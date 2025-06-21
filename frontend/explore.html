@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Destinations - Find Your Perfect Stay</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="explore.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html" class="logo-badge">
+              <span>Logo</span>
+            </a>
+          </div>
+
+          <!-- Navigation Icons -->
+          <nav class="nav-icons">
+            <a href="index.html" class="nav-btn">
+              <i data-lucide="home"></i>
+              <span>Home</span>
+            </a>
+            <button class="nav-btn active">
+              <i data-lucide="globe"></i>
+              <span>Explore</span>
+            </button>
+            <a href="experience.html" class="nav-btn">
+              <i data-lucide="calendar"></i>
+              <span>Experience</span>
+            </a>
+            <button class="nav-btn">
+              <i data-lucide="map-pin"></i>
+            </button>
+            <button class="nav-btn">
+              <i data-lucide="users"></i>
+            </button>
+          </nav>
+
+          <!-- Auth Buttons -->
+          <div class="auth-buttons">
+            <button class="btn btn-ghost">
+              <i data-lucide="user"></i>
+              Login
+            </button>
+            <button class="btn btn-outline">
+              <i data-lucide="user-plus"></i>
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="explore-hero">
+      <div class="container">
+        <div class="explore-header">
+          <h1>Explore Amazing Destinations</h1>
+          <p>Discover unique places to stay around the world</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+      <div class="container">
+        <div class="filters-container">
+          <!-- Search Bar -->
+          <div class="search-container">
+            <div class="search-input-container">
+              <i data-lucide="search"></i>
+              <input
+                type="text"
+                placeholder="Search destinations..."
+                class="search-input"
+                id="searchInput"
+              />
+            </div>
+          </div>
+
+          <!-- Category Filters -->
+          <div class="category-filters">
+            <button class="filter-btn active" data-category="all">
+              <i data-lucide="globe"></i>
+              All
+            </button>
+            <button class="filter-btn" data-category="mountains">
+              <i data-lucide="mountain"></i>
+              Mountains
+            </button>
+            <button class="filter-btn" data-category="beaches">
+              <i data-lucide="waves"></i>
+              Beaches
+            </button>
+            <button class="filter-btn" data-category="cities">
+              <i data-lucide="building"></i>
+              Cities
+            </button>
+            <button class="filter-btn" data-category="countryside">
+              <i data-lucide="trees"></i>
+              Countryside
+            </button>
+            <button class="filter-btn" data-category="luxury">
+              <i data-lucide="crown"></i>
+              Luxury
+            </button>
+          </div>
+
+          <!-- Sort Options -->
+          <div class="sort-container">
+            <select class="sort-select" id="sortSelect">
+              <option value="popular">Most Popular</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="newest">Newest</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+      <div class="container">
+        <!-- Results Header -->
+        <div class="results-header">
+          <div class="results-count">
+            <span id="resultsCount">247</span> destinations found
+          </div>
+          <div class="view-toggles">
+            <button class="view-btn active" data-view="grid">
+              <i data-lucide="grid-3x3"></i>
+            </button>
+            <button class="view-btn" data-view="list">
+              <i data-lucide="list"></i>
+            </button>
+            <button class="view-btn" data-view="map">
+              <i data-lucide="map"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Destinations Grid -->
+        <div class="destinations-container" id="destinationsContainer">
+          <!-- Destination cards will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+          <button class="btn btn-primary load-more-btn" id="loadMoreBtn">
+            Load More Destinations
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destination Modal -->
+    <div class="modal-overlay" id="destinationModal">
+      <div class="modal-content">
+        <button class="modal-close" id="closeModal">
+          <i data-lucide="x"></i>
+        </button>
+        <div class="modal-body" id="modalBody">
+          <!-- Modal content will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Company Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Company</span>
+              </div>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="linkedin"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- About -->
+          <div class="footer-section">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">UX design</a></li>
+              <li><a href="#">Wireframing</a></li>
+              <li><a href="#">Diagramming</a></li>
+              <li><a href="#">Brainstorming</a></li>
+              <li><a href="#">Online whiteboard</a></li>
+              <li><a href="#">Team collaboration</a></li>
+            </ul>
+          </div>
+
+          <!-- Careers -->
+          <div class="footer-section">
+            <h3>Careers</h3>
+            <ul>
+              <li><a href="#">Prototyping</a></li>
+              <li><a href="#">Development features</a></li>
+              <li><a href="#">Design systems</a></li>
+              <li><a href="#">Collaboration features</a></li>
+              <li><a href="#">Design process</a></li>
+              <li><a href="#">FigJam</a></li>
+            </ul>
+          </div>
+
+          <!-- Help & Map -->
+          <div class="footer-section">
+            <div class="help-section">
+              <h3>Help</h3>
+              <ul>
+                <li><a href="#">Best practices</a></li>
+                <li><a href="#">Colors</a></li>
+                <li><a href="#">Color wheel</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Developers</a></li>
+                <li><a href="#">Resource library</a></li>
+              </ul>
+            </div>
+            <div class="map-section">
+              <div class="map-link">
+                <i data-lucide="map-pin"></i>
+                <span>Map</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="explore.js"></script>
+  </body>
+</html>
