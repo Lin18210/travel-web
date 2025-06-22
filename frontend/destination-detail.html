@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination Details - Travel Booking</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="destination-detail.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  </head>
+  <body style="padding-top: 80px">
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1>TravelBooking</h1>
+        </div>
+        <ul
+          class="nav-menu"
+          style="
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+          "
+        >
+          <li style="display: flex; align-items: center; list-style: none">
+            <a href="index.html">Home</a>
+          </li>
+          <li style="display: flex; align-items: center; list-style: none">
+            <a href="explore.html">Explore</a>
+          </li>
+          <li style="display: flex; align-items: center; list-style: none">
+            <a href="experience.html">Experiences</a>
+          </li>
+          <li style="display: flex; align-items: center; list-style: none">
+            <a href="attractions.html">Attractions</a>
+          </li>
+          <li style="display: flex; align-items: center; list-style: none">
+            <a href="reviews.html">Reviews</a>
+          </li>
+        </ul>
+        <div class="nav-icons">
+          <button class="btn btn-ghost">Login</button>
+          <button class="btn btn-outline">Sign Up</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Loading State -->
+    <div id="loading-state" class="loading-state">
+      <div class="loading-spinner"></div>
+      <p>Loading destination details...</p>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" style="display: none">
+      <!-- Hero Section with Image Gallery -->
+      <section class="detail-hero">
+        <div class="hero-gallery">
+          <div class="main-image-container">
+            <img id="main-image" src="" alt="" class="main-image" />
+            <div class="image-overlay">
+              <button class="gallery-nav prev-btn" onclick="previousImage()">
+                <i data-lucide="chevron-left"></i>
+              </button>
+              <button class="gallery-nav next-btn" onclick="nextImage()">
+                <i data-lucide="chevron-right"></i>
+              </button>
+              <div class="image-counter">
+                <span id="current-image">1</span> /
+                <span id="total-images">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="thumbnail-grid">
+            <div class="thumbnails" id="thumbnails-container">
+              <!-- Thumbnails will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Info Overlay -->
+        <div class="quick-info">
+          <div class="info-badge">
+            <span class="category-tag" id="category-tag">Mountain</span>
+            <div class="rating-display">
+              <div class="stars" id="rating-stars"></div>
+              <span id="rating-text">4.8 (124 reviews)</span>
+            </div>
+          </div>
+          <h1 id="destination-title">Alpine Dreamscapes</h1>
+          <p class="location" id="destination-location">
+            <i data-lucide="map-pin"></i>
+            Swiss Alps, Switzerland
+          </p>
+          <div class="price-info">
+            <span class="price" id="destination-price">$299</span>
+            <span class="price-unit">per night</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Navigation Breadcrumbs -->
+      <div class="container">
+        <nav class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <i data-lucide="chevron-right"></i>
+          <a href="explore.html">Explore</a>
+          <i data-lucide="chevron-right"></i>
+          <span id="breadcrumb-title">Alpine Dreamscapes</span>
+        </nav>
+      </div>
+
+      <!-- Details Section -->
+      <section class="destination-details">
+        <div class="container">
+          <div class="details-grid">
+            <!-- Main Content -->
+            <div class="main-details">
+              <!-- Description -->
+              <div class="detail-section">
+                <h2>About This Destination</h2>
+                <div class="description" id="destination-description">
+                  <p>
+                    Wake up to snow-capped peaks, crackling fireplaces, and the
+                    crisp scent of pine. Your mountain retreat awaits in this
+                    stunning alpine lodge nestled in the heart of the Swiss
+                    Alps.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Highlights -->
+              <div class="detail-section">
+                <h2>Highlights</h2>
+                <div class="highlights-grid" id="highlights-container">
+                  <!-- Highlights will be populated by JavaScript -->
+                </div>
+              </div>
+
+              <!-- Amenities -->
+              <div class="detail-section">
+                <h2>Amenities & Features</h2>
+                <div class="amenities-grid" id="amenities-container">
+                  <!-- Amenities will be populated by JavaScript -->
+                </div>
+              </div>
+
+              <!-- What's Included -->
+              <div class="detail-section">
+                <h2>What's Included</h2>
+                <div class="included-list" id="included-container">
+                  <!-- Included items will be populated by JavaScript -->
+                </div>
+              </div>
+
+              <!-- Location & Map -->
+              <div class="detail-section">
+                <h2>Location</h2>
+                <div class="location-info">
+                  <div class="address" id="full-address">
+                    <i data-lucide="map-pin"></i>
+                    <span>Swiss Alps, Switzerland</span>
+                  </div>
+                  <div class="map-placeholder">
+                    <div class="map-icon">
+                      <i data-lucide="map"></i>
+                      <p>Interactive map would be displayed here</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reviews Preview -->
+              <div class="detail-section">
+                <h2>Guest Reviews</h2>
+                <div class="reviews-summary">
+                  <div class="rating-overview">
+                    <div class="overall-rating">
+                      <span class="rating-number" id="overall-rating">4.8</span>
+                      <div class="rating-breakdown">
+                        <div class="stars large" id="overview-stars"></div>
+                        <span id="total-reviews-count">124 reviews</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="recent-reviews" id="recent-reviews">
+                    <!-- Recent reviews will be populated by JavaScript -->
+                  </div>
+                  <div class="reviews-cta">
+                    <a href="reviews.html" class="btn btn-outline"
+                      >View All Reviews</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Booking Sidebar -->
+            <div class="booking-sidebar">
+              <div class="booking-card">
+                <div class="pricing-header">
+                  <div class="price-display">
+                    <span class="current-price" id="sidebar-price">$299</span>
+                    <span class="price-unit">per night</span>
+                  </div>
+                  <div class="rating-compact">
+                    <div class="stars small" id="sidebar-stars"></div>
+                    <span id="sidebar-rating">4.8 (124)</span>
+                  </div>
+                </div>
+
+                <div class="booking-form">
+                  <div class="date-inputs">
+                    <div class="input-group">
+                      <label>Check-in</label>
+                      <input type="date" id="checkin-date" class="date-input" />
+                    </div>
+                    <div class="input-group">
+                      <label>Check-out</label>
+                      <input
+                        type="date"
+                        id="checkout-date"
+                        class="date-input"
+                      />
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <label>Guests</label>
+                    <select id="guest-count" class="select-input">
+                      <option value="1">1 guest</option>
+                      <option value="2">2 guests</option>
+                      <option value="3">3 guests</option>
+                      <option value="4">4 guests</option>
+                      <option value="5">5+ guests</option>
+                    </select>
+                  </div>
+
+                  <div class="price-breakdown" id="price-breakdown">
+                    <div class="breakdown-item">
+                      <span>$299 × <span id="nights-count">1</span> night</span>
+                      <span id="subtotal">$299</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>Service fee</span>
+                      <span id="service-fee">$30</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>Taxes</span>
+                      <span id="taxes">$25</span>
+                    </div>
+                    <hr />
+                    <div class="breakdown-total">
+                      <span>Total</span>
+                      <span id="total-price">$354</span>
+                    </div>
+                  </div>
+
+                  <button
+                    class="btn btn-primary btn-full"
+                    onclick="proceedToBooking()"
+                  >
+                    Reserve Now
+                  </button>
+                  <p class="booking-note">You won't be charged yet</p>
+                </div>
+
+                <div class="quick-actions">
+                  <button class="action-btn" onclick="shareDestination()">
+                    <i data-lucide="share-2"></i>
+                    Share
+                  </button>
+                  <button class="action-btn" onclick="saveDestination()">
+                    <i data-lucide="heart"></i>
+                    Save
+                  </button>
+                </div>
+              </div>
+
+              <!-- Host Information -->
+              <div class="host-card">
+                <h3>Your Host</h3>
+                <div class="host-info">
+                  <div class="host-avatar">
+                    <div class="avatar-placeholder">
+                      <i data-lucide="user"></i>
+                    </div>
+                  </div>
+                  <div class="host-details">
+                    <h4 id="host-name">Sarah Mountain</h4>
+                    <p id="host-experience">Hosting since 2019</p>
+                    <div class="host-rating">
+                      <div class="stars small"></div>
+                      <span>4.9 host rating</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-outline btn-full">Contact Host</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Similar Destinations -->
+      <section class="similar-destinations">
+        <div class="container">
+          <h2>Similar Destinations</h2>
+          <div class="similar-grid" id="similar-destinations">
+            <!-- Similar destinations will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>TravelBooking</h3>
+            <p>
+              Discover amazing destinations and create unforgettable memories.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="explore.html">Explore</a></li>
+              <li><a href="experience.html">Experiences</a></li>
+              <li><a href="booking.html">Book Now</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i data-lucide="facebook"></i></a>
+              <a href="#"><i data-lucide="twitter"></i></a>
+              <a href="#"><i data-lucide="instagram"></i></a>
+              <a href="#"><i data-lucide="youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 TravelBooking. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="destination-detail.js"></script>
+  </body>
+</html>

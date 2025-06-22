@@ -402,7 +402,7 @@
   line-height: 1.6;
   margin-bottom: 16px;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -482,7 +482,7 @@
 }
 
 .reviews-container.list-view .review-content {
-  -webkit-line-clamp: 2;
+  line-clamp: 2;
   margin-bottom: 12px;
 }
 

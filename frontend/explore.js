@@ -13,6 +13,7 @@ const destinations = [
     features: ["WiFi", "Spa", "Skiing", "Restaurant", "Pool", "Fireplace"],
     image: "Mountain resort with snow-capped peaks",
     badge: "Luxury",
+    detailId: "alpine"
   },
   {
     id: 2,
@@ -34,6 +35,7 @@ const destinations = [
     ],
     image: "Overwater villa in crystal blue lagoon",
     badge: "Featured",
+    detailId: "seaside"
   },
   {
     id: 3,
@@ -48,6 +50,7 @@ const destinations = [
     features: ["City Views", "Gym", "Concierge", "WiFi", "Kitchen", "Terrace"],
     image: "Modern penthouse with city skyline",
     badge: "Popular",
+    detailId: "metropolitan"
   },
   {
     id: 4,
@@ -69,6 +72,7 @@ const destinations = [
     ],
     image: "Tuscan villa with vineyard views",
     badge: "Authentic",
+    detailId: "tuscan"
   },
   {
     id: 5,
@@ -90,6 +94,7 @@ const destinations = [
     ],
     image: "Luxury desert camp under stars",
     badge: "Adventure",
+    detailId: "desert"
   },
   {
     id: 6,
@@ -111,6 +116,7 @@ const destinations = [
     ],
     image: "Treehouse lodge in rainforest canopy",
     badge: "Eco-Friendly",
+    detailId: "rainforest"
   },
   {
     id: 7,
@@ -132,6 +138,7 @@ const destinations = [
     ],
     image: "White buildings on cliff overlooking sea",
     badge: "Romantic",
+    detailId: "santorini"
   },
   {
     id: 8,
@@ -153,6 +160,7 @@ const destinations = [
     ],
     image: "Modern hotel with traditional Japanese elements",
     badge: "Cultural",
+    detailId: "tokyo"
   },
   {
     id: 9,
@@ -174,6 +182,7 @@ const destinations = [
     ],
     image: "Medieval castle in misty highlands",
     badge: "Historic",
+    detailId: "castle"
   },
   {
     id: 10,
@@ -195,6 +204,7 @@ const destinations = [
     ],
     image: "Private island with white sand beaches",
     badge: "Exclusive",
+    detailId: "private-island"
   },
   {
     id: 11,
@@ -216,6 +226,7 @@ const destinations = [
     ],
     image: "Wooden chalet with snow and mountains",
     badge: "Ski Resort",
+    detailId: "aspen"
   },
   {
     id: 12,
@@ -235,8 +246,102 @@ const destinations = [
       "Canopy Walk",
       "Local Cuisine",
     ],
+    includes: ["Lodge", "Program", "Theater"],
     image: "Lodge platform high in jungle trees",
     badge: "Conservation",
+    detailId: "amazon"
+  },
+  {
+    id: 13,
+    title: "Whispering Pines Forest Retreat",
+    location: "Pacific Northwest, USA",
+    category: "countryside",
+    price: 189,
+    rating: 4.8,
+    reviews: 156,
+    description:
+      "Immerse yourself in ancient forests with towering pines, misty trails, and the peaceful sounds of nature all around.",
+    features: [
+      "Forest Trails",
+      "Wildlife Watching",
+      "Fireplace",
+      "Nature Sounds",
+      "Organic Meals",
+      "Yoga Deck",
+    ],
+    includes: ["Trails", "Guide", "Meals", "Activities"],
+    image: "Cozy cabin surrounded by towering pine trees",
+    badge: "Forest Haven",
+    detailId: "pacific-northwest"
+  },
+  {
+    id: 14,
+    title: "Oceanfront Cottage Collection",
+    location: "Maine Coast, USA",
+    category: "beaches",
+    price: 235,
+    rating: 4.7,
+    reviews: 298,
+    description:
+      "Charming seaside cottages with weathered shingles, panoramic ocean views, and the constant melody of waves.",
+    features: [
+      "Ocean Views",
+      "Private Beach",
+      "Fireplace",
+      "Deck",
+      "Kayaks",
+      "Lobster Dinner",
+    ],
+    includes: ["Beach", "Kayaks", "Meals", "Activities"],
+    image: "Classic New England cottage overlooking rocky coastline",
+    badge: "Coastal Charm",
+    detailId: "maine-coast"
+  },
+  {
+    id: 15,
+    title: "Rolling Hills Farm Stay",
+    location: "Cotswolds, England",
+    category: "countryside",
+    price: 165,
+    rating: 4.9,
+    reviews: 203,
+    description:
+      "Experience authentic countryside life with rolling green hills, blooming meadows, and rustic stone cottages.",
+    features: [
+      "Farm Tours",
+      "Horseback Riding",
+      "Organic Garden",
+      "Stone Cottage",
+      "Country Walks",
+      "Farm Breakfast",
+    ],
+    includes: ["Tours", "Meals", "Activities", "Garden"],
+    image: "Stone farmhouse in rolling English countryside",
+    badge: "Countryside Bliss",
+    detailId: "cotswolds"
+  },
+  {
+    id: 16,
+    title: "Paradise Island Resort",
+    location: "Bora Bora, French Polynesia",
+    category: "beaches",
+    price: 485,
+    rating: 4.9,
+    reviews: 127,
+    description:
+      "Overwater bungalows surrounded by swaying palms, crystal-clear lagoons, and pristine white sand beaches.",
+    features: [
+      "Overwater Bungalow",
+      "Private Lagoon",
+      "Snorkeling",
+      "Spa",
+      "Sunset Dinners",
+      "Water Sports",
+    ],
+    includes: ["Bungalow", "Meals", "Activities", "Spa"],
+    image: "Overwater bungalows in crystal blue tropical lagoon",
+    badge: "Tropical Tranquility",
+    detailId: "bora-bora"
   },
 ];
 
@@ -256,6 +361,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Set up event listeners
   setupEventListeners();
+
+  // Check for destination filter from homepage
+  checkDestinationFilter();
 
   // Initial render
   filterAndRenderDestinations();
@@ -475,7 +583,10 @@ function createDestinationCard(destination) {
       !e.target.closest(".card-details-btn") &&
       !e.target.closest(".card-book-btn")
     ) {
-      openDestinationModal(destination);
+      // Navigate to destination detail page
+      if (destination.detailId) {
+        window.location.href = `destination-detail.html?destination=${destination.detailId}`;
+      }
     }
   });
 
@@ -490,7 +601,10 @@ function createDestinationCard(destination) {
   const detailsBtn = card.querySelector(".card-details-btn");
   detailsBtn.addEventListener("click", function (e) {
     e.stopPropagation();
-    openDestinationModal(destination);
+    // Navigate to destination detail page
+    if (destination.detailId) {
+      window.location.href = `destination-detail.html?destination=${destination.detailId}`;
+    }
   });
 
   // Add booking data to the booking link
@@ -676,5 +790,108 @@ function setupInfiniteScroll() {
 
 // Initialize infinite scroll (uncomment to use instead of Load More button)
 // setupInfiniteScroll();
+
+function checkDestinationFilter() {
+  const destinationFilter = localStorage.getItem("destinationFilter");
+
+  if (destinationFilter) {
+    // Map destination types to search terms
+    const destinationMap = {
+      alpine: "alpine mountain snow",
+      seaside: "beach ocean seaside",
+      metropolitan: "city urban metropolitan",
+      desert: "desert sand dune",
+      forest: "forest pine tree woodland",
+      coastal: "coastal cottage ocean",
+      countryside: "countryside farm hills",
+      tropical: "tropical island paradise",
+    };
+
+    // Set search term and filter
+    const searchTerm = destinationMap[destinationFilter] || destinationFilter;
+    const searchInput = document.getElementById("searchInput");
+
+    if (searchInput) {
+      searchInput.value = searchTerm;
+      // Trigger search
+      handleSearch();
+
+      // Visual feedback
+      searchInput.style.background = "#f0f9ff";
+      searchInput.style.borderColor = "#3b82f6";
+
+      // Show notification
+      showFilterNotification(destinationFilter);
+    }
+
+    // Clear the filter from localStorage
+    localStorage.removeItem("destinationFilter");
+  }
+}
+
+function showFilterNotification(destinationType) {
+  // Create notification element
+  const notification = document.createElement("div");
+  notification.className = "filter-notification";
+  notification.innerHTML = `
+    <i data-lucide="filter"></i>
+    <span>Showing ${destinationType} destinations</span>
+    <button onclick="clearFilter()" class="clear-filter">
+      <i data-lucide="x"></i>
+    </button>
+  `;
+
+  // Add notification styles
+  notification.style.cssText = `
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: #3b82f6;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideInRight 0.3s ease;
+  `;
+
+  document.body.appendChild(notification);
+
+  // Re-initialize icons
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
+
+  // Auto-remove after 5 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.style.animation = "slideOutRight 0.3s ease";
+      setTimeout(() => {
+        if (notification.parentNode) {
+          notification.parentNode.removeChild(notification);
+        }
+      }, 300);
+    }
+  }, 5000);
+}
+
+function clearFilter() {
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput) {
+    searchInput.value = "";
+    searchInput.style.background = "";
+    searchInput.style.borderColor = "";
+    handleSearch();
+  }
+
+  // Remove notification
+  const notification = document.querySelector(".filter-notification");
+  if (notification) {
+    notification.parentNode.removeChild(notification);
+  }
+}
 
 console.log("Explore page initialized successfully!");

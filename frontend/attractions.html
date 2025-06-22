@@ -14,52 +14,43 @@
   <body>
     <!-- Header -->
     <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <!-- Logo -->
-          <div class="logo">
-            <a href="index.html" class="logo-badge">
-              <span>Logo</span>
-            </a>
-          </div>
-
-          <!-- Navigation Icons -->
-          <nav class="nav-icons">
-            <a href="index.html" class="nav-btn">
-              <i data-lucide="home"></i>
-              <span>Home</span>
-            </a>
-            <a href="explore.html" class="nav-btn">
-              <i data-lucide="globe"></i>
-              <span>Explore</span>
-            </a>
-            <a href="experience.html" class="nav-btn">
-              <i data-lucide="calendar"></i>
-              <span>Experience</span>
-            </a>
-            <button class="nav-btn active">
-              <i data-lucide="map-pin"></i>
-              <span>Attractions</span>
-            </button>
-            <a href="reviews.html" class="nav-btn">
-              <i data-lucide="users"></i>
-              <span>Reviews</span>
-            </a>
-          </nav>
-
-          <!-- Auth Buttons -->
-          <div class="auth-buttons">
-            <button class="btn btn-ghost">
-              <i data-lucide="user"></i>
-              Login
-            </button>
-            <button class="btn btn-outline">
-              <i data-lucide="user-plus"></i>
-              Sign Up
-            </button>
-          </div>
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1>TravelBooking</h1>
         </div>
-      </div>
+        <ul
+          class="nav-menu"
+          style="
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+          "
+        >
+          <li style="display: flex; align-items: center; list-style: none">
+            <a href="index.html">Home</a>
+          </li>
+          <li style="display: flex; align-items: center; list-style: none">
+            <a href="explore.html">Explore</a>
+          </li>
+          <li style="display: flex; align-items: center; list-style: none">
+            <a href="experience.html">Experiences</a>
+          </li>
+          <li style="display: flex; align-items: center; list-style: none">
+            <a href="attractions.html" class="active">Attractions</a>
+          </li>
+          <li style="display: flex; align-items: center; list-style: none">
+            <a href="reviews.html">Reviews</a>
+          </li>
+        </ul>
+        <div class="nav-icons">
+          <button class="btn btn-ghost">Login</button>
+          <button class="btn btn-outline">Sign Up</button>
+        </div>
+      </nav>
     </header>
 
     <!-- Page Header -->

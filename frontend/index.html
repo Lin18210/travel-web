@@ -13,52 +13,22 @@
   <body>
     <!-- Header -->
     <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <!-- Logo -->
-          <div class="logo">
-            <div class="logo-badge">
-              <span>Logo</span>
-            </div>
-          </div>
-
-          <!-- Navigation Icons -->
-          <nav class="nav-icons">
-            <button class="nav-btn active">
-              <i data-lucide="home"></i>
-              <span>Home</span>
-            </button>
-            <a href="explore.html" class="nav-btn">
-              <i data-lucide="globe"></i>
-              <span>Explore</span>
-            </a>
-            <a href="experience.html" class="nav-btn">
-              <i data-lucide="calendar"></i>
-              <span>Experience</span>
-            </a>
-            <a href="attractions.html" class="nav-btn">
-              <i data-lucide="map-pin"></i>
-              <span>Attractions</span>
-            </a>
-            <a href="reviews.html" class="nav-btn">
-              <i data-lucide="users"></i>
-              <span>Reviews</span>
-            </a>
-          </nav>
-
-          <!-- Auth Buttons -->
-          <div class="auth-buttons">
-            <button class="btn btn-ghost">
-              <i data-lucide="user"></i>
-              Login
-            </button>
-            <button class="btn btn-outline">
-              <i data-lucide="user-plus"></i>
-              Sign Up
-            </button>
-          </div>
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: blue;">TravelBooking</a></h1>
         </div>
-      </div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="experience.html">Experiences</a></li>
+          <li><a href="attractions.html">Attractions</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+        </ul>
+        <div class="nav-icons">
+          <button class="btn btn-ghost">Login</button>
+          <button class="btn btn-outline">Sign Up</button>
+        </div>
+      </nav>
     </header>
 
     <!-- Hero Section -->
@@ -97,9 +67,7 @@
       <div class="container">
         <div class="carousel-container">
           <div class="carousel-image">
-            <div class="image-placeholder">
-              <span>Featured Destination Image</span>
-            </div>
+            <!-- Images will be dynamically loaded by JavaScript -->
             <button class="carousel-btn carousel-prev">
               <i data-lucide="chevron-left"></i>
             </button>
@@ -119,9 +87,15 @@
       <div class="container">
         <!-- First Row -->
         <div class="destinations-grid">
-          <div class="destination-card">
+          <div class="destination-card" data-destination="alpine" onclick="redirectToExplore('alpine')">
             <div class="card-image">
-              <div class="image-placeholder">
+              <img
+                src="assets/home/moutain2.jpg"
+                alt="Alpine Dreamscapes - Snow-capped mountain lodge"
+                class="destination-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="image-placeholder" style="display: none;">
                 <svg viewBox="0 0 100 100" class="placeholder-x">
                   <path
                     d="M20 20 L80 80 M80 20 L20 80"
@@ -141,9 +115,15 @@
             </div>
           </div>
 
-          <div class="destination-card">
+          <div class="destination-card" data-destination="seaside" onclick="redirectToExplore('seaside')">
             <div class="card-image">
-              <div class="image-placeholder">
+              <img
+                src="assets/home/seaside.jpg"
+                alt="Seaside Serenity - Tropical beach villa"
+                class="destination-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="image-placeholder" style="display: none;">
                 <svg viewBox="0 0 100 100" class="placeholder-x">
                   <path
                     d="M20 20 L80 80 M80 20 L20 80"
@@ -163,9 +143,15 @@
             </div>
           </div>
 
-          <div class="destination-card">
+          <div class="destination-card" data-destination="metropolitan" onclick="redirectToExplore('metropolitan')">
             <div class="card-image">
-              <div class="image-placeholder">
+              <img
+                src="assets/home/urban.jpg"
+                alt="Metropolitan Magic - Modern city penthouse"
+                class="destination-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="image-placeholder" style="display: none;">
                 <svg viewBox="0 0 100 100" class="placeholder-x">
                   <path
                     d="M20 20 L80 80 M80 20 L20 80"
@@ -185,9 +171,15 @@
             </div>
           </div>
 
-          <div class="destination-card">
+          <div class="destination-card" data-destination="desert" onclick="redirectToExplore('desert')">
             <div class="card-image">
-              <div class="image-placeholder">
+              <img
+                src="assets/home/desert.jpg"
+                alt="Sands of Solitude - Desert luxury camp"
+                class="destination-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="image-placeholder" style="display: none;">
                 <svg viewBox="0 0 100 100" class="placeholder-x">
                   <path
                     d="M20 20 L80 80 M80 20 L20 80"
@@ -210,9 +202,15 @@
 
         <!-- Second Row -->
         <div class="destinations-grid">
-          <div class="destination-card">
+          <div class="destination-card" data-destination="forest" onclick="redirectToExplore('forest')">
             <div class="card-image">
-              <div class="image-placeholder">
+              <img
+                src="assets/home/forest.jpeg"
+                alt="Forest Haven - Peaceful woodland escape"
+                class="destination-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="image-placeholder" style="display: none;">
                 <svg viewBox="0 0 100 100" class="placeholder-x">
                   <path
                     d="M20 20 L80 80 M80 20 L20 80"
@@ -224,17 +222,22 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Alpine Dreamscapes</h3>
+              <h3>Forest Haven</h3>
               <p>
-                Wake up to snow-capped peaks, crackling fireplaces, and the
-                crisp scent of pine. Your mountain retreat awaits.
+                Whispering pines, misty trails, and the soothing sounds of nature—your peaceful woodland escape awaits.
               </p>
             </div>
           </div>
 
-          <div class="destination-card">
+          <div class="destination-card" data-destination="coastal" onclick="redirectToExplore('coastal')">
             <div class="card-image">
-              <div class="image-placeholder">
+              <img
+                src="assets/home/coast.jpeg"
+                alt="Coastal Charm - Oceanfront cottage retreat"
+                class="destination-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="image-placeholder" style="display: none;">
                 <svg viewBox="0 0 100 100" class="placeholder-x">
                   <path
                     d="M20 20 L80 80 M80 20 L20 80"
@@ -246,17 +249,22 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Seaside Serenity</h3>
+              <h3>Coastal Charm</h3>
               <p>
-                Powdery sands, turquoise waves, and endless sunsets—where every
-                day feels like a postcard.
+                Charming cottages, salty breezes, and oceanfront views—feel the rhythm of the sea in every moment.
               </p>
             </div>
           </div>
 
-          <div class="destination-card">
+          <div class="destination-card" data-destination="countryside" onclick="redirectToExplore('countryside')">
             <div class="card-image">
-              <div class="image-placeholder">
+              <img
+                src="assets/home/countryside.jpg"
+                alt="Countryside Bliss - Rolling hills and meadows"
+                class="destination-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="image-placeholder" style="display: none;">
                 <svg viewBox="0 0 100 100" class="placeholder-x">
                   <path
                     d="M20 20 L80 80 M80 20 L20 80"
@@ -268,17 +276,22 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Metropolitan Magic</h3>
+              <h3>Countryside Bliss</h3>
               <p>
-                Neon lights, rooftop cocktails, and hidden gems—experience the
-                pulse of the city that never sleeps.
+                Rolling hills, blooming meadows, and rustic comfort—unplug and unwind in the heart of the countryside.
               </p>
             </div>
           </div>
 
-          <div class="destination-card">
+          <div class="destination-card" data-destination="tropical" onclick="redirectToExplore('tropical')">
             <div class="card-image">
-              <div class="image-placeholder">
+              <img
+                src="assets/home/tropical.jpeg"
+                alt="Tropical Tranquility - Island paradise"
+                class="destination-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="image-placeholder" style="display: none;">
                 <svg viewBox="0 0 100 100" class="placeholder-x">
                   <path
                     d="M20 20 L80 80 M80 20 L20 80"
@@ -290,20 +303,13 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Sands of Solitude</h3>
+              <h3>Tropical Tranquility</h3>
               <p>
-                Golden dunes, starlit skies, and tranquil silence—find peace in
-                the heart of the desert.
+                Swaying palms, crystal-clear waters, and sun-kissed sands—your island paradise is calling.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
         <div class="footer-content">
           <!-- Company Info -->
           <div class="footer-section">
