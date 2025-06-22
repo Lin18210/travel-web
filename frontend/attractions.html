@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unique Experiences - Find Your Perfect Stay</title>
+    <title>Attractions & Tours - Find Your Perfect Stay</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="experience.css" />
+    <link rel="stylesheet" href="attractions.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
       rel="stylesheet"
@@ -33,14 +33,14 @@
               <i data-lucide="globe"></i>
               <span>Explore</span>
             </a>
-            <button class="nav-btn active">
+            <a href="experience.html" class="nav-btn">
               <i data-lucide="calendar"></i>
               <span>Experience</span>
-            </button>
-            <a href="attractions.html" class="nav-btn">
+            </a>
+            <button class="nav-btn active">
               <i data-lucide="map-pin"></i>
               <span>Attractions</span>
-            </a>
+            </button>
             <a href="reviews.html" class="nav-btn">
               <i data-lucide="users"></i>
               <span>Reviews</span>
@@ -63,11 +63,13 @@
     </header>
 
     <!-- Page Header -->
-    <section class="experience-hero">
+    <section class="attractions-hero">
       <div class="container">
-        <div class="experience-header">
-          <h1>Discover Unique Experiences</h1>
-          <p>Create unforgettable memories with local activities and tours</p>
+        <div class="attractions-header">
+          <h1>Discover Amazing Attractions & Tours</h1>
+          <p>
+            Explore iconic landmarks, museums, and guided tours around the world
+          </p>
         </div>
       </div>
     </section>
@@ -82,7 +84,7 @@
               <i data-lucide="search"></i>
               <input
                 type="text"
-                placeholder="Search experiences..."
+                placeholder="Search attractions..."
                 class="search-input"
                 id="searchInput"
               />
@@ -92,113 +94,101 @@
           <!-- Category Filters -->
           <div class="category-filters">
             <button class="filter-btn active" data-category="all">
-              <i data-lucide="compass"></i>
+              <i data-lucide="map"></i>
               All
             </button>
-            <button class="filter-btn" data-category="adventure">
-              <i data-lucide="mountain"></i>
-              Adventure
+            <button class="filter-btn" data-category="landmarks">
+              <i data-lucide="monument"></i>
+              Landmarks
             </button>
-            <button class="filter-btn" data-category="cultural">
-              <i data-lucide="landmark"></i>
-              Cultural
-            </button>
-            <button class="filter-btn" data-category="food">
-              <i data-lucide="chef-hat"></i>
-              Food & Drink
+            <button class="filter-btn" data-category="museums">
+              <i data-lucide="building-2"></i>
+              Museums
             </button>
             <button class="filter-btn" data-category="tours">
-              <i data-lucide="map"></i>
-              Tours
+              <i data-lucide="route"></i>
+              City Tours
             </button>
-            <button class="filter-btn" data-category="wellness">
-              <i data-lucide="heart"></i>
-              Wellness
+            <button class="filter-btn" data-category="historical">
+              <i data-lucide="castle"></i>
+              Historical
             </button>
             <button class="filter-btn" data-category="nature">
-              <i data-lucide="tree-pine"></i>
+              <i data-lucide="mountain"></i>
               Nature
+            </button>
+            <button class="filter-btn" data-category="entertainment">
+              <i data-lucide="ticket"></i>
+              Entertainment
             </button>
           </div>
 
-          <!-- Duration & Price Filters -->
+          <!-- Sort Options -->
           <div class="filter-options">
-            <select class="filter-select" id="durationFilter">
-              <option value="all">Any Duration</option>
-              <option value="short">1-3 Hours</option>
-              <option value="half">Half Day (4-6 Hours)</option>
-              <option value="full">Full Day (7+ Hours)</option>
-              <option value="multi">Multi-Day</option>
-            </select>
-
-            <select class="filter-select" id="priceFilter">
-              <option value="all">Any Price</option>
-              <option value="budget">Under $50</option>
-              <option value="mid">$50 - $150</option>
-              <option value="premium">$150 - $300</option>
-              <option value="luxury">$300+</option>
-            </select>
-
             <select class="filter-select" id="sortSelect">
               <option value="popular">Most Popular</option>
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
               <option value="rating">Highest Rated</option>
-              <option value="duration">Shortest First</option>
+              <option value="newest">Recently Added</option>
             </select>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Featured Experience -->
-    <section class="featured-experience">
+    <!-- Featured Attraction -->
+    <section class="featured-attraction">
       <div class="container">
         <div class="featured-card">
           <div class="featured-image">
             <div class="image-placeholder">
-              <span>Featured: Hot Air Balloon Over Cappadocia</span>
+              <span>Majestic Eiffel Tower at Golden Hour</span>
             </div>
-            <div class="featured-badge">Featured Experience</div>
+            <div class="featured-badge">Most Popular</div>
+            <div class="featured-rating">
+              <i data-lucide="star"></i>
+              <span>4.8</span>
+            </div>
           </div>
           <div class="featured-content">
             <div class="featured-header">
-              <h3>Magical Hot Air Balloon Adventure</h3>
-              <div class="featured-rating">
-                <i data-lucide="star"></i>
-                <span>4.9</span>
-                <span>(347 reviews)</span>
+              <h3>Eiffel Tower Skip-the-Line Tour</h3>
+              <div class="featured-location">
+                <i data-lucide="map-pin"></i>
+                <span>Paris, France</span>
               </div>
             </div>
-            <div class="featured-location">
-              <i data-lucide="map-pin"></i>
-              <span>Cappadocia, Turkey</span>
-            </div>
             <p class="featured-description">
-              Experience the breathtaking beauty of Cappadocia from above as you
-              float peacefully over fairy chimneys, ancient cave dwellings, and
-              stunning rock formations in a hot air balloon at sunrise.
+              Skip the long lines and ascend the iconic Eiffel Tower with
+              priority access. Enjoy breathtaking panoramic views of Paris from
+              the observation decks while learning about the tower's fascinating
+              history from expert guides.
             </p>
             <div class="featured-details">
               <div class="detail-item">
                 <i data-lucide="clock"></i>
-                <span>3 Hours</span>
+                <span>2.5 hours</span>
               </div>
               <div class="detail-item">
                 <i data-lucide="users"></i>
-                <span>Max 12 people</span>
+                <span>Max 15 people</span>
               </div>
               <div class="detail-item">
-                <i data-lucide="calendar"></i>
-                <span>Daily at 5:30 AM</span>
+                <i data-lucide="ticket"></i>
+                <span>Skip-the-line</span>
+              </div>
+              <div class="detail-item">
+                <i data-lucide="headphones"></i>
+                <span>Audio guide</span>
               </div>
             </div>
             <div class="featured-footer">
               <div class="featured-price">
-                <span class="currency">$</span>185
+                <span class="currency">$</span>45
                 <span class="period">/person</span>
               </div>
-              <button class="btn btn-primary">Book Experience</button>
+              <button class="btn btn-primary">Book Tour</button>
             </div>
           </div>
         </div>
@@ -211,7 +201,7 @@
         <!-- Results Header -->
         <div class="results-header">
           <div class="results-count">
-            <span id="resultsCount">156</span> experiences found
+            <span id="resultsCount">189</span> attractions found
           </div>
           <div class="view-toggles">
             <button class="view-btn active" data-view="grid">
@@ -223,22 +213,22 @@
           </div>
         </div>
 
-        <!-- Experiences Grid -->
-        <div class="experiences-container" id="experiencesContainer">
-          <!-- Experience cards will be inserted here by JavaScript -->
+        <!-- Attractions Grid -->
+        <div class="attractions-container" id="attractionsContainer">
+          <!-- Attraction cards will be inserted here by JavaScript -->
         </div>
 
         <!-- Load More Button -->
         <div class="load-more-container">
           <button class="btn btn-primary load-more-btn" id="loadMoreBtn">
-            Discover More Experiences
+            Discover More Attractions
           </button>
         </div>
       </div>
     </section>
 
-    <!-- Experience Modal -->
-    <div class="modal-overlay" id="experienceModal">
+    <!-- Attraction Modal -->
+    <div class="modal-overlay" id="attractionModal">
       <div class="modal-content">
         <button class="modal-close" id="closeModal">
           <i data-lucide="x"></i>
@@ -329,6 +319,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script src="experience.js"></script>
+    <script src="attractions.js"></script>
   </body>
 </html>

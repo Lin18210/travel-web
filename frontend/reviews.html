@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews & Ratings - Find Your Perfect Stay</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="reviews.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html" class="logo-badge">
+              <span>Logo</span>
+            </a>
+          </div>
+
+          <!-- Navigation Icons -->
+          <nav class="nav-icons">
+            <a href="index.html" class="nav-btn">
+              <i data-lucide="home"></i>
+              <span>Home</span>
+            </a>
+            <a href="explore.html" class="nav-btn">
+              <i data-lucide="globe"></i>
+              <span>Explore</span>
+            </a>
+            <a href="experience.html" class="nav-btn">
+              <i data-lucide="calendar"></i>
+              <span>Experience</span>
+            </a>
+            <a href="attractions.html" class="nav-btn">
+              <i data-lucide="map-pin"></i>
+              <span>Attractions</span>
+            </a>
+            <button class="nav-btn active">
+              <i data-lucide="users"></i>
+              <span>Reviews</span>
+            </button>
+          </nav>
+
+          <!-- Auth Buttons -->
+          <div class="auth-buttons">
+            <button class="btn btn-ghost">
+              <i data-lucide="user"></i>
+              Login
+            </button>
+            <button class="btn btn-outline">
+              <i data-lucide="user-plus"></i>
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="reviews-hero">
+      <div class="container">
+        <div class="reviews-header">
+          <h1>Reviews & Ratings</h1>
+          <p>Read authentic traveler experiences and share your own journey</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Write Review CTA -->
+    <section class="write-review-cta">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-content">
+            <h3>Share Your Travel Experience</h3>
+            <p>Help fellow travelers by writing a review of your recent trip</p>
+          </div>
+          <button class="btn btn-primary" id="writeReviewBtn">
+            <i data-lucide="pen-tool"></i>
+            Write a Review
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+      <div class="container">
+        <div class="filters-container">
+          <!-- Search Bar -->
+          <div class="search-container">
+            <div class="search-input-container">
+              <i data-lucide="search"></i>
+              <input
+                type="text"
+                placeholder="Search reviews..."
+                class="search-input"
+                id="searchInput"
+              />
+            </div>
+          </div>
+
+          <!-- Category Filters -->
+          <div class="category-filters">
+            <button class="filter-btn active" data-category="all">
+              <i data-lucide="list"></i>
+              All Reviews
+            </button>
+            <button class="filter-btn" data-category="destinations">
+              <i data-lucide="map"></i>
+              Destinations
+            </button>
+            <button class="filter-btn" data-category="experiences">
+              <i data-lucide="camera"></i>
+              Experiences
+            </button>
+            <button class="filter-btn" data-category="attractions">
+              <i data-lucide="monument"></i>
+              Attractions
+            </button>
+          </div>
+
+          <!-- Rating & Sort Filters -->
+          <div class="filter-options">
+            <select class="filter-select" id="ratingFilter">
+              <option value="all">All Ratings</option>
+              <option value="5">5 Stars</option>
+              <option value="4">4+ Stars</option>
+              <option value="3">3+ Stars</option>
+              <option value="2">2+ Stars</option>
+              <option value="1">1+ Stars</option>
+            </select>
+
+            <select class="filter-select" id="sortSelect">
+              <option value="newest">Most Recent</option>
+              <option value="oldest">Oldest First</option>
+              <option value="highest">Highest Rated</option>
+              <option value="lowest">Lowest Rated</option>
+              <option value="helpful">Most Helpful</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Stats -->
+    <section class="reviews-stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="totalReviews">12,847</div>
+            <div class="stat-label">Total Reviews</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="averageRating">4.6</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="verifiedReviews">89%</div>
+            <div class="stat-label">Verified Reviews</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="monthlyReviews">1,234</div>
+            <div class="stat-label">This Month</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+      <div class="container">
+        <!-- Results Header -->
+        <div class="results-header">
+          <div class="results-count">
+            <span id="resultsCount">247</span> reviews found
+          </div>
+          <div class="view-toggles">
+            <button class="view-btn active" data-view="card">
+              <i data-lucide="grid-3x3"></i>
+            </button>
+            <button class="view-btn" data-view="list">
+              <i data-lucide="list"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div class="reviews-container" id="reviewsContainer">
+          <!-- Review cards will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+          <button class="btn btn-primary load-more-btn" id="loadMoreBtn">
+            Load More Reviews
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Write Review Modal -->
+    <div class="modal-overlay" id="writeReviewModal">
+      <div class="modal-content">
+        <button class="modal-close" id="closeWriteModal">
+          <i data-lucide="x"></i>
+        </button>
+        <div class="modal-body">
+          <h2 class="modal-title">Write a Review</h2>
+          <form class="review-form" id="reviewForm">
+            <div class="form-group">
+              <label for="reviewType">What are you reviewing?</label>
+              <select id="reviewType" class="form-select" required>
+                <option value="">Select category</option>
+                <option value="destinations">Destination</option>
+                <option value="experiences">Experience</option>
+                <option value="attractions">Attraction</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="reviewTitle">Review Title</label>
+              <input
+                type="text"
+                id="reviewTitle"
+                class="form-input"
+                placeholder="Give your review a title"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="reviewRating">Rating</label>
+              <div class="rating-input" id="ratingInput">
+                <button type="button" class="star-btn" data-rating="1">
+                  <i data-lucide="star"></i>
+                </button>
+                <button type="button" class="star-btn" data-rating="2">
+                  <i data-lucide="star"></i>
+                </button>
+                <button type="button" class="star-btn" data-rating="3">
+                  <i data-lucide="star"></i>
+                </button>
+                <button type="button" class="star-btn" data-rating="4">
+                  <i data-lucide="star"></i>
+                </button>
+                <button type="button" class="star-btn" data-rating="5">
+                  <i data-lucide="star"></i>
+                </button>
+              </div>
+              <input type="hidden" id="reviewRating" required />
+            </div>
+
+            <div class="form-group">
+              <label for="reviewContent">Your Review</label>
+              <textarea
+                id="reviewContent"
+                class="form-textarea"
+                placeholder="Share your experience with fellow travelers..."
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="reviewLocation">Location (Optional)</label>
+              <input
+                type="text"
+                id="reviewLocation"
+                class="form-input"
+                placeholder="e.g. Paris, France"
+              />
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline" id="cancelReview">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Publish Review
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Detail Modal -->
+    <div class="modal-overlay" id="reviewModal">
+      <div class="modal-content">
+        <button class="modal-close" id="closeModal">
+          <i data-lucide="x"></i>
+        </button>
+        <div class="modal-body" id="modalBody">
+          <!-- Modal content will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Company Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Company</span>
+              </div>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="linkedin"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- About -->
+          <div class="footer-section">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">UX design</a></li>
+              <li><a href="#">Wireframing</a></li>
+              <li><a href="#">Diagramming</a></li>
+              <li><a href="#">Brainstorming</a></li>
+              <li><a href="#">Online whiteboard</a></li>
+              <li><a href="#">Team collaboration</a></li>
+            </ul>
+          </div>
+
+          <!-- Careers -->
+          <div class="footer-section">
+            <h3>Careers</h3>
+            <ul>
+              <li><a href="#">Prototyping</a></li>
+              <li><a href="#">Development features</a></li>
+              <li><a href="#">Design systems</a></li>
+              <li><a href="#">Collaboration features</a></li>
+              <li><a href="#">Design process</a></li>
+              <li><a href="#">FigJam</a></li>
+            </ul>
+          </div>
+
+          <!-- Help & Map -->
+          <div class="footer-section">
+            <div class="help-section">
+              <h3>Help</h3>
+              <ul>
+                <li><a href="#">Best practices</a></li>
+                <li><a href="#">Colors</a></li>
+                <li><a href="#">Color wheel</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Developers</a></li>
+                <li><a href="#">Resource library</a></li>
+              </ul>
+            </div>
+            <div class="map-section">
+              <div class="map-link">
+                <i data-lucide="map-pin"></i>
+                <span>Map</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="reviews.js"></script>
+  </body>
+</html>

@@ -426,11 +426,11 @@ function createDestinationCard(destination) {
       <div class="image-placeholder">
         <span>${destination.image}</span>
       </div>
-      <div class="card-badge">${destination.badge}</div>
-      <button class="card-favorite" data-id="${destination.id}">
-        <i data-lucide="heart"></i>
-      </button>
     </div>
+    <div class="card-badge">${destination.badge}</div>
+    <button class="card-favorite" data-id="${destination.id}">
+      <i data-lucide="heart"></i>
+    </button>
     <div class="explore-card-content">
       <div class="card-header">
         <h3 class="card-title">${destination.title}</h3>
@@ -457,12 +457,24 @@ function createDestinationCard(destination) {
           .map((feature) => `<span class="feature-tag">${feature}</span>`)
           .join("")}
       </div>
+      <div class="card-actions">
+        <button class="btn btn-outline card-details-btn">
+          View Details
+        </button>
+        <a href="booking.html" class="btn btn-primary card-book-btn">
+          Book Now
+        </a>
+      </div>
     </div>
   `;
 
-  // Add click handler for card
+  // Add click handler for card (only for non-interactive areas)
   card.addEventListener("click", function (e) {
-    if (!e.target.closest(".card-favorite")) {
+    if (
+      !e.target.closest(".card-favorite") &&
+      !e.target.closest(".card-details-btn") &&
+      !e.target.closest(".card-book-btn")
+    ) {
       openDestinationModal(destination);
     }
   });
@@ -472,6 +484,31 @@ function createDestinationCard(destination) {
   favoriteBtn.addEventListener("click", function (e) {
     e.stopPropagation();
     toggleFavorite(this, destination.id);
+  });
+
+  // Add details button handler
+  const detailsBtn = card.querySelector(".card-details-btn");
+  detailsBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    openDestinationModal(destination);
+  });
+
+  // Add booking data to the booking link
+  const bookBtn = card.querySelector(".card-book-btn");
+  bookBtn.addEventListener("click", function (e) {
+    // Store booking data in localStorage for the booking page
+    const bookingData = {
+      type: "destination",
+      id: destination.id,
+      title: destination.title,
+      location: destination.location,
+      price: destination.price,
+      rating: destination.rating,
+      reviews: destination.reviews,
+      image: destination.image,
+      features: destination.features,
+    };
+    localStorage.setItem("pendingBooking", JSON.stringify(bookingData));
   });
 
   return card;

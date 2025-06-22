@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Your Booking - Find Your Perfect Stay</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="booking.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html" class="logo-badge">
+              <span>Logo</span>
+            </a>
+          </div>
+
+          <!-- Navigation Icons -->
+          <nav class="nav-icons">
+            <a href="index.html" class="nav-btn">
+              <i data-lucide="home"></i>
+              <span>Home</span>
+            </a>
+            <a href="explore.html" class="nav-btn">
+              <i data-lucide="globe"></i>
+              <span>Explore</span>
+            </a>
+            <a href="experience.html" class="nav-btn">
+              <i data-lucide="calendar"></i>
+              <span>Experience</span>
+            </a>
+            <a href="attractions.html" class="nav-btn">
+              <i data-lucide="map-pin"></i>
+              <span>Attractions</span>
+            </a>
+            <a href="reviews.html" class="nav-btn">
+              <i data-lucide="users"></i>
+              <span>Reviews</span>
+            </a>
+          </nav>
+
+          <!-- Auth Buttons -->
+          <div class="auth-buttons">
+            <button class="btn btn-ghost">
+              <i data-lucide="user"></i>
+              Login
+            </button>
+            <button class="btn btn-outline">
+              <i data-lucide="user-plus"></i>
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="booking-hero">
+      <div class="container">
+        <div class="booking-header">
+          <h1>Complete Your Booking</h1>
+          <p>Secure your dream trip with our easy checkout process</p>
+        </div>
+
+        <!-- Progress Steps -->
+        <div class="progress-steps">
+          <div class="step active">
+            <div class="step-circle">1</div>
+            <span>Details</span>
+          </div>
+          <div class="step-line active"></div>
+          <div class="step">
+            <div class="step-circle">2</div>
+            <span>Payment</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step">
+            <div class="step-circle">3</div>
+            <span>Confirmation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Content -->
+    <section class="booking-content">
+      <div class="container">
+        <div class="booking-layout">
+          <!-- Main Form -->
+          <div class="booking-form-container">
+            <form class="booking-form" id="bookingForm">
+              <!-- Personal Information -->
+              <div class="form-section active" id="personalSection">
+                <h2 class="section-title">
+                  <i data-lucide="user"></i>
+                  Personal Information
+                </h2>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      class="form-input"
+                      placeholder="Enter your first name"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      class="form-input"
+                      placeholder="Enter your last name"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group span-2">
+                    <label for="email">Email Address *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-input"
+                      placeholder="your.email@example.com"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="form-input"
+                      placeholder="+1 (555) 123-4567"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="country">Country *</label>
+                    <select
+                      id="country"
+                      name="country"
+                      class="form-select"
+                      required
+                    >
+                      <option value="">Select your country</option>
+                      <option value="US">United States</option>
+                      <option value="CA">Canada</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="FR">France</option>
+                      <option value="DE">Germany</option>
+                      <option value="IT">Italy</option>
+                      <option value="ES">Spain</option>
+                      <option value="AU">Australia</option>
+                      <option value="JP">Japan</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Emergency Contact -->
+                <h3 class="subsection-title">Emergency Contact</h3>
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="emergencyName">Contact Name</label>
+                    <input
+                      type="text"
+                      id="emergencyName"
+                      name="emergencyName"
+                      class="form-input"
+                      placeholder="Emergency contact name"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="emergencyPhone">Contact Phone</label>
+                    <input
+                      type="tel"
+                      id="emergencyPhone"
+                      name="emergencyPhone"
+                      class="form-input"
+                      placeholder="Emergency contact phone"
+                    />
+                  </div>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="form-group">
+                  <label for="specialRequests">Special Requests</label>
+                  <textarea
+                    id="specialRequests"
+                    name="specialRequests"
+                    class="form-textarea"
+                    placeholder="Any special requirements, dietary restrictions, accessibility needs, etc."
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button
+                    type="button"
+                    class="btn btn-primary next-btn"
+                    id="nextToPayment"
+                  >
+                    Continue to Payment
+                    <i data-lucide="arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Payment Information -->
+              <div class="form-section" id="paymentSection">
+                <h2 class="section-title">
+                  <i data-lucide="credit-card"></i>
+                  Payment Information
+                </h2>
+
+                <!-- Payment Method Selection -->
+                <div class="payment-methods">
+                  <h3 class="subsection-title">Payment Method</h3>
+                  <div class="payment-options">
+                    <label class="payment-option active">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="card"
+                        checked
+                      />
+                      <div class="option-content">
+                        <i data-lucide="credit-card"></i>
+                        <span>Credit/Debit Card</span>
+                      </div>
+                    </label>
+
+                    <label class="payment-option">
+                      <input type="radio" name="paymentMethod" value="paypal" />
+                      <div class="option-content">
+                        <i data-lucide="wallet"></i>
+                        <span>PayPal</span>
+                      </div>
+                    </label>
+
+                    <label class="payment-option">
+                      <input type="radio" name="paymentMethod" value="apple" />
+                      <div class="option-content">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apple Pay</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Card Details -->
+                <div class="card-details" id="cardDetails">
+                  <div class="form-grid">
+                    <div class="form-group span-2">
+                      <label for="cardNumber">Card Number *</label>
+                      <div class="card-input-container">
+                        <input
+                          type="text"
+                          id="cardNumber"
+                          name="cardNumber"
+                          class="form-input"
+                          placeholder="1234 5678 9012 3456"
+                          maxlength="19"
+                        />
+                        <div class="card-icons">
+                          <img
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'%3E%3Crect width='24' height='16' rx='2' fill='%23000080'/%3E%3Ctext x='12' y='10' text-anchor='middle' fill='white' font-size='6' font-weight='bold'%3EVISA%3C/text%3E%3C/svg%3E"
+                            alt="Visa"
+                            class="card-icon"
+                          />
+                          <img
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'%3E%3Crect width='24' height='16' rx='2' fill='%23FF5F00'/%3E%3Ccircle cx='8' cy='8' r='6' fill='%23EB001B'/%3E%3Ccircle cx='16' cy='8' r='6' fill='%23F79E1B'/%3E%3C/svg%3E"
+                            alt="Mastercard"
+                            class="card-icon"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="expiryDate">Expiry Date *</label>
+                      <input
+                        type="text"
+                        id="expiryDate"
+                        name="expiryDate"
+                        class="form-input"
+                        placeholder="MM/YY"
+                        maxlength="5"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="cvv">CVV *</label>
+                      <input
+                        type="text"
+                        id="cvv"
+                        name="cvv"
+                        class="form-input"
+                        placeholder="123"
+                        maxlength="4"
+                      />
+                    </div>
+
+                    <div class="form-group span-2">
+                      <label for="cardholderName">Cardholder Name *</label>
+                      <input
+                        type="text"
+                        id="cardholderName"
+                        name="cardholderName"
+                        class="form-input"
+                        placeholder="Name as it appears on card"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Billing Address -->
+                <h3 class="subsection-title">Billing Address</h3>
+                <div class="form-group">
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      id="sameAsPersonal"
+                      name="sameAsPersonal"
+                      checked
+                    />
+                    <span class="checkmark"></span>
+                    Same as personal information
+                  </label>
+                </div>
+
+                <div class="billing-address" id="billingAddress">
+                  <div class="form-grid">
+                    <div class="form-group span-2">
+                      <label for="billingAddress1">Address Line 1 *</label>
+                      <input
+                        type="text"
+                        id="billingAddress1"
+                        name="billingAddress1"
+                        class="form-input"
+                        placeholder="Street address"
+                      />
+                    </div>
+
+                    <div class="form-group span-2">
+                      <label for="billingAddress2">Address Line 2</label>
+                      <input
+                        type="text"
+                        id="billingAddress2"
+                        name="billingAddress2"
+                        class="form-input"
+                        placeholder="Apartment, suite, etc. (optional)"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="billingCity">City *</label>
+                      <input
+                        type="text"
+                        id="billingCity"
+                        name="billingCity"
+                        class="form-input"
+                        placeholder="City"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="billingState">State/Province *</label>
+                      <input
+                        type="text"
+                        id="billingState"
+                        name="billingState"
+                        class="form-input"
+                        placeholder="State or Province"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="billingZip">ZIP/Postal Code *</label>
+                      <input
+                        type="text"
+                        id="billingZip"
+                        name="billingZip"
+                        class="form-input"
+                        placeholder="ZIP or Postal Code"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="billingCountry">Country *</label>
+                      <select
+                        id="billingCountry"
+                        name="billingCountry"
+                        class="form-select"
+                      >
+                        <option value="">Select country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="FR">France</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button
+                    type="button"
+                    class="btn btn-outline back-btn"
+                    id="backToPersonal"
+                  >
+                    <i data-lucide="arrow-left"></i>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary next-btn"
+                    id="reviewBooking"
+                  >
+                    Review Booking
+                    <i data-lucide="arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Confirmation -->
+              <div class="form-section" id="confirmationSection">
+                <h2 class="section-title">
+                  <i data-lucide="check-circle"></i>
+                  Review & Confirm
+                </h2>
+
+                <div class="confirmation-content">
+                  <div class="confirmation-notice">
+                    <i data-lucide="info"></i>
+                    <div>
+                      <h4>Please review your booking details</h4>
+                      <p>
+                        Make sure all information is correct before confirming
+                        your reservation.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Terms and Conditions -->
+                  <div class="terms-section">
+                    <label class="checkbox-label">
+                      <input
+                        type="checkbox"
+                        id="agreeTerms"
+                        name="agreeTerms"
+                        required
+                      />
+                      <span class="checkmark"></span>
+                      I agree to the
+                      <a href="#" class="link">Terms & Conditions</a> and
+                      <a href="#" class="link">Privacy Policy</a>
+                    </label>
+
+                    <label class="checkbox-label">
+                      <input
+                        type="checkbox"
+                        id="agreeMarketing"
+                        name="agreeMarketing"
+                      />
+                      <span class="checkmark"></span>
+                      I would like to receive travel deals and updates via email
+                    </label>
+                  </div>
+
+                  <div class="form-actions">
+                    <button
+                      type="button"
+                      class="btn btn-outline back-btn"
+                      id="backToPayment"
+                    >
+                      <i data-lucide="arrow-left"></i>
+                      Back
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-success confirm-btn"
+                      id="confirmBooking"
+                    >
+                      <i data-lucide="lock"></i>
+                      Confirm & Pay
+                      <span class="total-amount">$1,245</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Booking Summary -->
+          <div class="booking-summary">
+            <div class="summary-card">
+              <h3>Booking Summary</h3>
+
+              <!-- Item Details -->
+              <div class="booking-item" id="bookingItem">
+                <div class="item-image">
+                  <span>Swiss Alpine Lodge</span>
+                </div>
+                <div class="item-details">
+                  <h4>Alpine Mountain Lodge</h4>
+                  <p class="item-location">
+                    <i data-lucide="map-pin"></i>
+                    Zermatt, Switzerland
+                  </p>
+                  <div class="item-rating">
+                    <i data-lucide="star"></i>
+                    <span>4.8 (127 reviews)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Booking Details -->
+              <div class="booking-details">
+                <div class="detail-row">
+                  <span class="label">Check-in</span>
+                  <span class="value" id="checkinDate">Dec 20, 2024</span>
+                </div>
+                <div class="detail-row">
+                  <span class="label">Check-out</span>
+                  <span class="value" id="checkoutDate">Dec 25, 2024</span>
+                </div>
+                <div class="detail-row">
+                  <span class="label">Guests</span>
+                  <span class="value" id="guestCount">2 Adults</span>
+                </div>
+                <div class="detail-row">
+                  <span class="label">Duration</span>
+                  <span class="value" id="duration">5 nights</span>
+                </div>
+              </div>
+
+              <!-- Price Breakdown -->
+              <div class="price-breakdown">
+                <div class="price-row">
+                  <span>$199 × 5 nights</span>
+                  <span>$995</span>
+                </div>
+                <div class="price-row">
+                  <span>Service fee</span>
+                  <span>$89</span>
+                </div>
+                <div class="price-row">
+                  <span>Taxes</span>
+                  <span>$161</span>
+                </div>
+                <div class="price-row total">
+                  <span>Total</span>
+                  <span>$1,245</span>
+                </div>
+              </div>
+
+              <!-- Security Notice -->
+              <div class="security-notice">
+                <i data-lucide="shield-check"></i>
+                <div>
+                  <strong>Secure Payment</strong>
+                  <p>Your payment information is encrypted and secure</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+      <div class="modal-content success-modal">
+        <div class="success-icon">
+          <i data-lucide="check-circle"></i>
+        </div>
+        <h2>Booking Confirmed!</h2>
+        <p>
+          Your reservation has been successfully confirmed. You'll receive a
+          confirmation email shortly.
+        </p>
+
+        <div class="booking-reference">
+          <strong>Booking Reference: </strong>
+          <span id="bookingReference">TRV-2024-001234</span>
+        </div>
+
+        <div class="success-actions">
+          <button class="btn btn-outline" id="viewBooking">View Booking</button>
+          <a href="index.html" class="btn btn-primary">Return Home</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Company Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Company</span>
+              </div>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="linkedin"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- About -->
+          <div class="footer-section">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">UX design</a></li>
+              <li><a href="#">Wireframing</a></li>
+              <li><a href="#">Diagramming</a></li>
+              <li><a href="#">Brainstorming</a></li>
+              <li><a href="#">Online whiteboard</a></li>
+              <li><a href="#">Team collaboration</a></li>
+            </ul>
+          </div>
+
+          <!-- Careers -->
+          <div class="footer-section">
+            <h3>Careers</h3>
+            <ul>
+              <li><a href="#">Prototyping</a></li>
+              <li><a href="#">Development features</a></li>
+              <li><a href="#">Design systems</a></li>
+              <li><a href="#">Collaboration features</a></li>
+              <li><a href="#">Design process</a></li>
+              <li><a href="#">FigJam</a></li>
+            </ul>
+          </div>
+
+          <!-- Help & Map -->
+          <div class="footer-section">
+            <div class="help-section">
+              <h3>Help</h3>
+              <ul>
+                <li><a href="#">Best practices</a></li>
+                <li><a href="#">Colors</a></li>
+                <li><a href="#">Color wheel</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Developers</a></li>
+                <li><a href="#">Resource library</a></li>
+              </ul>
+            </div>
+            <div class="map-section">
+              <div class="map-link">
+                <i data-lucide="map-pin"></i>
+                <span>Map</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="booking.js"></script>
+  </body>
+</html>
