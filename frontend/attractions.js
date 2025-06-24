@@ -23,7 +23,7 @@ const attractions = [
       "Professional guide",
     ],
     includes: ["Ferry", "Guide", "Audio", "Museum"],
-    image: "Majestic Statue of Liberty on Liberty Island",
+    image: "assets/attractive/statue.jpeg",
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ const attractions = [
       "Egyptian antiquities",
     ],
     includes: ["Entry", "Guide", "Headsets", "Map"],
-    image: "Louvre Museum glass pyramid and courtyard",
+    image: "assets/attractive/louvre.jpg",
   },
   {
     id: 3,
@@ -73,7 +73,7 @@ const attractions = [
       "VIP entrance",
     ],
     includes: ["Entry", "Guide", "Underground", "Forum"],
-    image: "Ancient Colosseum amphitheater in Rome",
+    image: "assets/attractive/colosseum.webp",
   },
   {
     id: 4,
@@ -98,7 +98,7 @@ const attractions = [
       "Free WiFi on buses",
     ],
     includes: ["Bus Pass", "Audio", "Map", "Tours"],
-    image: "Red double-decker bus in front of Big Ben",
+    image: "assets/attractive/big-bus.webp",
   },
   {
     id: 5,
@@ -123,7 +123,7 @@ const attractions = [
       "Comfortable transport",
     ],
     includes: ["Transport", "Guide", "Entry", "IMAX"],
-    image: "Spectacular Grand Canyon South Rim panorama",
+    image: "assets/attractive/grand.jpg",
   },
   {
     id: 6,
@@ -148,7 +148,7 @@ const attractions = [
       "Theater district location",
     ],
     includes: ["Ticket", "Program", "Theater"],
-    image: "Lion King Broadway theater performance",
+    image: "assets/attractive/broadway.jpg",
   },
   {
     id: 7,
@@ -173,7 +173,7 @@ const attractions = [
       "Small group experience",
     ],
     includes: ["Entry", "Guide", "Transport", "Lunch"],
-    image: "Ancient Machu Picchu ruins in misty mountains",
+    image: "assets/attractive/machu.jpg",
   },
   {
     id: 8,
@@ -198,7 +198,7 @@ const attractions = [
       "Expert guide",
     ],
     includes: ["Tour", "Audio", "Access", "Photos"],
-    image: "Iconic Sydney Opera House with harbor bridge",
+    image: "assets/attractive/sydney.avif",
   },
   {
     id: 9,
@@ -223,7 +223,7 @@ const attractions = [
       "Museum access",
     ],
     includes: ["Entry", "Audio", "Museum", "Tower"],
-    image: "Gaudi's Sagrada Familia basilica towers",
+    image: "assets/attractive/sagrada.webp",
   },
   {
     id: 10,
@@ -248,7 +248,7 @@ const attractions = [
       "White Tower access",
     ],
     includes: ["Entry", "Guide", "Audio", "Jewels"],
-    image: "Historic Tower of London fortress",
+    image: "assets/attractive/tower.jpg",
   },
   {
     id: 11,
@@ -273,7 +273,7 @@ const attractions = [
       "Rooftop garden access",
     ],
     includes: ["Entry", "Guide", "Map", "Garden"],
-    image: "Metropolitan Museum grand entrance hall",
+    image: "assets/attractive/metropolitan.jpg",
   },
   {
     id: 12,
@@ -298,7 +298,7 @@ const attractions = [
       "Photo opportunities",
     ],
     includes: ["Ferry", "Audio", "Transport", "Guide"],
-    image: "Golden Gate Bridge with Alcatraz Island",
+    image: "assets/attractive/golden.jpg",
   },
 ];
 
@@ -479,8 +479,9 @@ function createAttractionCard(attraction) {
 
   card.innerHTML = `
     <div class="attraction-card-image">
-      <div class="image-placeholder">
-        <span>${attraction.image}</span>
+      <img src="${attraction.image}" alt="${attraction.title}" class="attraction-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="image-placeholder" style="display:none;">
+        <span>${attraction.title}</span>
       </div>
       <div class="card-category-badge">${getCategoryLabel(attraction.category)}</div>
       <div class="card-rating">
@@ -580,7 +581,7 @@ function openAttractionModal(attraction) {
 
   modalBody.innerHTML = `
     <div class="modal-image">
-      <span>${attraction.image}</span>
+      <img src="${attraction.image}" alt="${attraction.title}" class="modal-img" onerror="this.style.display='none';" />
     </div>
     <h2 class="modal-title">${attraction.title}</h2>
     <div class="modal-location">

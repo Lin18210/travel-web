@@ -421,9 +421,15 @@ function populateBookingDetails() {
     // Update the booking item details
     const bookingItem = document.getElementById("bookingItem");
     if (bookingItem) {
+      let imgHtml = '';
+      if (bookingDetails.image) {
+        imgHtml = `<img src="${bookingDetails.image}" alt="${bookingDetails.item}" class="booking-summary-img" onerror="this.style.display='none'">`;
+      } else {
+        imgHtml = `<div class='booking-summary-img placeholder-img'></div>`;
+      }
       bookingItem.innerHTML = `
         <div class="item-image">
-          <span>${bookingDetails.image}</span>
+          ${imgHtml}
         </div>
         <div class="item-details">
           <h4>${bookingDetails.item}</h4>
@@ -494,10 +500,18 @@ function populateBookingDetails() {
   }
 }
 
-function processBooking() {
+async function processBooking() {
   // Validate terms agreement
   if (!document.getElementById("agreeTerms").checked) {
     alert("Please agree to the Terms & Conditions to proceed.");
+    return;
+  }
+
+  // Check authentication
+  const token = localStorage.getItem('authToken') || sessionStorage.getItem('authToken');
+  if (!token) {
+    alert('You must be logged in to complete a booking. Please log in or sign up.');
+    window.location.href = 'login.html';
     return;
   }
 
@@ -512,38 +526,45 @@ function processBooking() {
     lucide.createIcons();
   }
 
-  // Simulate payment processing
-  setTimeout(() => {
-    // Reset button
-    confirmBtn.innerHTML = originalText;
-    confirmBtn.disabled = false;
+  // Gather booking details (replace with your actual data structure)
+  const pendingBooking = JSON.parse(localStorage.getItem('pendingBooking') || '{}');
+  const bookingDetails = {
+    destination: pendingBooking.title || pendingBooking.item || pendingBooking.location || 'Unknown',
+    check_in: pendingBooking.checkinDate || '2024-12-20',
+    check_out: pendingBooking.checkoutDate || '2024-12-25',
+    guests: parseInt((pendingBooking.guests || '2').toString().replace(/\D/g, '')) || 2,
+    total_price: pendingBooking.price?.total || 1245,
+    image: pendingBooking.image || '',
+  };
 
-    // Generate booking reference
-    const bookingRef =
-      "TRV-" +
-      new Date().getFullYear() +
-      "-" +
-      String(Math.floor(Math.random() * 999999)).padStart(6, "0");
-    document.getElementById("bookingReference").textContent = bookingRef;
-
-    // Show success modal
-    showSuccessModal();
-
-    // Clear pending booking data
-    localStorage.removeItem("pendingBooking");
-
-    // Log booking data (in real app, this would be sent to server)
-    console.log("Booking submitted:", {
-      ...bookingData,
-      reference: bookingRef,
-      timestamp: new Date().toISOString(),
+  try {
+    // Send booking to backend
+    const response = await fetch('http://localhost:3000/api/bookings', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify(bookingDetails),
     });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.error || 'Booking failed');
+    }
 
-    // Re-initialize icons
+    // Show booking reference from backend
+    document.getElementById("bookingReference").textContent = 'TRV-' + data.booking.id;
+    showSuccessModal();
+    localStorage.removeItem("pendingBooking");
     if (typeof lucide !== "undefined") {
       lucide.createIcons();
     }
-  }, 2000);
+  } catch (error) {
+    alert('Booking failed: ' + error.message);
+  } finally {
+    confirmBtn.innerHTML = originalText;
+    confirmBtn.disabled = false;
+  }
 }
 
 function showSuccessModal() {

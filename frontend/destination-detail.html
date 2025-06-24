@@ -13,7 +13,7 @@
     <header class="header">
       <nav class="nav">
         <div class="nav-brand">
-          <h1>TravelBooking</h1>
+          <h1><a href="index.html" style="text-decoration: none; color: blue;">TravelBooking</a></h1>
         </div>
         <ul
           class="nav-menu"
@@ -115,206 +115,207 @@
         </nav>
       </div>
 
-      <!-- Details Section -->
-      <section class="destination-details">
-        <div class="container">
-          <div class="details-grid">
-            <!-- Main Content -->
-            <div class="main-details">
-              <!-- Description -->
-              <div class="detail-section">
-                <h2>About This Destination</h2>
-                <div class="description" id="destination-description">
-                  <p>
-                    Wake up to snow-capped peaks, crackling fireplaces, and the
-                    crisp scent of pine. Your mountain retreat awaits in this
-                    stunning alpine lodge nestled in the heart of the Swiss
-                    Alps.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Highlights -->
-              <div class="detail-section">
-                <h2>Highlights</h2>
-                <div class="highlights-grid" id="highlights-container">
-                  <!-- Highlights will be populated by JavaScript -->
-                </div>
-              </div>
-
-              <!-- Amenities -->
-              <div class="detail-section">
-                <h2>Amenities & Features</h2>
-                <div class="amenities-grid" id="amenities-container">
-                  <!-- Amenities will be populated by JavaScript -->
-                </div>
-              </div>
-
-              <!-- What's Included -->
-              <div class="detail-section">
-                <h2>What's Included</h2>
-                <div class="included-list" id="included-container">
-                  <!-- Included items will be populated by JavaScript -->
-                </div>
-              </div>
-
-              <!-- Location & Map -->
-              <div class="detail-section">
-                <h2>Location</h2>
-                <div class="location-info">
-                  <div class="address" id="full-address">
-                    <i data-lucide="map-pin"></i>
-                    <span>Swiss Alps, Switzerland</span>
+        <!-- Details Section -->
+        <section class="destination-details">
+          <div class="container">
+            <div class="details-grid">
+              <!-- Main Content -->
+              <div class="main-details">
+                <!-- Description -->
+                <div class="detail-section">
+                  <h2>About This Destination</h2>
+                  <div class="description" id="destination-description">
+                    <p>
+                      Wake up to snow-capped peaks, crackling fireplaces, and the
+                      crisp scent of pine. Your mountain retreat awaits in this
+                      stunning alpine lodge nestled in the heart of the Swiss
+                      Alps.
+                    </p>
                   </div>
-                  <div class="map-placeholder">
-                    <div class="map-icon">
-                      <i data-lucide="map"></i>
-                      <p>Interactive map would be displayed here</p>
+                </div>
+
+                <!-- Highlights -->
+                <div class="detail-section">
+                  <h2>Highlights</h2>
+                  <div class="highlights-grid" id="highlights-container">
+                    <!-- Highlights will be populated by JavaScript -->
+                  </div>
+                </div>
+
+                <!-- Amenities -->
+                <div class="detail-section">
+                  <h2>Amenities & Features</h2>
+                  <div class="amenities-grid" id="amenities-container">
+                    <!-- Amenities will be populated by JavaScript -->
+                  </div>
+                </div>
+
+                <!-- What's Included -->
+                <div class="detail-section">
+                  <h2>What's Included</h2>
+                  <div class="included-list" id="included-container">
+                    <!-- Included items will be populated by JavaScript -->
+                  </div>
+                </div>
+
+                <!-- Location & Map -->
+                <div class="detail-section">
+                  <h2>Location</h2>
+                  <div class="location-info">
+                    <div class="address" id="full-address">
+                      <i data-lucide="map-pin"></i>
+                      <span>Swiss Alps, Switzerland</span>
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Reviews Preview -->
-              <div class="detail-section">
-                <h2>Guest Reviews</h2>
-                <div class="reviews-summary">
-                  <div class="rating-overview">
-                    <div class="overall-rating">
-                      <span class="rating-number" id="overall-rating">4.8</span>
-                      <div class="rating-breakdown">
-                        <div class="stars large" id="overview-stars"></div>
-                        <span id="total-reviews-count">124 reviews</span>
+                    <div class="map-placeholder">
+                      <div class="map-icon">
+                        <i data-lucide="map"></i>
+                        <p>Interactive map would be displayed here</p>
                       </div>
                     </div>
                   </div>
-                  <div class="recent-reviews" id="recent-reviews">
-                    <!-- Recent reviews will be populated by JavaScript -->
+                </div>
+
+                <!-- Reviews Preview -->
+                <div class="detail-section">
+                  <h2>Guest Reviews</h2>
+                  <div class="reviews-summary">
+                    <div class="rating-overview">
+                      <div class="overall-rating">
+                        <span class="rating-number" id="overall-rating">4.8</span>
+                        <div class="rating-breakdown">
+                          <div class="stars large" id="overview-stars"></div>
+                          <span id="total-reviews-count">124 reviews</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="recent-reviews" id="recent-reviews">
+                      <!-- Recent reviews will be populated by JavaScript -->
+                    </div>
+                    <div class="reviews-cta">
+                      <a href="reviews.html" class="btn btn-outline"
+                        >View All Reviews</a
+                      >
+                    </div>
                   </div>
-                  <div class="reviews-cta">
-                    <a href="reviews.html" class="btn btn-outline"
-                      >View All Reviews</a
+                </div>
+              </div>
+
+              <!-- Booking Sidebar -->
+              <div class="booking-sidebar">
+                <div class="booking-card">
+                  <div class="pricing-header">
+                    <div class="price-display">
+                      <span class="current-price" id="sidebar-price">$299</span>
+                      <span class="price-unit">per night</span>
+                    </div>
+                    <div class="rating-compact">
+                      <div class="stars small" id="sidebar-stars"></div>
+                      <span id="sidebar-rating">4.8 (124)</span>
+                    </div>
+                  </div>
+
+                  <div class="booking-form">
+                    <div class="date-inputs">
+                      <div class="input-group">
+                        <label>Check-in</label>
+                        <input type="date" id="checkin-date" class="date-input" />
+                      </div>
+                      <div class="input-group">
+                        <label>Check-out</label>
+                        <input
+                          type="date"
+                          id="checkout-date"
+                          class="date-input"
+                        />
+                      </div>
+                    </div>
+                    <div class="input-group">
+                      <label>Guests</label>
+                      <select id="guest-count" class="select-input">
+                        <option value="1">1 guest</option>
+                        <option value="2">2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                        <option value="5">5+ guests</option>
+                      </select>
+                    </div>
+
+                    <div class="price-breakdown" id="price-breakdown">
+                      <div class="breakdown-item">
+                        <span>$299 × <span id="nights-count">1</span> night</span>
+                        <span id="subtotal">$299</span>
+                      </div>
+                      <div class="breakdown-item">
+                        <span>Service fee</span>
+                        <span id="service-fee">$30</span>
+                      </div>
+                      <div class="breakdown-item">
+                        <span>Taxes</span>
+                        <span id="taxes">$25</span>
+                      </div>
+                      <hr />
+                      <div class="breakdown-total">
+                        <span>Total</span>
+                        <span id="total-price">$354</span>
+                      </div>
+                    </div>
+
+                    <button
+                      class="btn btn-primary btn-full"
+                      onclick="proceedToBooking()"
                     >
+                      Reserve Now
+                    </button>
+                    <p class="booking-note">You won't be charged yet</p>
                   </div>
+
+                  <div class="quick-actions">
+                    <button class="action-btn" onclick="shareDestination()">
+                      <i data-lucide="share-2"></i>
+                      Share
+                    </button>
+                    <button class="action-btn" onclick="saveDestination()">
+                      <i data-lucide="heart"></i>
+                      Save
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Host Information -->
+                <div class="host-card">
+                  <h3>Your Host</h3>
+                  <div class="host-info">
+                    <div class="host-avatar">
+                      <div class="avatar-placeholder">
+                        <i data-lucide="user"></i>
+                      </div>
+                    </div>
+                    <div class="host-details">
+                      <h4 id="host-name">Sarah Mountain</h4>
+                      <p id="host-experience">Hosting since 2019</p>
+                      <div class="host-rating">
+                        <div class="stars small"></div>
+                        <span>4.9 host rating</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-outline btn-full">Contact Host</button>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            <!-- Booking Sidebar -->
-            <div class="booking-sidebar">
-              <div class="booking-card">
-                <div class="pricing-header">
-                  <div class="price-display">
-                    <span class="current-price" id="sidebar-price">$299</span>
-                    <span class="price-unit">per night</span>
-                  </div>
-                  <div class="rating-compact">
-                    <div class="stars small" id="sidebar-stars"></div>
-                    <span id="sidebar-rating">4.8 (124)</span>
-                  </div>
-                </div>
-
-                <div class="booking-form">
-                  <div class="date-inputs">
-                    <div class="input-group">
-                      <label>Check-in</label>
-                      <input type="date" id="checkin-date" class="date-input" />
-                    </div>
-                    <div class="input-group">
-                      <label>Check-out</label>
-                      <input
-                        type="date"
-                        id="checkout-date"
-                        class="date-input"
-                      />
-                    </div>
-                  </div>
-                  <div class="input-group">
-                    <label>Guests</label>
-                    <select id="guest-count" class="select-input">
-                      <option value="1">1 guest</option>
-                      <option value="2">2 guests</option>
-                      <option value="3">3 guests</option>
-                      <option value="4">4 guests</option>
-                      <option value="5">5+ guests</option>
-                    </select>
-                  </div>
-
-                  <div class="price-breakdown" id="price-breakdown">
-                    <div class="breakdown-item">
-                      <span>$299 × <span id="nights-count">1</span> night</span>
-                      <span id="subtotal">$299</span>
-                    </div>
-                    <div class="breakdown-item">
-                      <span>Service fee</span>
-                      <span id="service-fee">$30</span>
-                    </div>
-                    <div class="breakdown-item">
-                      <span>Taxes</span>
-                      <span id="taxes">$25</span>
-                    </div>
-                    <hr />
-                    <div class="breakdown-total">
-                      <span>Total</span>
-                      <span id="total-price">$354</span>
-                    </div>
-                  </div>
-
-                  <button
-                    class="btn btn-primary btn-full"
-                    onclick="proceedToBooking()"
-                  >
-                    Reserve Now
-                  </button>
-                  <p class="booking-note">You won't be charged yet</p>
-                </div>
-
-                <div class="quick-actions">
-                  <button class="action-btn" onclick="shareDestination()">
-                    <i data-lucide="share-2"></i>
-                    Share
-                  </button>
-                  <button class="action-btn" onclick="saveDestination()">
-                    <i data-lucide="heart"></i>
-                    Save
-                  </button>
-                </div>
-              </div>
-
-              <!-- Host Information -->
-              <div class="host-card">
-                <h3>Your Host</h3>
-                <div class="host-info">
-                  <div class="host-avatar">
-                    <div class="avatar-placeholder">
-                      <i data-lucide="user"></i>
-                    </div>
-                  </div>
-                  <div class="host-details">
-                    <h4 id="host-name">Sarah Mountain</h4>
-                    <p id="host-experience">Hosting since 2019</p>
-                    <div class="host-rating">
-                      <div class="stars small"></div>
-                      <span>4.9 host rating</span>
-                    </div>
-                  </div>
-                </div>
-                <button class="btn btn-outline btn-full">Contact Host</button>
-              </div>
+        <!-- Similar Destinations -->
+        <section class="similar-destinations">
+          <div class="container">
+            <h2>Similar Destinations</h2>
+            <div class="similar-grid" id="similar-destinations">
+              <!-- Similar destinations will be populated by JavaScript -->
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- Similar Destinations -->
-      <section class="similar-destinations">
-        <div class="container">
-          <h2>Similar Destinations</h2>
-          <div class="similar-grid" id="similar-destinations">
-            <!-- Similar destinations will be populated by JavaScript -->
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
     <!-- Footer -->

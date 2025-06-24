@@ -555,7 +555,7 @@ body {
 /* Destinations Section */
 .destinations {
   background-color: white;
-  padding: 64px 0;
+  padding: 64px 0 160px 0;
 }
 
 .destinations-grid {
@@ -625,6 +625,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
+  margin-top: 10rem;
 }
 
 .footer-section h3 {
@@ -918,6 +919,49 @@ body {
   .footer-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+}
+
+/* User Menu in Navbar (applies to all pages) */
+.user-menu-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 16px;
+  transition: background 0.18s, box-shadow 0.18s;
+  background: none;
+  box-shadow: none;
+}
+.user-menu-link:hover {
+  background: #f3f6fd;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+}
+.user-menu-avatar {
+  width: 36px !important;
+  height: 36px !important;
+  color: #667eea;
+  margin-bottom: 0.25rem;
+}
+.user-menu-name {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 600px) {
+  .user-menu-link {
+    padding: 0.5rem 0.75rem;
+  }
+  .user-menu-avatar {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .user-menu-name {
+    font-size: 0.95rem;
   }
 }
 

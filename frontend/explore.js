@@ -11,7 +11,7 @@ const destinations = [
     description:
       "Experience luxury in the heart of the Swiss Alps with breathtaking mountain views, world-class skiing, and cozy alpine charm.",
     features: ["WiFi", "Spa", "Skiing", "Restaurant", "Pool", "Fireplace"],
-    image: "Mountain resort with snow-capped peaks",
+    image: "assets/home/moutain.jpg",
     badge: "Luxury",
     detailId: "alpine"
   },
@@ -33,7 +33,7 @@ const destinations = [
       "Infinity Pool",
       "Sunset Views",
     ],
-    image: "Overwater villa in crystal blue lagoon",
+    image: "assets/explore/oceanfront1.jpg",
     badge: "Featured",
     detailId: "seaside"
   },
@@ -48,7 +48,7 @@ const destinations = [
     description:
       "Sophisticated penthouse in the heart of Manhattan with panoramic city views and luxury amenities.",
     features: ["City Views", "Gym", "Concierge", "WiFi", "Kitchen", "Terrace"],
-    image: "Modern penthouse with city skyline",
+    image: "assets/home/urban.jpg",
     badge: "Popular",
     detailId: "metropolitan"
   },
@@ -70,7 +70,7 @@ const destinations = [
       "WiFi",
       "Fireplace",
     ],
-    image: "Tuscan villa with vineyard views",
+    image: "assets/explore/tuscan.jpg",
     badge: "Authentic",
     detailId: "tuscan"
   },
@@ -92,7 +92,7 @@ const destinations = [
       "Guided Tours",
       "Spa",
     ],
-    image: "Luxury desert camp under stars",
+    image: "assets/home/desert.jpg",
     badge: "Adventure",
     detailId: "desert"
   },
@@ -114,7 +114,7 @@ const destinations = [
       "WiFi",
       "Hiking Trails",
     ],
-    image: "Treehouse lodge in rainforest canopy",
+    image: "assets/explore/whispering1.jpg",
     badge: "Eco-Friendly",
     detailId: "rainforest"
   },
@@ -136,7 +136,7 @@ const destinations = [
       "WiFi",
       "Private Terrace",
     ],
-    image: "White buildings on cliff overlooking sea",
+    image: "assets/explore/cliffside.jpg",
     badge: "Romantic",
     detailId: "santorini"
   },
@@ -158,7 +158,7 @@ const destinations = [
       "Tea Ceremony",
       "Garden",
     ],
-    image: "Modern hotel with traditional Japanese elements",
+    image: "assets/home/urban2.jpg",
     badge: "Cultural",
     detailId: "tokyo"
   },
@@ -180,7 +180,7 @@ const destinations = [
       "Library",
       "Highland Views",
     ],
-    image: "Medieval castle in misty highlands",
+    image: "assets/explore/alphine2.webp",
     badge: "Historic",
     detailId: "castle"
   },
@@ -202,7 +202,7 @@ const destinations = [
       "Fine Dining",
       "Helicopter Access",
     ],
-    image: "Private island with white sand beaches",
+    image: "assets/explore/seaside2.avif",
     badge: "Exclusive",
     detailId: "private-island"
   },
@@ -224,7 +224,7 @@ const destinations = [
       "Chef Service",
       "Wine Cellar",
     ],
-    image: "Wooden chalet with snow and mountains",
+    image: "assets/home/ski.webp",
     badge: "Ski Resort",
     detailId: "aspen"
   },
@@ -247,7 +247,7 @@ const destinations = [
       "Local Cuisine",
     ],
     includes: ["Lodge", "Program", "Theater"],
-    image: "Lodge platform high in jungle trees",
+    image: "assets/home/forest.jpeg",
     badge: "Conservation",
     detailId: "amazon"
   },
@@ -270,7 +270,7 @@ const destinations = [
       "Yoga Deck",
     ],
     includes: ["Trails", "Guide", "Meals", "Activities"],
-    image: "Cozy cabin surrounded by towering pine trees",
+    image: "assets/home/forest.jpeg",
     badge: "Forest Haven",
     detailId: "pacific-northwest"
   },
@@ -293,7 +293,7 @@ const destinations = [
       "Lobster Dinner",
     ],
     includes: ["Beach", "Kayaks", "Meals", "Activities"],
-    image: "Classic New England cottage overlooking rocky coastline",
+    image: "assets/home/coast.jpeg",
     badge: "Coastal Charm",
     detailId: "maine-coast"
   },
@@ -316,7 +316,7 @@ const destinations = [
       "Farm Breakfast",
     ],
     includes: ["Tours", "Meals", "Activities", "Garden"],
-    image: "Stone farmhouse in rolling English countryside",
+    image: "assets/home/countryside.jpg",
     badge: "Countryside Bliss",
     detailId: "cotswolds"
   },
@@ -339,7 +339,7 @@ const destinations = [
       "Water Sports",
     ],
     includes: ["Bungalow", "Meals", "Activities", "Spa"],
-    image: "Overwater bungalows in crystal blue tropical lagoon",
+    image: "assets/home/tropical.jpeg",
     badge: "Tropical Tranquility",
     detailId: "bora-bora"
   },
@@ -531,8 +531,9 @@ function createDestinationCard(destination) {
   card.className = "explore-destination-card";
   card.innerHTML = `
     <div class="explore-card-image">
-      <div class="image-placeholder">
-        <span>${destination.image}</span>
+      <img src="${destination.image}" alt="${destination.title}" class="destination-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="image-placeholder" style="display: none;">
+        <span>${destination.title}</span>
       </div>
     </div>
     <div class="card-badge">${destination.badge}</div>
@@ -668,7 +669,7 @@ function openDestinationModal(destination) {
 
   modalBody.innerHTML = `
     <div class="modal-image">
-      <span>${destination.image}</span>
+      <img src="${destination.image}" alt="${destination.title}" class="modal-img" onerror="this.style.display='none';" />
     </div>
     <h2 class="modal-title">${destination.title}</h2>
     <div class="modal-location">

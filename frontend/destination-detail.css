@@ -184,14 +184,22 @@
   position: relative;
   overflow: hidden;
   border-radius: 12px 0 0 12px;
+  background: #f8f9fa;
+  aspect-ratio: 16/9;
+  min-height: 350px;
+  width: 100%;
+  display: block;
 }
 
 .main-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  object-position: center;
+  border-radius: 12px 0 0 12px;
+  display: block;
 }
+
 
 .main-image:hover {
   transform: scale(1.05);
@@ -214,6 +222,7 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   padding: 1rem;
+  
 }
 
 .main-image-container:hover .image-overlay {
@@ -324,12 +333,17 @@
   position: absolute;
   top: 2rem;
   left: 2rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(20px);
   padding: 1.5rem;
-  border-radius: 12px;
-  max-width: 400px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  z-index: 10;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .info-badge {
@@ -982,8 +996,10 @@
   }
 
   .quick-info {
-    position: static;
-    margin: 1rem 0.5rem;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
     padding: 1rem;
   }
 

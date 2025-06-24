@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - TravelBooking</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="auth.css" />
+    <link rel="stylesheet" href="profile.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: blue;">TravelBooking</a></h1>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="experience.html">Experiences</a></li>
+          <li><a href="attractions.html">Attractions</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js -->
+        </div>
+        <button class="logout-btn" onclick="Auth.logout()">
+          <i data-lucide="log-out"></i>
+          <span>Logout</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <div class="container">
+        <div class="profile-container">
+          <div class="profile-sidebar">
+            <div class="profile-card">
+              <div class="profile-avatar">
+                <i data-lucide="user"></i>
+              </div>
+              <div class="profile-info">
+                <h3 id="profileUsername">Loading...</h3>
+                <p id="profileEmail">loading@email.com</p>
+                <span class="member-since">Member since <span id="memberSince">...</span></span>
+              </div>
+            </div>
+            
+            <nav class="profile-nav">
+              <button class="nav-item active" data-tab="profile">
+                <i data-lucide="user"></i>
+                Profile
+              </button>
+              <button class="nav-item" data-tab="security">
+                <i data-lucide="shield"></i>
+                Security
+              </button>
+              <button class="nav-item" data-tab="bookings">
+                <i data-lucide="calendar"></i>
+                My Bookings
+              </button>
+              <button class="nav-item" data-tab="favorites">
+                <i data-lucide="heart"></i>
+                Favorites
+              </button>
+            </nav>
+          </div>
+
+          <div class="profile-content">
+            <!-- Profile Tab -->
+            <div class="tab-content active" id="profile-tab">
+              <div class="content-header">
+                <h2>Profile Information</h2>
+                <p>Update your personal information and preferences</p>
+              </div>
+
+              <form id="profileForm" class="profile-form">
+                <div class="form-group">
+                  <label for="editUsername">Username</label>
+                  <div class="input-group">
+                    <i data-lucide="user"></i>
+                    <input 
+                      type="text" 
+                      id="editUsername" 
+                      name="username" 
+                      placeholder="Enter your username"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="editEmail">Email</label>
+                  <div class="input-group">
+                    <i data-lucide="mail"></i>
+                    <input 
+                      type="email" 
+                      id="editEmail" 
+                      name="email" 
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <div class="input-group">
+                    <i data-lucide="user"></i>
+                    <input 
+                      type="text" 
+                      id="firstName" 
+                      name="firstName" 
+                      placeholder="Enter your first name"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <div class="input-group">
+                    <i data-lucide="user"></i>
+                    <input 
+                      type="text" 
+                      id="lastName" 
+                      name="lastName" 
+                      placeholder="Enter your last name"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <div class="input-group">
+                    <i data-lucide="phone"></i>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone" 
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <div class="input-group">
+                    <i data-lucide="map-pin"></i>
+                    <select id="country" name="country">
+                      <option value="">Select your country</option>
+                      <option value="US">United States</option>
+                      <option value="CA">Canada</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="AU">Australia</option>
+                      <option value="DE">Germany</option>
+                      <option value="FR">France</option>
+                      <option value="IT">Italy</option>
+                      <option value="ES">Spain</option>
+                      <option value="JP">Japan</option>
+                      <option value="CN">China</option>
+                      <option value="IN">India</option>
+                      <option value="BR">Brazil</option>
+                      <option value="MX">Mexico</option>
+                      <option value="AR">Argentina</option>
+                      <option value="ZA">South Africa</option>
+                      <option value="EG">Egypt</option>
+                      <option value="NG">Nigeria</option>
+                      <option value="KE">Kenya</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="bio">Bio</label>
+                  <div class="input-group">
+                    <i data-lucide="file-text"></i>
+                    <textarea 
+                      id="bio" 
+                      name="bio" 
+                      placeholder="Tell us about yourself..."
+                      rows="4"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  <span class="btn-text">Update Profile</span>
+                  <span class="btn-loading" style="display: none;">
+                    <i data-lucide="loader-2" class="spinner"></i>
+                    Updating...
+                  </span>
+                </button>
+              </form>
+            </div>
+
+            <!-- Security Tab -->
+            <div class="tab-content" id="security-tab">
+              <div class="content-header">
+                <h2>Security Settings</h2>
+                <p>Manage your password and account security</p>
+              </div>
+
+              <form id="passwordForm" class="profile-form">
+                <div class="form-group">
+                  <label for="currentPassword">Current Password</label>
+                  <div class="input-group">
+                    <i data-lucide="lock"></i>
+                    <input 
+                      type="password" 
+                      id="currentPassword" 
+                      name="currentPassword" 
+                      placeholder="Enter your current password"
+                      required
+                    />
+                    <button type="button" class="password-toggle" onclick="togglePassword('currentPassword')">
+                      <i data-lucide="eye"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="newPassword">New Password</label>
+                  <div class="input-group">
+                    <i data-lucide="lock"></i>
+                    <input 
+                      type="password" 
+                      id="newPassword" 
+                      name="newPassword" 
+                      placeholder="Enter your new password"
+                      required
+                    />
+                    <button type="button" class="password-toggle" onclick="togglePassword('newPassword')">
+                      <i data-lucide="eye"></i>
+                    </button>
+                  </div>
+                  <div class="password-strength">
+                    <div class="strength-bar">
+                      <div class="strength-fill" id="strengthFill"></div>
+                    </div>
+                    <span class="strength-text" id="strengthText">Password strength</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="confirmNewPassword">Confirm New Password</label>
+                  <div class="input-group">
+                    <i data-lucide="lock"></i>
+                    <input 
+                      type="password" 
+                      id="confirmNewPassword" 
+                      name="confirmNewPassword" 
+                      placeholder="Confirm your new password"
+                      required
+                    />
+                    <button type="button" class="password-toggle" onclick="togglePassword('confirmNewPassword')">
+                      <i data-lucide="eye"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  <span class="btn-text">Change Password</span>
+                  <span class="btn-loading" style="display: none;">
+                    <i data-lucide="loader-2" class="spinner"></i>
+                    Changing password...
+                  </span>
+                </button>
+              </form>
+
+              <div class="security-options">
+                <h3>Additional Security</h3>
+                <div class="security-item">
+                  <div class="security-info">
+                    <h4>Two-Factor Authentication</h4>
+                    <p>Add an extra layer of security to your account</p>
+                  </div>
+                  <button class="btn btn-outline">Enable</button>
+                </div>
+                
+                <div class="security-item">
+                  <div class="security-info">
+                    <h4>Login Notifications</h4>
+                    <p>Get notified when someone logs into your account</p>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bookings Tab -->
+            <div class="tab-content" id="bookings-tab">
+              <div class="content-header">
+                <h2>My Bookings</h2>
+                <p>View and manage your travel bookings</p>
+              </div>
+
+              <div class="bookings-container">
+                <div class="booking-card">
+                  <div class="booking-image">
+                    <img src="assets/home/moutain2.jpg" alt="Mountain lodge" />
+                  </div>
+                  <div class="booking-info">
+                    <h3>Alpine Dreamscapes Lodge</h3>
+                    <p class="booking-dates">Dec 15 - Dec 20, 2024</p>
+                    <p class="booking-status confirmed">Confirmed</p>
+                    <div class="booking-actions">
+                      <button class="btn btn-outline btn-sm">View Details</button>
+                      <button class="btn btn-ghost btn-sm">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="booking-card">
+                  <div class="booking-image">
+                    <img src="assets/home/seaside.jpg" alt="Seaside villa" />
+                  </div>
+                  <div class="booking-info">
+                    <h3>Seaside Serenity Villa</h3>
+                    <p class="booking-dates">Jan 10 - Jan 15, 2025</p>
+                    <p class="booking-status pending">Pending</p>
+                    <div class="booking-actions">
+                      <button class="btn btn-outline btn-sm">View Details</button>
+                      <button class="btn btn-ghost btn-sm">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="empty-state">
+                  <i data-lucide="calendar-x"></i>
+                  <h3>No bookings yet</h3>
+                  <p>Start exploring amazing destinations and make your first booking!</p>
+                  <a href="explore.html" class="btn btn-primary">Explore Destinations</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Favorites Tab -->
+            <div class="tab-content" id="favorites-tab">
+              <div class="content-header">
+                <h2>My Favorites</h2>
+                <p>Your saved destinations and experiences</p>
+              </div>
+
+              <div class="favorites-container">
+                <div class="favorite-card">
+                  <div class="favorite-image">
+                    <img src="assets/home/moutain3.jpg" alt="Mountain paradise" />
+                    <button class="favorite-btn active">
+                      <i data-lucide="heart"></i>
+                    </button>
+                  </div>
+                  <div class="favorite-info">
+                    <h3>Mountain Paradise Retreat</h3>
+                    <p>Experience serenity in alpine beauty</p>
+                    <div class="favorite-actions">
+                      <button class="btn btn-primary btn-sm">Book Now</button>
+                      <button class="btn btn-ghost btn-sm">Remove</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="favorite-card">
+                  <div class="favorite-image">
+                    <img src="assets/home/urban.jpg" alt="Metropolitan magic" />
+                    <button class="favorite-btn active">
+                      <i data-lucide="heart"></i>
+                    </button>
+                  </div>
+                  <div class="favorite-info">
+                    <h3>Metropolitan Magic Penthouse</h3>
+                    <p>Experience the pulse of the world's greatest cities</p>
+                    <div class="favorite-actions">
+                      <button class="btn btn-primary btn-sm">Book Now</button>
+                      <button class="btn btn-ghost btn-sm">Remove</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="empty-state">
+                  <i data-lucide="heart"></i>
+                  <h3>No favorites yet</h3>
+                  <p>Start exploring and save your favorite destinations!</p>
+                  <a href="explore.html" class="btn btn-primary">Explore Destinations</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="bookingDetailModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeBookingDetailModal()">&times;</span>
+        <h2 id="modalBookingTitle">Booking Details</h2>
+        <div id="modalBookingInfo"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="auth.js"></script>
+    <script src="profile.js"></script>
+  </body>
+</html> 

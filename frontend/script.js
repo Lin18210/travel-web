@@ -271,13 +271,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Explore Now button
   const exploreBtn = document.querySelector(".carousel-cta .btn-primary");
-  if (exploreBtn) {
-    exploreBtn.addEventListener("click", function () {
-      alert(
-        "Explore Now clicked! This would navigate to the browse destinations page.",
-      );
-    });
-  }
 
   // Auth buttons functionality
   const loginBtn = document.querySelector(".btn-ghost");

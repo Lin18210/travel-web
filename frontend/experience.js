@@ -25,7 +25,7 @@ const experiences = [
       "Small group experience",
     ],
     includes: ["Market Tour", "Lunch", "Sake", "Recipes"],
-    image: "Traditional sushi chef teaching in Japanese kitchen",
+    image: "assets/experience/authentic-sushi.jpg",
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const experiences = [
       "Luxury helicopter experience",
     ],
     includes: ["Transport", "Breakfast", "Champagne", "Photography"],
-    image: "Helicopter flying over endless Serengeti plains",
+    image: "assets/experience/sunrise.jpg",
   },
   {
     id: 3,
@@ -79,7 +79,7 @@ const experiences = [
       "Vatican Gardens visit",
     ],
     includes: ["Guide", "Entry Fees", "Headsets", "Gardens"],
-    image: "Empty Sistine Chapel with Michelangelo's ceiling",
+    image: "assets/experience/Vatican.jpg",
   },
   {
     id: 4,
@@ -106,7 +106,7 @@ const experiences = [
       "Certification available",
     ],
     includes: ["Yoga Mat", "Lunch", "Transport", "Certificate"],
-    image: "Peaceful meditation by flowing Ganges River",
+    image: "assets/experience/meditation.jpg",
   },
   {
     id: 5,
@@ -133,7 +133,7 @@ const experiences = [
       "Small group guarantee",
     ],
     includes: ["Camera Gear", "Transport", "Snacks", "Photos"],
-    image: "Spectacular Northern Lights dancing over snowy landscape",
+    image: "assets/experience/northern.webp",
   },
   {
     id: 6,
@@ -160,7 +160,7 @@ const experiences = [
       "Traditional lunch",
     ],
     includes: ["Snorkel Gear", "Lunch", "Transport", "Guide"],
-    image: "Crystal clear cenote with stunning underwater formations",
+    image: "assets/experience/underground.jpg",
   },
   {
     id: 7,
@@ -187,7 +187,7 @@ const experiences = [
       "Take-home truffles",
     ],
     includes: ["Dogs", "Cooking", "Wine", "Lunch"],
-    image: "Truffle hunting dog searching in French forest",
+    image: "assets/experience/truffle.jpeg",
   },
   {
     id: 8,
@@ -214,7 +214,7 @@ const experiences = [
       "Local lunch",
     ],
     includes: ["Bike", "Helmet", "Guide", "Lunch"],
-    image: "Bicycles parked in front of majestic Angkor Wat",
+    image: "assets/experience/ancient.jpg",
   },
   {
     id: 9,
@@ -241,7 +241,7 @@ const experiences = [
       "Certificate of completion",
     ],
     includes: ["Guide", "Accommodation", "Meals", "Gear"],
-    image: "Climbers ascending Mount Fuji at dawn",
+    image: "assets/experience/volcano.webp",
   },
   {
     id: 10,
@@ -268,7 +268,7 @@ const experiences = [
       "Cultural insights",
     ],
     includes: ["Show", "Tapas", "Drinks", "Guide"],
-    image: "Passionate flamenco dancer in traditional Spanish tablao",
+    image: "assets/experience/flamenco.webp",
   },
   {
     id: 11,
@@ -295,7 +295,7 @@ const experiences = [
       "Photo editing workshop",
     ],
     includes: ["Transport", "Equipment", "Guide", "Lunch"],
-    image: "Majestic polar bear walking on Arctic ice",
+    image: "assets/experience/arctic.webp",
   },
   {
     id: 12,
@@ -322,7 +322,7 @@ const experiences = [
       "Recipe cards to take home",
     ],
     includes: ["Ingredients", "Lunch", "Recipes", "Wine"],
-    image: "Italian grandmother teaching pasta making in rustic kitchen",
+    image: "assets/experience/traditional-cooking.jpg",
   },
 ];
 
@@ -529,8 +529,9 @@ function createExperienceCard(experience) {
   card.className = "experience-card";
   card.innerHTML = `
     <div class="experience-card-image">
-      <div class="image-placeholder">
-        <span>${experience.image}</span>
+      <img src="${experience.image}" alt="${experience.title}" class="experience-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="image-placeholder" style="display:none;">
+        <span>${experience.title}</span>
       </div>
       <div class="card-category-badge ${experience.category}">${getCategoryLabel(experience.category)}</div>
       <div class="card-duration">
@@ -639,7 +640,7 @@ function openExperienceModal(experience) {
 
   modalBody.innerHTML = `
     <div class="modal-experience-image">
-      <span>${experience.image}</span>
+      <img src="${experience.image}" alt="${experience.title}" class="modal-img" onerror="this.style.display='none';" />
     </div>
     <h2 class="modal-title">${experience.title}</h2>
     <div class="modal-location">

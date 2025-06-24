@@ -19,11 +19,10 @@ const destinationsData = {
     description:
       "Wake up to snow-capped peaks, crackling fireplaces, and the crisp scent of pine. Your mountain retreat awaits in this stunning alpine lodge nestled in the heart of the Swiss Alps. Experience luxury mountain living with panoramic views, world-class skiing, and authentic Swiss hospitality.",
     images: [
-      "assets/images/destinations/alpine-lodge.jpg",
-      "assets/images/destinations/alpine-lodge.jpg",
-      "assets/images/destinations/alpine-lodge.jpg",
-      "assets/images/destinations/alpine-lodge.jpg",
-      "assets/images/destinations/alpine-lodge.jpg",
+      "assets/home/moutain.jpg",
+      "assets/explore/alphine1.jpg",
+      "assets/explore/alphine2.webp",
+      "assets/home/moutain4.jpg",
     ],
     highlights: [
       {
@@ -95,11 +94,9 @@ const destinationsData = {
     description:
       "Ocean waves as your soundtrack, golden sunsets painting the sky, and endless beaches at your doorstep. This beachfront villa offers the ultimate coastal escape with luxury amenities and unparalleled ocean views.",
     images: [
-      "assets/images/destinations/seaside-villa.jpg",
-      "assets/images/destinations/seaside-villa.jpg",
-      "assets/images/destinations/seaside-villa.jpg",
-      "assets/images/destinations/seaside-villa.jpg",
-      "assets/images/destinations/seaside-villa.jpg",
+      "assets/home/seaside.jpg",
+      "assets/explore/seaside1.jpg",
+      "assets/explore/seaside2.avif",
     ],
     highlights: [
       {
@@ -171,11 +168,9 @@ const destinationsData = {
     description:
       "Experience the pulse of the city that never sleeps in this sophisticated Manhattan loft. Floor-to-ceiling windows showcase the iconic skyline while luxury amenities ensure comfort in the heart of urban excitement.",
     images: [
-      "assets/images/destinations/metropolitan-loft.jpg",
-      "assets/images/destinations/metropolitan-loft.jpg",
-      "assets/images/destinations/metropolitan-loft.jpg",
-      "assets/images/destinations/metropolitan-loft.jpg",
-      "assets/images/destinations/metropolitan-loft.jpg",
+      "assets/home/urban.jpg",
+      "assets/explore/metro1.jpeg",
+      "assets/explore/metro2.jpg",
     ],
     highlights: [
       {
@@ -247,11 +242,8 @@ const destinationsData = {
     description:
       "Find tranquility in the Sonoran Desert at this stunning southwestern retreat. Cacti gardens, mountain vistas, and starlit skies create an otherworldly experience in the heart of Arizona's natural beauty.",
     images: [
-      "assets/images/destinations/desert-oasis.jpg",
-      "assets/images/destinations/desert-oasis.jpg",
-      "assets/images/destinations/desert-oasis.jpg",
-      "assets/images/destinations/desert-oasis.jpg",
-      "assets/images/destinations/desert-oasis.jpg",
+      "assets/home/desert.jpg",
+      "assets/explore/desert.jpg",
     ],
     highlights: [
       {
@@ -323,11 +315,7 @@ const destinationsData = {
     description:
       "Whispering pines, misty trails, and the soothing sounds of nature—your peaceful woodland escape awaits. Immerse yourself in the ancient forests of the Pacific Northwest in this eco-friendly cabin.",
     images: [
-      "assets/images/destinations/forest-haven.jpg",
-      "assets/images/destinations/forest-haven.jpg",
-      "assets/images/destinations/forest-haven.jpg",
-      "assets/images/destinations/forest-haven.jpg",
-      "assets/images/destinations/forest-haven.jpg",
+      "assets/home/forest.jpeg",
     ],
     highlights: [
       {
@@ -399,11 +387,9 @@ const destinationsData = {
     description:
       "Charming cottages, salty breezes, and oceanfront views—feel the rhythm of the sea in every moment. This traditional New England coastal cottage offers authentic maritime charm.",
     images: [
-      "assets/images/destinations/coastal-charm.jpg",
-      "assets/images/destinations/coastal-charm.jpg",
-      "assets/images/destinations/coastal-charm.jpg",
-      "assets/images/destinations/coastal-charm.jpg",
-      "assets/images/destinations/coastal-charm.jpg",
+      "assets/home/coast.jpeg",
+      "assets/explore/oceanfront1.jpg",
+      "assets/explore/oceanfront2.jpg",
     ],
     highlights: [
       {
@@ -475,11 +461,9 @@ const destinationsData = {
     description:
       "Rolling hills, blooming meadows, and rustic comfort—unplug and unwind in the heart of the countryside. This authentic Tuscan farmhouse offers wine, wellness, and timeless beauty.",
     images: [
-      "assets/images/destinations/countryside-bliss.jpg",
-      "assets/images/destinations/countryside-bliss.jpg",
-      "assets/images/destinations/countryside-bliss.jpg",
-      "assets/images/destinations/countryside-bliss.jpg",
-      "assets/images/destinations/countryside-bliss.jpg",
+      "assets/home/countryside.jpg",
+      "assets/explore/rolling1.jpg",
+      "assets/explore/rolling2.jpg",
     ],
     highlights: [
       {
@@ -551,11 +535,7 @@ const destinationsData = {
     description:
       "Swaying palms, crystal-clear waters, and sun-kissed sands—your island paradise is calling. This luxury beachfront resort offers the ultimate tropical escape with world-class amenities.",
     images: [
-      "assets/images/destinations/tropical-tranquility.jpg",
-      "assets/images/destinations/tropical-tranquility.jpg",
-      "assets/images/destinations/tropical-tranquility.jpg",
-      "assets/images/destinations/tropical-tranquility.jpg",
-      "assets/images/destinations/tropical-tranquility.jpg",
+      "assets/home/tropical.jpeg",
     ],
     highlights: [
       {
@@ -627,11 +607,10 @@ const destinationsData = {
     description:
       "Charming villa surrounded by rolling hills, vineyards, and olive groves in the heart of Tuscany. Experience authentic Italian countryside living with world-class wine, traditional cuisine, and breathtaking landscapes.",
     images: [
-      "assets/images/destinations/tuscan-villa.jpg",
-      "assets/images/destinations/tuscan-villa.jpg",
-      "assets/images/destinations/tuscan-villa.jpg",
-      "assets/images/destinations/tuscan-villa.jpg",
-      "assets/images/destinations/tuscan-villa.jpg",
+      "assets/home/tuscan.jpg",
+      "assets/explore/tuscan.jpg",
+      "assets/explore/tuscan1.webp",
+      "assets/explore/tuscan2.webp",
     ],
     highlights: [
       {
@@ -1887,17 +1866,25 @@ function calculatePricing() {
 }
 
 function proceedToBooking() {
-  // Prepare booking data
+  // Prepare booking data in the same structure as Explore page
   const bookingData = {
-    destination: destinationData,
-    checkin: document.getElementById("checkin-date").value,
-    checkout: document.getElementById("checkout-date").value,
-    guests: document.getElementById("guest-count").value,
-    totalPrice: document.getElementById("total-price").textContent,
+    type: "destination",
+    id: destinationData.id,
+    title: destinationData.title,
+    location: destinationData.location,
+    price: destinationData.price,
+    rating: destinationData.rating,
+    reviews: destinationData.reviewCount,
+    image: destinationData.images && destinationData.images[0] ? destinationData.images[0] : '',
+    features: destinationData.highlights ? destinationData.highlights.map(h => h.title) : [],
+    // Add checkin/checkout/guests for booking page if needed
+    checkinDate: document.getElementById("checkin-date").value,
+    checkoutDate: document.getElementById("checkout-date").value,
+    guests: document.getElementById("guest-count").value
   };
 
-  // Store in localStorage
-  localStorage.setItem("bookingData", JSON.stringify(bookingData));
+  // Store in localStorage under the correct key
+  localStorage.setItem("pendingBooking", JSON.stringify(bookingData));
 
   // Navigate to booking page
   window.location.href = "booking.html";
