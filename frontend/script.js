@@ -276,21 +276,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginBtn = document.querySelector(".btn-ghost");
   const signupBtn = document.querySelector(".btn-outline");
 
-  if (loginBtn) {
-    loginBtn.addEventListener("click", function () {
-      alert(
-        "Login clicked! This would open the login modal or navigate to login page.",
-      );
-    });
-  }
-
-  if (signupBtn) {
-    signupBtn.addEventListener("click", function () {
-      alert(
-        "Sign Up clicked! This would open the registration modal or navigate to signup page.",
-      );
-    });
-  }
 
   // Footer links functionality
   const footerLinks = document.querySelectorAll(".footer-section a");
@@ -369,6 +354,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   console.log("Travel booking website initialized successfully!");
+
+  // Hamburger menu toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function () {
+      navToggle.classList.toggle('active');
+      navMenu.classList.toggle('open');
+    });
+  }
+  // Close menu when clicking a link (mobile UX)
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 900 && navMenu.classList.contains('open')) {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('open');
+      }
+    });
+  });
 });
 
 // Function to redirect to destination detail page (Global scope for onclick handlers)

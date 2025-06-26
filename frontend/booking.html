@@ -18,37 +18,21 @@
         <div class="nav-brand">
           <h1><a href="index.html" style="text-decoration: none; color: blue;">TravelBooking</a></h1>
         </div>
-        <ul
-          class="nav-menu"
-          style="
-            display: flex;
-            flex-direction: row;
-            list-style: none;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-            align-items: center;
-          "
-        >
-          <li style="display: flex; align-items: center; list-style: none">
-            <a href="index.html">Home</a>
-          </li>
-          <li style="display: flex; align-items: center; list-style: none">
-            <a href="explore.html">Explore</a>
-          </li>
-          <li style="display: flex; align-items: center; list-style: none">
-            <a href="experience.html">Experiences</a>
-          </li>
-          <li style="display: flex; align-items: center; list-style: none">
-            <a href="attractions.html">Attractions</a>
-          </li>
-          <li style="display: flex; align-items: center; list-style: none">
-            <a href="reviews.html">Reviews</a>
-          </li>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="experience.html">Experiences</a></li>
+          <li><a href="attractions.html">Attractions</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li class="nav-auth-link"><a href="login.html">Log in or sign up</a></li>
         </ul>
         <div class="nav-icons">
-          <button class="btn btn-ghost">Login</button>
-          <button class="btn btn-outline">Sign Up</button>
+          <!-- Will be populated by auth.js (user menu when logged in) -->
         </div>
       </nav>
     </header>
@@ -687,5 +671,6 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="booking.js"></script>
     <script src="auth.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

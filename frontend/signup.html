@@ -18,6 +18,11 @@
         <div class="nav-brand">
           <h1><a href="index.html" style="text-decoration: none; color: blue;">TravelBooking</a></h1>
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
         <ul class="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="explore.html">Explore</a></li>
@@ -26,8 +31,7 @@
           <li><a href="reviews.html">Reviews</a></li>
         </ul>
         <div class="nav-icons">
-          <button class="btn btn-ghost" onclick="window.location.href='login.html'">Login</button>
-          <button class="btn btn-outline" onclick="window.location.href='signup.html'">Sign Up</button>
+          <!-- Will be populated by auth.js (user menu when logged in) -->
         </div>
       </nav>
     </header>
@@ -166,5 +170,6 @@
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="auth.js"></script>
+    <script src="script.js"></script>
   </body>
 </html> 
