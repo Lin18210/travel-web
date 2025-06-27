@@ -43,7 +43,6 @@ function createTables() {
       check_out DATE NOT NULL,
       guests INTEGER NOT NULL,
       total_price DECIMAL(10,2) NOT NULL,
-      image TEXT,
       status TEXT DEFAULT 'confirmed',
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
@@ -221,29 +220,35 @@ app.put('/api/auth/change-password', authenticateToken, (req, res) => {
 });
 
 // Create a new booking (after payment)
-app.post('/api/bookings', authenticateToken, async (req, res) => {
-  const { destination, check_in, check_out, guests, total_price, image } = req.body;
+app.post('/api/bookings', authenticateToken, (req, res) => {
+  const { destination, check_in, check_out, guests, total_price } = req.body;
+  console.log('Booking request:', req.user, req.body);
+
   if (!destination || !check_in || !check_out || !guests || !total_price) {
     return res.status(400).json({ error: 'All fields are required' });
   }
-  const sql = 'INSERT INTO bookings (user_id, destination, check_in, check_out, guests, total_price, image) VALUES (?, ?, ?, ?, ?, ?, ?)';
-  try {
-    const result = await db.run(sql, [req.user.id, destination, check_in, check_out, guests, total_price, image]);
-    res.status(201).json({ message: 'Booking created successfully', booking: { id: result.lastID } });
-  } catch (err) {
-    return res.status(500).json({ error: 'Error creating booking' });
-  }
+
+  const sql = 'INSERT INTO bookings (user_id, destination, check_in, check_out, guests, total_price) VALUES (?, ?, ?, ?, ?, ?)';
+  db.run(sql, [req.user.id, destination, check_in, check_out, guests, total_price], function(err) {
+    if (err) {
+      console.error('Error creating booking:', err);
+      return res.status(500).json({ error: 'Error creating booking' });
+    }
+    res.status(201).json({ message: 'Booking created successfully', booking: { id: this.lastID } });
+  });
 });
 
 // Get all bookings for a user
-app.get('/api/bookings', authenticateToken, async (req, res) => {
+app.get('/api/bookings', authenticateToken, (req, res) => {
   const sql = 'SELECT * FROM bookings WHERE user_id = ? ORDER BY created_at DESC';
-  try {
-    const result = await db.all(sql, [req.user.id]);
-    res.json({ bookings: result });
-  } catch (err) {
-    return res.status(500).json({ error: 'Error fetching bookings' });
-  }
+  db.all(sql, [req.user.id], (err, rows) => {
+    if (err) {
+      console.error('Error fetching bookings:', err);
+      return res.status(500).json({ error: 'Error fetching bookings' });
+    }
+    console.log('Fetched bookings for user:', req.user.id, rows);
+    res.json({ bookings: rows });
+  });
 });
 
 // Get a single booking by ID

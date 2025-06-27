@@ -528,13 +528,20 @@ async function processBooking() {
 
   // Gather booking details (replace with your actual data structure)
   const pendingBooking = JSON.parse(localStorage.getItem('pendingBooking') || '{}');
+  
+  // Format dates to YYYY-MM-DD
+  const formatDateForServer = (dateStr) => {
+    if (!dateStr) return null;
+    const date = new Date(dateStr);
+    return date.toISOString().split('T')[0];
+  };
+
   const bookingDetails = {
     destination: pendingBooking.title || pendingBooking.item || pendingBooking.location || 'Unknown',
-    check_in: pendingBooking.checkinDate || '2024-12-20',
-    check_out: pendingBooking.checkoutDate || '2024-12-25',
+    check_in: formatDateForServer(pendingBooking.checkinDate) || '2024-12-20',
+    check_out: formatDateForServer(pendingBooking.checkoutDate) || '2024-12-25',
     guests: parseInt((pendingBooking.guests || '2').toString().replace(/\D/g, '')) || 2,
-    total_price: pendingBooking.price?.total || 1245,
-    image: pendingBooking.image || '',
+    total_price: pendingBooking.price?.total || 1245
   };
 
   try {
@@ -559,6 +566,11 @@ async function processBooking() {
     if (typeof lucide !== "undefined") {
       lucide.createIcons();
     }
+    
+    // Redirect to profile page after 2 seconds
+    setTimeout(() => {
+      window.location.href = 'profile.html#bookings';
+    }, 2000);
   } catch (error) {
     alert('Booking failed: ' + error.message);
   } finally {

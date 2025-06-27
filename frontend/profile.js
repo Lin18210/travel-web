@@ -27,11 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
     newPasswordInput.addEventListener('input', checkPasswordStrength);
   }
 
-  patchBookingsTab();
-  // Optionally, fetch bookings immediately if bookings tab is default
-  if (document.getElementById('bookings-tab').classList.contains('active')) {
-    fetchAndRenderBookings();
+  // Check if we should show bookings tab (from URL hash)
+  if (window.location.hash === '#bookings') {
+    const bookingsTab = document.querySelector('.nav-item[data-tab="bookings"]');
+    if (bookingsTab) {
+      bookingsTab.click();
+    }
   }
+
+  // Always fetch bookings on page load
+  fetchAndRenderBookings();
+
+  patchBookingsTab();
 });
 
 // Load user data
@@ -425,13 +432,14 @@ function closeBookingDetailModal() {
   document.body.style.overflow = 'auto';
 }
 
-// Update fetchAndRenderBookings to use the modal
+// --- My Bookings Feature ---
+
 async function fetchAndRenderBookings() {
   const token = Auth.getToken();
   const bookingsContainer = document.querySelector('.bookings-container');
   if (!bookingsContainer) return;
 
-  // Clear existing content
+  // Show loading
   bookingsContainer.innerHTML = '<div class="loading">Loading your bookings...</div>';
 
   try {
@@ -440,11 +448,13 @@ async function fetchAndRenderBookings() {
         'Authorization': `Bearer ${token}`,
       },
     });
-    const data = await response.json();
-    if (!response.ok) throw new Error(data.error || 'Failed to fetch bookings');
-    const bookings = data.bookings;
+    if (!response.ok) {
+      const data = await response.json();
+      throw new Error(data.error || 'Failed to fetch bookings');
+    }
+    const { bookings } = await response.json();
 
-    if (!bookings || bookings.length === 0) {
+    if (!Array.isArray(bookings) || bookings.length === 0) {
       bookingsContainer.innerHTML = `
         <div class="empty-state">
           <i data-lucide="calendar-x"></i>
@@ -453,57 +463,44 @@ async function fetchAndRenderBookings() {
           <a href="explore.html" class="btn btn-primary">Explore Destinations</a>
         </div>
       `;
-    } else {
-      bookingsContainer.innerHTML = bookings.map(booking => `
-        <div class="booking-card" data-booking-id="${booking.id}">
-          <div class="booking-image">
-            ${booking.image ? `<img src="${booking.image}" alt="${booking.destination}" class="booking-summary-img" onerror="this.style.display='none'">` : `<div class='booking-summary-img placeholder-img'></div>`}
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+      return;
+    }
+
+    // Helper to format date
+    const formatDisplayDate = (dateStr) => {
+      if (!dateStr) return '';
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    };
+
+    bookingsContainer.innerHTML = bookings.map(booking => `
+      <div class="booking-card" data-booking-id="${booking.id}">
+        <div class="booking-image">
+          <div class='booking-summary-img placeholder-img'></div>
+        </div>
+        <div class="booking-info">
+          <h3>${booking.destination}</h3>
+          <p class="booking-dates">${formatDisplayDate(booking.check_in)} - ${formatDisplayDate(booking.check_out)}</p>
+          <p class="booking-status ${booking.status ? booking.status.toLowerCase() : ''}">${booking.status ? booking.status.charAt(0).toUpperCase() + booking.status.slice(1) : 'Confirmed'}</p>
+          <div class="booking-details">
+            <span>Guests: ${booking.guests}</span> | <span>Total: $${parseFloat(booking.total_price).toFixed(2)}</span>
           </div>
-          <div class="booking-info">
-            <h3>${booking.destination}</h3>
-            <p class="booking-dates">${formatDate(booking.check_in)} - ${formatDate(booking.check_out)}</p>
-            <p class="booking-status ${booking.status}">${capitalize(booking.status)}</p>
-            <div class="booking-details">
-              <span>Guests: ${booking.guests}</span> | <span>Total: $${booking.total_price}</span>
-            </div>
-            <div class="booking-actions">
-              <button class="btn btn-outline btn-sm" onclick='showBookingDetailModal(${JSON.stringify(booking)})'>View Details</button>
-              <button class="btn btn-ghost btn-sm delete-booking-btn" data-booking-id="${booking.id}" title="Delete Booking"><i data-lucide="trash-2"></i></button>
-            </div>
+          <div class="booking-actions">
+            <button class="btn btn-outline btn-sm" onclick='showBookingDetailModal(${JSON.stringify({
+              ...booking,
+              check_in: formatDisplayDate(booking.check_in),
+              check_out: formatDisplayDate(booking.check_out)
+            })})'>View Details</button>
           </div>
         </div>
-      `).join('');
-    }
-    if (typeof lucide !== 'undefined') lucide.createIcons();
+      </div>
+    `).join('');
 
-    // Add delete button event listeners
-    document.querySelectorAll('.delete-booking-btn').forEach(btn => {
-      btn.addEventListener('click', async function(e) {
-        e.stopPropagation();
-        const bookingId = this.getAttribute('data-booking-id');
-        if (confirm('Are you sure you want to delete this booking? This action cannot be undone.')) {
-          try {
-            const token = Auth.getToken();
-            const response = await fetch(`http://localhost:3000/api/bookings/${bookingId}`, {
-              method: 'DELETE',
-              headers: {
-                'Authorization': `Bearer ${token}`,
-              },
-            });
-            const data = await response.json();
-            if (!response.ok) throw new Error(data.error || 'Failed to delete booking');
-            // Remove card from DOM
-            const card = document.querySelector(`.booking-card[data-booking-id="${bookingId}"]`);
-            if (card) card.remove();
-            showMessage('Booking deleted successfully!', 'success');
-          } catch (error) {
-            showMessage(error.message || 'Failed to delete booking', 'error');
-          }
-        }
-      });
-    });
+    if (typeof lucide !== 'undefined') lucide.createIcons();
   } catch (error) {
     bookingsContainer.innerHTML = `<div class="message error">${error.message}</div>`;
+    if (typeof lucide !== 'undefined') lucide.createIcons();
   }
 }
 
@@ -520,6 +517,14 @@ function patchBookingsTab() {
     });
   }
 }
+
+// On page load, always fetch bookings
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', fetchAndRenderBookings);
+} else {
+  fetchAndRenderBookings();
+}
+patchBookingsTab();
 
 function formatDate(dateStr) {
   const date = new Date(dateStr);
