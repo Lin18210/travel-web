@@ -1,0 +1,643 @@
+/* Blog Page Specific Styles */
+
+/* Page Hero */
+.page-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Featured Article */
+.featured-article {
+  padding: 80px 0;
+  background: white;
+}
+
+.featured-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.featured-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.featured-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #d4af37;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.featured-text h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.featured-text p {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.article-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.article-meta .category {
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.article-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Blog Categories */
+.blog-categories {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.category-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #d4af37;
+}
+
+.category-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.category-icon i {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.category-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.category-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.article-count {
+  color: #d4af37;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Latest Articles */
+.latest-articles {
+  padding: 80px 0;
+  background: white;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.article-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.article-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-image img {
+  transform: scale(1.05);
+}
+
+.article-category {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.article-content {
+  padding: 24px;
+}
+
+.article-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.article-content p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.load-more-container {
+  text-align: center;
+}
+
+/* Travel Guide */
+.travel-guide {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.guide-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 60px;
+}
+
+.guide-sidebar {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.guide-nav {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.guide-nav h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.guide-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guide-nav li {
+  margin-bottom: 8px;
+}
+
+.guide-nav a {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 8px 0;
+  display: block;
+  transition: color 0.15s ease;
+}
+
+.guide-nav a:hover {
+  color: #d4af37;
+}
+
+.guide-main {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.guide-section {
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.guide-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.guide-section h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.guide-section p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.guide-section ul {
+  color: #4b5563;
+  line-height: 1.6;
+  padding-left: 20px;
+}
+
+.guide-section li {
+  margin-bottom: 8px;
+}
+
+.season-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.season {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #d4af37;
+}
+
+.season h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.season p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.packing-lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.packing-list {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.packing-list h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.packing-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.packing-list li {
+  padding: 4px 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+  position: relative;
+  padding-left: 16px;
+}
+
+.packing-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #d4af37;
+  font-weight: bold;
+}
+
+/* Newsletter Signup */
+.newsletter-signup {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+}
+
+.newsletter-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.newsletter-text h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.newsletter-text p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  min-width: 400px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+}
+
+.newsletter-form input::placeholder {
+  color: #9ca3af;
+}
+
+.newsletter-form .btn {
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .featured-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .featured-image {
+    order: -1;
+  }
+  
+  .guide-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .guide-sidebar {
+    position: static;
+  }
+  
+  .newsletter-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .newsletter-form {
+    min-width: auto;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .page-hero p {
+    font-size: 1.125rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .featured-text h2 {
+    font-size: 1.875rem;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+  }
+  
+  .articles-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .guide-main {
+    padding: 24px;
+  }
+  
+  .season-info,
+  .packing-lists {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .newsletter-text h2 {
+    font-size: 1.875rem;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-form .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 60px 0;
+  }
+  
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .featured-article,
+  .blog-categories,
+  .latest-articles,
+  .travel-guide,
+  .newsletter-signup {
+    padding: 60px 0;
+  }
+  
+  .featured-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .article-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .category-card {
+    padding: 30px 20px;
+  }
+  
+  .article-content {
+    padding: 20px;
+  }
+  
+  .guide-main {
+    padding: 20px;
+  }
+  
+  .newsletter-text h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animations */
+.article-card.fade-in {
+  animation: articleFadeIn 0.5s ease-in;
+}
+
+@keyframes articleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Smooth scrolling for guide navigation */
+html {
+  scroll-behavior: smooth;
+}

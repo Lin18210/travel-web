@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Guide & Blog - Grand Vista Resort</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="blog.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms & Suites</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="spa.html">Spa & Wellness</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js (user menu when logged in) -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Travel Guide & Blog</h1>
+        <p>Discover the best of our destination with insider tips, local culture, and travel insights</p>
+      </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="featured-article">
+      <div class="container">
+        <div class="featured-content">
+          <div class="featured-image">
+            <img src="assets/attractive/colosseum.webp" alt="Featured Article" />
+            <div class="featured-badge">Featured</div>
+          </div>
+          <div class="featured-text">
+            <div class="article-meta">
+              <span class="category">Local Culture</span>
+              <span class="date">December 15, 2024</span>
+              <span class="read-time">5 min read</span>
+            </div>
+            <h2>Discovering the Hidden Gems of Paradise City</h2>
+            <p>Explore the rich cultural heritage and hidden treasures that make our destination truly special. From historic landmarks to local artisan workshops, discover the authentic experiences that await you beyond the resort.</p>
+            <div class="article-tags">
+              <span class="tag">Culture</span>
+              <span class="tag">Local Attractions</span>
+              <span class="tag">History</span>
+            </div>
+            <button class="btn btn-primary">Read Full Article</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+      <div class="container">
+        <div class="section-header">
+          <h2>Explore by Category</h2>
+          <p>Find articles tailored to your interests and travel style</p>
+        </div>
+        
+        <div class="categories-grid">
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="compass"></i>
+            </div>
+            <h3>Travel Tips</h3>
+            <p>Essential advice for making the most of your stay</p>
+            <span class="article-count">12 articles</span>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="utensils"></i>
+            </div>
+            <h3>Food & Dining</h3>
+            <p>Local cuisine, restaurant reviews, and culinary experiences</p>
+            <span class="article-count">8 articles</span>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="camera"></i>
+            </div>
+            <h3>Attractions</h3>
+            <p>Must-visit places and hidden gems in the area</p>
+            <span class="article-count">15 articles</span>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="heart"></i>
+            </div>
+            <h3>Wellness</h3>
+            <p>Spa treatments, fitness tips, and wellness practices</p>
+            <span class="article-count">6 articles</span>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="calendar"></i>
+            </div>
+            <h3>Events</h3>
+            <p>Local festivals, seasonal events, and special occasions</p>
+            <span class="article-count">10 articles</span>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Family Travel</h3>
+            <p>Kid-friendly activities and family vacation tips</p>
+            <span class="article-count">7 articles</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="latest-articles">
+      <div class="container">
+        <div class="section-header">
+          <h2>Latest Articles</h2>
+          <p>Stay updated with our newest travel insights and local discoveries</p>
+        </div>
+
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-image">
+              <img src="assets/attractive/golden.jpg" alt="Sunset Photography" />
+              <div class="article-category">Photography</div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="date">December 12, 2024</span>
+                <span class="read-time">3 min read</span>
+              </div>
+              <h3>Capturing the Perfect Sunset at Grand Vista</h3>
+              <p>Learn the best spots and techniques for photographing our stunning sunsets, from the beachfront to the rooftop terrace.</p>
+              <div class="article-tags">
+                <span class="tag">Photography</span>
+                <span class="tag">Sunset</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-image">
+              <img src="assets/attractive/authentic-sushi.jpg" alt="Local Cuisine" />
+              <div class="article-category">Food</div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="date">December 10, 2024</span>
+                <span class="read-time">4 min read</span>
+              </div>
+              <h3>Local Cuisine: A Culinary Journey Through Paradise</h3>
+              <p>Discover the authentic flavors of our region, from street food to fine dining, and the stories behind each dish.</p>
+              <div class="article-tags">
+                <span class="tag">Food</span>
+                <span class="tag">Local Culture</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-image">
+              <img src="assets/attractive/northern.webp" alt="Wellness Retreat" />
+              <div class="article-category">Wellness</div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="date">December 8, 2024</span>
+                <span class="read-time">6 min read</span>
+              </div>
+              <h3>Wellness Retreat: Rejuvenate Your Mind and Body</h3>
+              <p>Explore our comprehensive wellness programs and discover how to create your perfect spa and wellness experience.</p>
+              <div class="article-tags">
+                <span class="tag">Wellness</span>
+                <span class="tag">Spa</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-image">
+              <img src="assets/attractive/flamenco.webp" alt="Cultural Events" />
+              <div class="article-category">Culture</div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="date">December 5, 2024</span>
+                <span class="read-time">5 min read</span>
+              </div>
+              <h3>Cultural Events: Immerse Yourself in Local Traditions</h3>
+              <p>From traditional festivals to contemporary art exhibitions, discover the vibrant cultural scene of our destination.</p>
+              <div class="article-tags">
+                <span class="tag">Culture</span>
+                <span class="tag">Events</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-image">
+              <img src="assets/attractive/alphine1.jpg" alt="Adventure Activities" />
+              <div class="article-category">Adventure</div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="date">December 3, 2024</span>
+                <span class="read-time">4 min read</span>
+              </div>
+              <h3>Adventure Awaits: Outdoor Activities for Every Season</h3>
+              <p>From hiking trails to water sports, discover the exciting outdoor activities available year-round in our region.</p>
+              <div class="article-tags">
+                <span class="tag">Adventure</span>
+                <span class="tag">Outdoor</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-image">
+              <img src="assets/attractive/meditation.jpg" alt="Mindfulness" />
+              <div class="article-category">Lifestyle</div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="date">December 1, 2024</span>
+                <span class="read-time">3 min read</span>
+              </div>
+              <h3>Mindfulness and Meditation: Finding Peace at Grand Vista</h3>
+              <p>Learn about our meditation programs and discover how to incorporate mindfulness into your vacation experience.</p>
+              <div class="article-tags">
+                <span class="tag">Mindfulness</span>
+                <span class="tag">Meditation</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="load-more-container">
+          <button class="btn btn-outline">Load More Articles</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Guide Section -->
+    <section class="travel-guide">
+      <div class="container">
+        <div class="section-header">
+          <h2>Complete Travel Guide</h2>
+          <p>Everything you need to know for the perfect stay at Grand Vista Resort</p>
+        </div>
+
+        <div class="guide-content">
+          <div class="guide-sidebar">
+            <div class="guide-nav">
+              <h3>Quick Navigation</h3>
+              <ul>
+                <li><a href="#getting-here">Getting Here</a></li>
+                <li><a href="#best-time">Best Time to Visit</a></li>
+                <li><a href="#packing-tips">Packing Tips</a></li>
+                <li><a href="#local-transport">Local Transportation</a></li>
+                <li><a href="#weather">Weather Guide</a></li>
+                <li><a href="#safety">Safety Tips</a></li>
+                <li><a href="#currency">Currency & Payments</a></li>
+                <li><a href="#language">Language & Communication</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="guide-main">
+            <div class="guide-section" id="getting-here">
+              <h3>Getting Here</h3>
+              <p>Grand Vista Resort is easily accessible by air, land, and sea. The nearest international airport is just 30 minutes away, with complimentary shuttle service available for all guests.</p>
+              <ul>
+                <li><strong>By Air:</strong> Paradise International Airport (30 min drive)</li>
+                <li><strong>By Car:</strong> Highway 101, Exit 45 (2 hours from downtown)</li>
+                <li><strong>By Sea:</strong> Private marina with boat access</li>
+                <li><strong>Shuttle Service:</strong> Complimentary airport transfers</li>
+              </ul>
+            </div>
+
+            <div class="guide-section" id="best-time">
+              <h3>Best Time to Visit</h3>
+              <p>Our destination offers year-round appeal with each season bringing its own unique charm and activities.</p>
+              <div class="season-info">
+                <div class="season">
+                  <h4>Spring (March - May)</h4>
+                  <p>Mild temperatures, blooming gardens, perfect for outdoor activities</p>
+                </div>
+                <div class="season">
+                  <h4>Summer (June - August)</h4>
+                  <p>Warm weather, beach activities, peak season with vibrant energy</p>
+                </div>
+                <div class="season">
+                  <h4>Fall (September - November)</h4>
+                  <p>Pleasant weather, harvest festivals, ideal for cultural experiences</p>
+                </div>
+                <div class="season">
+                  <h4>Winter (December - February)</h4>
+                  <p>Cooler temperatures, holiday celebrations, perfect for relaxation</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="guide-section" id="packing-tips">
+              <h3>Packing Tips</h3>
+              <p>Pack smart for your stay with our comprehensive packing guide tailored to the season and activities you plan to enjoy.</p>
+              <div class="packing-lists">
+                <div class="packing-list">
+                  <h4>Essentials</h4>
+                  <ul>
+                    <li>Comfortable walking shoes</li>
+                    <li>Swimwear and beach cover-up</li>
+                    <li>Sunglasses and sun hat</li>
+                    <li>Lightweight clothing</li>
+                    <li>Camera or smartphone</li>
+                  </ul>
+                </div>
+                <div class="packing-list">
+                  <h4>For Dining</h4>
+                  <ul>
+                    <li>Smart casual attire</li>
+                    <li>Dress shoes</li>
+                    <li>Light jacket or shawl</li>
+                    <li>Accessories for evening wear</li>
+                  </ul>
+                </div>
+                <div class="packing-list">
+                  <h4>For Activities</h4>
+                  <ul>
+                    <li>Hiking boots (if planning outdoor activities)</li>
+                    <li>Water shoes</li>
+                    <li>Reusable water bottle</li>
+                    <li>Backpack for day trips</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-signup">
+      <div class="container">
+        <div class="newsletter-content">
+          <div class="newsletter-text">
+            <h2>Stay Updated</h2>
+            <p>Get the latest travel tips, local insights, and exclusive offers delivered to your inbox</p>
+          </div>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Enter your email address" />
+            <button class="btn btn-primary">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Hotel Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Grand Vista Resort</span>
+              </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="facebook"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
+            </ul>
+          </div>
+
+          <!-- Guest Services -->
+          <div class="footer-section">
+            <h3>Guest Services</h3>
+            <ul>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-section">
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="blog.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

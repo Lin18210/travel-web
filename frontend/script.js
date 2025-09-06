@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     lucide.createIcons();
   }
 
+  // Initialize social media integration
+  initializeSocialMedia();
+
   // Navigation functionality
   const navButtons = document.querySelectorAll(".nav-btn");
   navButtons.forEach((btn) => {
@@ -434,4 +437,202 @@ document.addEventListener("DOMContentLoaded", function () {
     card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
     observer.observe(card);
   });
+});
+
+// Social Media Integration Functions
+function initializeSocialMedia() {
+  // Add social sharing buttons to pages
+  addSocialSharingButtons();
+  
+  // Initialize social media widgets
+  initializeSocialWidgets();
+  
+  // Add social media event tracking
+  initializeSocialTracking();
+}
+
+function addSocialSharingButtons() {
+  // Create social sharing container
+  const socialContainer = document.createElement('div');
+  socialContainer.className = 'social-sharing-container';
+  socialContainer.innerHTML = `
+    <div class="social-sharing">
+      <h4>Share this page</h4>
+      <div class="social-buttons">
+        <button class="social-share-btn facebook" onclick="shareOnFacebook()" aria-label="Share on Facebook">
+          <i data-lucide="facebook"></i>
+          <span>Facebook</span>
+        </button>
+        <button class="social-share-btn twitter" onclick="shareOnTwitter()" aria-label="Share on Twitter">
+          <i data-lucide="twitter"></i>
+          <span>Twitter</span>
+        </button>
+        <button class="social-share-btn linkedin" onclick="shareOnLinkedIn()" aria-label="Share on LinkedIn">
+          <i data-lucide="linkedin"></i>
+          <span>LinkedIn</span>
+        </button>
+        <button class="social-share-btn whatsapp" onclick="shareOnWhatsApp()" aria-label="Share on WhatsApp">
+          <i data-lucide="message-circle"></i>
+          <span>WhatsApp</span>
+        </button>
+        <button class="social-share-btn email" onclick="shareViaEmail()" aria-label="Share via Email">
+          <i data-lucide="mail"></i>
+          <span>Email</span>
+        </button>
+      </div>
+    </div>
+  `;
+  
+  // Add to main content area
+  const mainContent = document.querySelector('#main-content') || document.querySelector('.destinations');
+  if (mainContent) {
+    mainContent.appendChild(socialContainer);
+  }
+  
+  // Re-initialize icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+}
+
+function initializeSocialWidgets() {
+  // Add social media follow buttons to footer
+  const footerSocialIcons = document.querySelectorAll('.social-icons .social-btn');
+  footerSocialIcons.forEach(icon => {
+    icon.addEventListener('click', function() {
+      const platform = this.querySelector('i').getAttribute('data-lucide');
+      openSocialProfile(platform);
+    });
+  });
+}
+
+function initializeSocialTracking() {
+  // Track social media interactions
+  const socialButtons = document.querySelectorAll('.social-share-btn, .social-btn');
+  socialButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const platform = this.classList.contains('social-share-btn') 
+        ? this.classList[1] 
+        : this.querySelector('i').getAttribute('data-lucide');
+      
+      // Track social interaction (in real implementation, send to analytics)
+      console.log(`Social interaction: ${platform}`);
+      
+      // Example: Send to Google Analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'social_interaction', {
+          'social_network': platform,
+          'social_action': 'share',
+          'social_target': window.location.href
+        });
+      }
+    });
+  });
+}
+
+// Social Sharing Functions
+function shareOnFacebook() {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+  const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${title}`;
+  openSocialWindow(facebookUrl, 'Facebook');
+}
+
+function shareOnTwitter() {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+  const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+  openSocialWindow(twitterUrl, 'Twitter');
+}
+
+function shareOnLinkedIn() {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+  openSocialWindow(linkedinUrl, 'LinkedIn');
+}
+
+function shareOnWhatsApp() {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+  const whatsappUrl = `https://wa.me/?text=${title}%20${url}`;
+  openSocialWindow(whatsappUrl, 'WhatsApp');
+}
+
+function shareViaEmail() {
+  const url = window.location.href;
+  const title = document.title;
+  const subject = encodeURIComponent(`Check out: ${title}`);
+  const body = encodeURIComponent(`I thought you might be interested in this: ${title}\n\n${url}`);
+  const emailUrl = `mailto:?subject=${subject}&body=${body}`;
+  window.location.href = emailUrl;
+}
+
+function openSocialWindow(url, platform) {
+  const width = 600;
+  const height = 400;
+  const left = (screen.width - width) / 2;
+  const top = (screen.height - height) / 2;
+  
+  const windowFeatures = `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`;
+  
+  window.open(url, platform, windowFeatures);
+}
+
+function openSocialProfile(platform) {
+  const profiles = {
+    'facebook': 'https://www.facebook.com/grandvistaresort',
+    'instagram': 'https://www.instagram.com/grandvistaresort',
+    'youtube': 'https://www.youtube.com/grandvistaresort',
+    'twitter': 'https://www.twitter.com/grandvistaresort',
+    'linkedin': 'https://www.linkedin.com/company/grandvistaresort'
+  };
+  
+  const profileUrl = profiles[platform];
+  if (profileUrl) {
+    window.open(profileUrl, '_blank');
+  }
+}
+
+// Trust Elements and Social Proof
+function addTrustElements() {
+  // Add trust badges to the page
+  const trustContainer = document.createElement('div');
+  trustContainer.className = 'trust-elements';
+  trustContainer.innerHTML = `
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <i data-lucide="shield-check"></i>
+        <span>Secure Booking</span>
+      </div>
+      <div class="trust-badge">
+        <i data-lucide="award"></i>
+        <span>5-Star Rated</span>
+      </div>
+      <div class="trust-badge">
+        <i data-lucide="users"></i>
+        <span>10,000+ Happy Guests</span>
+      </div>
+      <div class="trust-badge">
+        <i data-lucide="clock"></i>
+        <span>24/7 Support</span>
+      </div>
+    </div>
+  `;
+  
+  // Add to hero section
+  const heroSection = document.querySelector('.hero');
+  if (heroSection) {
+    heroSection.appendChild(trustContainer);
+  }
+  
+  // Re-initialize icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+}
+
+// Initialize trust elements when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  addTrustElements();
 });

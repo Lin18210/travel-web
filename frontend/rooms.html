@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rooms & Suites - Grand Vista Resort</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="rooms.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html" class="active">Rooms & Suites</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="spa.html">Spa & Wellness</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js (user menu when logged in) -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Luxury Rooms & Suites</h1>
+          <p>Experience unparalleled comfort and elegance in our beautifully appointed accommodations</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Room Categories -->
+    <section class="room-categories">
+      <div class="container">
+        <div class="section-header">
+          <h2>Choose Your Perfect Accommodation</h2>
+          <p>From intimate guest rooms to expansive presidential suites, find your ideal retreat</p>
+        </div>
+
+        <!-- Deluxe Ocean View -->
+        <div class="room-card">
+          <div class="room-image">
+            <img src="assets/home/seaside.jpg" alt="Deluxe Ocean View Room" />
+            <div class="room-badge">Most Popular</div>
+          </div>
+          <div class="room-content">
+            <div class="room-header">
+              <h3>Deluxe Ocean View</h3>
+              <div class="room-price">
+                <span class="price">$299</span>
+                <span class="period">per night</span>
+              </div>
+            </div>
+            <p class="room-description">
+              Wake up to breathtaking ocean views in our elegantly appointed deluxe rooms. 
+              Featuring premium amenities, marble bathrooms, and private balconies.
+            </p>
+            <div class="room-amenities">
+              <div class="amenity">
+                <i data-lucide="wifi"></i>
+                <span>Free WiFi</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="tv"></i>
+                <span>Smart TV</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="coffee"></i>
+                <span>Mini Bar</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="wind"></i>
+                <span>Air Conditioning</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="shield"></i>
+                <span>Safe</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="waves"></i>
+                <span>Ocean View</span>
+              </div>
+            </div>
+            <div class="room-actions">
+              <button class="btn btn-outline">View Details</button>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Presidential Suite -->
+        <div class="room-card">
+          <div class="room-image">
+            <img src="assets/home/moutain2.jpg" alt="Presidential Suite" />
+            <div class="room-badge premium">Premium</div>
+          </div>
+          <div class="room-content">
+            <div class="room-header">
+              <h3>Presidential Suite</h3>
+              <div class="room-price">
+                <span class="price">$899</span>
+                <span class="period">per night</span>
+              </div>
+            </div>
+            <p class="room-description">
+              The ultimate in luxury living. Our presidential suite features separate living and dining areas, 
+              a private terrace, and panoramic views of the resort and ocean.
+            </p>
+            <div class="room-amenities">
+              <div class="amenity">
+                <i data-lucide="home"></i>
+                <span>Separate Living Room</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="utensils"></i>
+                <span>Dining Area</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="users"></i>
+                <span>Butler Service</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="car"></i>
+                <span>Private Parking</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="sparkles"></i>
+                <span>Premium Amenities</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="mountain"></i>
+                <span>Mountain & Ocean Views</span>
+              </div>
+            </div>
+            <div class="room-actions">
+              <button class="btn btn-outline">View Details</button>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garden Villa -->
+        <div class="room-card">
+          <div class="room-image">
+            <img src="assets/home/forest.jpeg" alt="Garden Villa" />
+          </div>
+          <div class="room-content">
+            <div class="room-header">
+              <h3>Garden Villa</h3>
+              <div class="room-price">
+                <span class="price">$499</span>
+                <span class="period">per night</span>
+              </div>
+            </div>
+            <p class="room-description">
+              Immerse yourself in tropical paradise with our garden villas. Featuring private gardens, 
+              outdoor showers, and direct access to the resort's lush landscapes.
+            </p>
+            <div class="room-amenities">
+              <div class="amenity">
+                <i data-lucide="tree-pine"></i>
+                <span>Private Garden</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="droplets"></i>
+                <span>Outdoor Shower</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="sun"></i>
+                <span>Sun Deck</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="leaf"></i>
+                <span>Garden Views</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="wifi"></i>
+                <span>Free WiFi</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="coffee"></i>
+                <span>Mini Bar</span>
+              </div>
+            </div>
+            <div class="room-actions">
+              <button class="btn btn-outline">View Details</button>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Family Suite -->
+        <div class="room-card">
+          <div class="room-image">
+            <img src="assets/home/countryside.jpg" alt="Family Suite" />
+            <div class="room-badge family">Family Friendly</div>
+          </div>
+          <div class="room-content">
+            <div class="room-header">
+              <h3>Family Suite</h3>
+              <div class="room-price">
+                <span class="price">$399</span>
+                <span class="period">per night</span>
+              </div>
+            </div>
+            <p class="room-description">
+              Perfect for families, our spacious suites feature separate bedrooms, a living area, 
+              and child-friendly amenities to ensure everyone's comfort.
+            </p>
+            <div class="room-amenities">
+              <div class="amenity">
+                <i data-lucide="bed"></i>
+                <span>Two Bedrooms</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="home"></i>
+                <span>Living Area</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="baby"></i>
+                <span>Child Amenities</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="wifi"></i>
+                <span>Free WiFi</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="tv"></i>
+                <span>Smart TV</span>
+              </div>
+              <div class="amenity">
+                <i data-lucide="mountain"></i>
+                <span>Mountain Views</span>
+              </div>
+            </div>
+            <div class="room-actions">
+              <button class="btn btn-outline">View Details</button>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Room Packages -->
+    <section class="packages">
+      <div class="container">
+        <div class="section-header">
+          <h2>Special Packages</h2>
+          <p>Enhance your stay with our curated packages designed for every occasion</p>
+        </div>
+        <div class="packages-grid">
+          <div class="package-card">
+            <div class="package-icon">
+              <i data-lucide="heart"></i>
+            </div>
+            <h3>Romantic Getaway</h3>
+            <p>Perfect for couples seeking a romantic escape with champagne, rose petals, and couples spa treatment.</p>
+            <ul class="package-features">
+              <li>Champagne welcome</li>
+              <li>Rose petal turndown</li>
+              <li>Couples spa treatment</li>
+              <li>Private dinner setup</li>
+            </ul>
+            <div class="package-price">+$150 per night</div>
+          </div>
+          <div class="package-card">
+            <div class="package-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Family Fun</h3>
+            <p>Everything families need for an unforgettable vacation with activities and amenities for all ages.</p>
+            <ul class="package-features">
+              <li>Kids club access</li>
+              <li>Family activities</li>
+              <li>Childcare services</li>
+              <li>Family dining credits</li>
+            </ul>
+            <div class="package-price">+$100 per night</div>
+          </div>
+          <div class="package-card">
+            <div class="package-icon">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <h3>Business Traveler</h3>
+            <p>Designed for business guests with meeting facilities, high-speed internet, and convenient services.</p>
+            <ul class="package-features">
+              <li>Meeting room access</li>
+              <li>High-speed internet</li>
+              <li>Business center</li>
+              <li>Express check-in/out</li>
+            </ul>
+            <div class="package-price">+$75 per night</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities Overview -->
+    <section class="amenities-overview">
+      <div class="container">
+        <div class="section-header">
+          <h2>Room Amenities</h2>
+          <p>Every room includes these premium amenities for your comfort and convenience</p>
+        </div>
+        <div class="amenities-grid">
+          <div class="amenity-category">
+            <h3>Technology</h3>
+            <ul>
+              <li><i data-lucide="wifi"></i> Complimentary WiFi</li>
+              <li><i data-lucide="tv"></i> Smart TV with streaming</li>
+              <li><i data-lucide="smartphone"></i> USB charging ports</li>
+              <li><i data-lucide="bluetooth"></i> Bluetooth speakers</li>
+            </ul>
+          </div>
+          <div class="amenity-category">
+            <h3>Comfort</h3>
+            <ul>
+              <li><i data-lucide="bed"></i> Premium bedding</li>
+              <li><i data-lucide="wind"></i> Climate control</li>
+              <li><i data-lucide="coffee"></i> Mini bar</li>
+              <li><i data-lucide="moon"></i> Blackout curtains</li>
+            </ul>
+          </div>
+          <div class="amenity-category">
+            <h3>Bathroom</h3>
+            <ul>
+              <li><i data-lucide="droplets"></i> Rain shower</li>
+              <li><i data-lucide="sparkles"></i> Premium toiletries</li>
+              <li><i data-lucide="wind"></i> Hair dryer</li>
+              <li><i data-lucide="bath"></i> Deep soaking tub</li>
+            </ul>
+          </div>
+          <div class="amenity-category">
+            <h3>Services</h3>
+            <ul>
+              <li><i data-lucide="truck"></i> Room service</li>
+              <li><i data-lucide="shirt"></i> Laundry service</li>
+              <li><i data-lucide="shield"></i> In-room safe</li>
+              <li><i data-lucide="clock"></i> Turndown service</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Book Your Stay?</h2>
+          <p>
+            Experience the luxury and comfort of Grand Vista Resort. 
+            Book your perfect room today and create memories that will last a lifetime.
+          </p>
+          <div class="cta-buttons">
+            <a href="booking.html" class="btn btn-primary">Book Now</a>
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Hotel Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Grand Vista Resort</span>
+              </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="facebook"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
+            </ul>
+          </div>
+
+          <!-- Guest Services -->
+          <div class="footer-section">
+            <h3>Guest Services</h3>
+            <ul>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-section">
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

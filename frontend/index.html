@@ -3,31 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Find Your Perfect Stay</title>
+    <title>Grand Vista Resort - Luxury Hotel & Resort | Your Perfect Getaway Awaits</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Experience luxury hospitality at Grand Vista Resort. World-class amenities, fine dining, spa services, and stunning ocean views. Book your perfect getaway today." />
+    <meta name="keywords" content="luxury hotel, resort, spa, fine dining, ocean view, vacation, getaway, hospitality, grand vista resort" />
+    <meta name="author" content="Grand Vista Resort" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en-US" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Grand Vista Resort - Luxury Hotel & Resort" />
+    <meta property="og:description" content="Experience luxury hospitality at Grand Vista Resort. World-class amenities, fine dining, spa services, and stunning ocean views." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://grandvistaresort.com" />
+    <meta property="og:image" content="https://grandvistaresort.com/assets/home/moutain2.jpg" />
+    <meta property="og:site_name" content="Grand Vista Resort" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Grand Vista Resort - Luxury Hotel & Resort" />
+    <meta name="twitter:description" content="Experience luxury hospitality at Grand Vista Resort. World-class amenities, fine dining, spa services, and stunning ocean views." />
+    <meta name="twitter:image" content="https://grandvistaresort.com/assets/home/moutain2.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://grandvistaresort.com" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Grand Vista Resort",
+      "description": "Luxury hotel and resort offering world-class amenities, fine dining, spa services, and stunning ocean views.",
+      "url": "https://grandvistaresort.com",
+      "telephone": "+1-555-123-4567",
+      "email": "info@grandvistaresort.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Paradise Drive",
+        "addressLocality": "Resort City",
+        "addressRegion": "RC",
+        "postalCode": "12345",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "25.7617",
+        "longitude": "-80.1918"
+      },
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Spa",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Fitness Center",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Pool",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Restaurant",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "WiFi",
+          "value": true
+        }
+      ],
+      "image": [
+        "https://grandvistaresort.com/assets/home/moutain2.jpg",
+        "https://grandvistaresort.com/assets/home/oceanfront1.jpg",
+        "https://grandvistaresort.com/assets/home/urban1.jpg"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/grandvistaresort",
+        "https://www.instagram.com/grandvistaresort",
+        "https://www.twitter.com/grandvistaresort"
+      ]
+    }
+    </script>
   </head>
   <body>
+    <!-- Skip to content link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header -->
-    <header class="header">
+    <header class="header" role="banner">
       <nav class="nav">
         <div class="nav-brand">
-          <h1><a href="index.html" style="text-decoration: none; color: blue;">TravelBooking</a></h1>
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
         </div>
         <button class="nav-toggle" aria-label="Toggle navigation">
           <span class="hamburger"></span>
           <span class="hamburger"></span>
           <span class="hamburger"></span>
         </button>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="explore.html">Explore</a></li>
-          <li><a href="experience.html">Experiences</a></li>
-          <li><a href="attractions.html">Attractions</a></li>
-          <li><a href="reviews.html">Reviews</a></li>
+        <ul class="nav-menu" role="menubar">
+          <li role="none"><a href="index.html" role="menuitem" aria-current="page">Home</a></li>
+          <li role="none"><a href="rooms.html" role="menuitem">Rooms & Suites</a></li>
+          <li role="none"><a href="dining.html" role="menuitem">Dining</a></li>
+          <li role="none"><a href="spa.html" role="menuitem">Spa & Wellness</a></li>
+          <li role="none"><a href="events.html" role="menuitem">Events</a></li>
+          <li role="none"><a href="about.html" role="menuitem">About Us</a></li>
+          <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
         </ul>
         <div class="nav-icons">
           <!-- Will be populated by auth.js (user menu when logged in) -->
@@ -36,32 +138,43 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" role="banner" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero-content">
-          <h1 class="hero-title">Find Your Perfect Stay</h1>
+          <h1 class="hero-title" id="hero-title">Welcome to Grand Vista Resort</h1>
           <p class="hero-subtitle">
-            Explore homes and experiences in 190+ countries
+            Experience luxury hospitality in the heart of paradise. Your perfect getaway awaits.
           </p>
 
-          <!-- Search Form -->
-          <div class="search-form">
+          <!-- Quick Booking Form -->
+          <form class="search-form" role="search" aria-label="Hotel booking search">
             <div class="search-field">
-              <i data-lucide="map-pin"></i>
-              <input type="text" placeholder="Location" />
+              <label for="checkin-date" class="sr-only">Check-in Date</label>
+              <i data-lucide="calendar" aria-hidden="true"></i>
+              <input type="date" id="checkin-date" name="checkin" placeholder="Check-in Date" required aria-label="Select check-in date" />
             </div>
             <div class="search-field">
-              <i data-lucide="calendar"></i>
-              <input type="date" value="2025-08-17" />
+              <label for="checkout-date" class="sr-only">Check-out Date</label>
+              <i data-lucide="calendar" aria-hidden="true"></i>
+              <input type="date" id="checkout-date" name="checkout" placeholder="Check-out Date" required aria-label="Select check-out date" />
             </div>
             <div class="search-field">
-              <i data-lucide="users"></i>
-              <input type="text" placeholder="Guests" />
+              <label for="guests" class="sr-only">Number of Guests</label>
+              <i data-lucide="users" aria-hidden="true"></i>
+              <select id="guests" name="guests" class="form-select" required aria-label="Select number of guests">
+                <option value="">Guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5+">5+ Guests</option>
+              </select>
             </div>
-            <button class="search-btn">
-              <i data-lucide="search"></i>
+            <button type="submit" class="search-btn" aria-label="Search for available rooms">
+              <i data-lucide="search" aria-hidden="true"></i>
+              Check Availability
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </section>
@@ -86,16 +199,21 @@
       </div>
     </section>
 
-    <!-- Destinations Grid -->
-    <section class="destinations">
+    <!-- Hotel Amenities & Services -->
+    <section class="destinations" id="main-content" role="main" aria-labelledby="amenities-title">
       <div class="container">
+        <div class="section-header">
+          <h2 id="amenities-title">Luxury Amenities & Services</h2>
+          <p>Discover the exceptional facilities that make your stay unforgettable</p>
+        </div>
+        
         <!-- First Row -->
         <div class="destinations-grid">
-          <div class="destination-card" data-destination="alpine" onclick="redirectToExplore('alpine')">
+          <div class="destination-card" data-destination="rooms" onclick="window.location.href='rooms.html'">
             <div class="card-image">
               <img
                 src="assets/home/moutain2.jpg"
-                alt="Alpine Dreamscapes - Snow-capped mountain lodge"
+                alt="Luxury Suites - Elegant accommodation with stunning views"
                 class="destination-img"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
@@ -111,19 +229,18 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Alpine Dreamscapes</h3>
+              <h3>Luxury Suites</h3>
               <p>
-                Wake up to snow-capped peaks, crackling fireplaces, and the
-                crisp scent of pine. Your mountain retreat awaits.
+                Elegantly appointed rooms and suites with breathtaking views, premium amenities, and personalized service.
               </p>
             </div>
           </div>
 
-          <div class="destination-card" data-destination="seaside" onclick="redirectToExplore('seaside')">
+          <div class="destination-card" data-destination="dining" onclick="window.location.href='dining.html'">
             <div class="card-image">
               <img
                 src="assets/home/seaside.jpg"
-                alt="Seaside Serenity - Tropical beach villa"
+                alt="Fine Dining - World-class culinary experiences"
                 class="destination-img"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
@@ -139,19 +256,18 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Seaside Serenity</h3>
+              <h3>Fine Dining</h3>
               <p>
-                Powdery sands, turquoise waves, and endless sunsets—where every
-                day feels like a postcard.
+                Award-winning restaurants featuring world-class cuisine, fresh local ingredients, and exceptional service.
               </p>
             </div>
           </div>
 
-          <div class="destination-card" data-destination="metropolitan" onclick="redirectToExplore('metropolitan')">
+          <div class="destination-card" data-destination="spa" onclick="window.location.href='spa.html'">
             <div class="card-image">
               <img
                 src="assets/explore/metro1.jpeg"
-                alt="Metropolitan Magic - Modern city penthouse"
+                alt="Spa & Wellness - Rejuvenating treatments and relaxation"
                 class="destination-img"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
@@ -167,19 +283,18 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Metropolitan Magic</h3>
+              <h3>Spa & Wellness</h3>
               <p>
-                Neon lights, rooftop cocktails, and hidden gems—experience the
-                pulse of the city that never sleeps.
+                Indulge in luxurious spa treatments, state-of-the-art fitness facilities, and wellness programs.
               </p>
             </div>
           </div>
 
-          <div class="destination-card" data-destination="desert" onclick="redirectToExplore('desert')">
+          <div class="destination-card" data-destination="pool" onclick="window.location.href='amenities.html'">
             <div class="card-image">
               <img
                 src="assets/home/desert.jpg"
-                alt="Sands of Solitude - Desert luxury camp"
+                alt="Pool & Recreation - Infinity pools and recreational facilities"
                 class="destination-img"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
@@ -195,10 +310,9 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Sands of Solitude</h3>
+              <h3>Pool & Recreation</h3>
               <p>
-                Golden dunes, starlit skies, and tranquil silence—find peace in
-                the heart of the desert.
+                Infinity pools, water sports, tennis courts, and recreational activities for all ages.
               </p>
             </div>
           </div>
@@ -206,11 +320,11 @@
 
         <!-- Second Row -->
         <div class="destinations-grid">
-          <div class="destination-card" data-destination="forest" onclick="redirectToExplore('forest')">
+          <div class="destination-card" data-destination="events" onclick="window.location.href='events.html'">
             <div class="card-image">
               <img
                 src="assets/home/forest.jpeg"
-                alt="Forest Haven - Peaceful woodland escape"
+                alt="Events & Weddings - Perfect venues for special occasions"
                 class="destination-img"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
@@ -226,18 +340,18 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Forest Haven</h3>
+              <h3>Events & Weddings</h3>
               <p>
-                Whispering pines, misty trails, and the soothing sounds of nature—your peaceful woodland escape awaits.
+                Stunning venues for weddings, conferences, and special events with professional event planning services.
               </p>
             </div>
           </div>
 
-          <div class="destination-card" data-destination="coastal" onclick="redirectToExplore('coastal')">
+          <div class="destination-card" data-destination="golf" onclick="window.location.href='golf.html'">
             <div class="card-image">
               <img
                 src="assets/home/coast.jpeg"
-                alt="Coastal Charm - Oceanfront cottage retreat"
+                alt="Championship Golf - World-class golf course"
                 class="destination-img"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
@@ -253,18 +367,18 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Coastal Charm</h3>
+              <h3>Championship Golf</h3>
               <p>
-                Charming cottages, salty breezes, and oceanfront views—feel the rhythm of the sea in every moment.
+                Play on our championship golf course designed by renowned architects with stunning ocean views.
               </p>
             </div>
           </div>
 
-          <div class="destination-card" data-destination="countryside" onclick="redirectToExplore('countryside')">
+          <div class="destination-card" data-destination="beach" onclick="window.location.href='beach.html'">
             <div class="card-image">
               <img
                 src="assets/home/countryside.jpg"
-                alt="Countryside Bliss - Rolling hills and meadows"
+                alt="Private Beach - Exclusive beach access and water activities"
                 class="destination-img"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
@@ -280,18 +394,18 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Countryside Bliss</h3>
+              <h3>Private Beach</h3>
               <p>
-                Rolling hills, blooming meadows, and rustic comfort—unplug and unwind in the heart of the countryside.
+                Exclusive access to pristine beaches with water sports, beach service, and private cabanas.
               </p>
             </div>
           </div>
 
-          <div class="destination-card" data-destination="tropical" onclick="redirectToExplore('tropical')">
+          <div class="destination-card" data-destination="concierge" onclick="window.location.href='concierge.html'">
             <div class="card-image">
               <img
                 src="assets/home/tropical.jpeg"
-                alt="Tropical Tranquility - Island paradise"
+                alt="Concierge Services - Personalized assistance and local experiences"
                 class="destination-img"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
@@ -307,24 +421,27 @@
               </div>
             </div>
             <div class="card-content">
-              <h3>Tropical Tranquility</h3>
+              <h3>Concierge Services</h3>
               <p>
-                Swaying palms, crystal-clear waters, and sun-kissed sands—your island paradise is calling.
+                Personalized assistance with reservations, local experiences, transportation, and special requests.
               </p>
             </div>
           </div>
         </div>
         <div class="footer-content">
-          <!-- Company Info -->
+          <!-- Hotel Info -->
           <div class="footer-section">
             <div class="company-info">
               <div class="company-logo">
                 <div class="logo-icon"></div>
-                <span>Company</span>
+                <span>Grand Vista Resort</span>
               </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
               <div class="social-icons">
                 <button class="social-btn">
-                  <i data-lucide="twitter"></i>
+                  <i data-lucide="facebook"></i>
                 </button>
                 <button class="social-btn">
                   <i data-lucide="instagram"></i>
@@ -333,55 +450,53 @@
                   <i data-lucide="youtube"></i>
                 </button>
                 <button class="social-btn">
-                  <i data-lucide="linkedin"></i>
+                  <i data-lucide="twitter"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- About -->
+          <!-- Quick Links -->
           <div class="footer-section">
-            <h3>About</h3>
+            <h3>Quick Links</h3>
             <ul>
-              <li><a href="#">UX design</a></li>
-              <li><a href="#">Wireframing</a></li>
-              <li><a href="#">Diagramming</a></li>
-              <li><a href="#">Brainstorming</a></li>
-              <li><a href="#">Online whiteboard</a></li>
-              <li><a href="#">Team collaboration</a></li>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
             </ul>
           </div>
 
-          <!-- Careers -->
+          <!-- Guest Services -->
           <div class="footer-section">
-            <h3>Careers</h3>
+            <h3>Guest Services</h3>
             <ul>
-              <li><a href="#">Prototyping</a></li>
-              <li><a href="#">Development features</a></li>
-              <li><a href="#">Design systems</a></li>
-              <li><a href="#">Collaboration features</a></li>
-              <li><a href="#">Design process</a></li>
-              <li><a href="#">FigJam</a></li>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
             </ul>
           </div>
 
-          <!-- Help & Map -->
+          <!-- Contact & Newsletter -->
           <div class="footer-section">
-            <div class="help-section">
-              <h3>Help</h3>
-              <ul>
-                <li><a href="#">Best practices</a></li>
-                <li><a href="#">Colors</a></li>
-                <li><a href="#">Color wheel</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Developers</a></li>
-                <li><a href="#">Resource library</a></li>
-              </ul>
-            </div>
-            <div class="map-section">
-              <div class="map-link">
-                <i data-lucide="map-pin"></i>
-                <span>Map</span>
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
               </div>
             </div>
           </div>

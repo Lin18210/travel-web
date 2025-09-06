@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Grand Vista Resort</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="gallery.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms & Suites</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="spa.html">Spa & Wellness</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js (user menu when logged in) -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Gallery</h1>
+          <p>Explore the beauty and luxury of Grand Vista Resort through our stunning visual collection</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Navigation -->
+    <section class="gallery-nav">
+      <div class="container">
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="rooms">Rooms & Suites</button>
+          <button class="filter-btn" data-filter="dining">Dining</button>
+          <button class="filter-btn" data-filter="spa">Spa & Wellness</button>
+          <button class="filter-btn" data-filter="beach">Beach & Pool</button>
+          <button class="filter-btn" data-filter="events">Events</button>
+          <button class="filter-btn" data-filter="landscape">Landscape</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Virtual Tour Section -->
+    <section class="virtual-tour">
+      <div class="container">
+        <div class="tour-content">
+          <div class="tour-text">
+            <h2>360° Virtual Tour</h2>
+            <p class="lead">
+              Experience Grand Vista Resort from anywhere in the world with our immersive virtual tour. 
+              Explore our facilities, rooms, and breathtaking views in stunning detail.
+            </p>
+            <div class="tour-features">
+              <div class="feature">
+                <i data-lucide="eye"></i>
+                <span>360° Views</span>
+              </div>
+              <div class="feature">
+                <i data-lucide="navigation"></i>
+                <span>Interactive Navigation</span>
+              </div>
+              <div class="feature">
+                <i data-lucide="smartphone"></i>
+                <span>Mobile Optimized</span>
+              </div>
+              <div class="feature">
+                <i data-lucide="headphones"></i>
+                <span>Audio Commentary</span>
+              </div>
+            </div>
+            <button class="btn btn-primary">Start Virtual Tour</button>
+          </div>
+          <div class="tour-preview">
+            <div class="tour-placeholder">
+              <i data-lucide="play-circle"></i>
+              <span>Click to Start Virtual Tour</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+      <div class="container">
+        <div class="gallery-grid">
+          <!-- Rooms & Suites -->
+          <div class="gallery-item" data-category="rooms">
+            <div class="gallery-image">
+              <img src="assets/home/moutain2.jpg" alt="Luxury Suite with Mountain View" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Presidential Suite</h3>
+                  <p>Panoramic mountain and ocean views</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="rooms">
+            <div class="gallery-image">
+              <img src="assets/home/seaside.jpg" alt="Ocean View Room" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Ocean View Room</h3>
+                  <p>Wake up to breathtaking ocean views</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="rooms">
+            <div class="gallery-image">
+              <img src="assets/home/forest.jpeg" alt="Garden Villa" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Garden Villa</h3>
+                  <p>Private garden and outdoor living</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dining -->
+          <div class="gallery-item" data-category="dining">
+            <div class="gallery-image">
+              <img src="assets/home/urban.jpg" alt="Ocean Terrace Restaurant" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Ocean Terrace</h3>
+                  <p>Fine dining with ocean views</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="dining">
+            <div class="gallery-image">
+              <img src="assets/home/tropical.jpeg" alt="Beachside Bistro" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Beachside Bistro</h3>
+                  <p>Casual dining by the beach</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="dining">
+            <div class="gallery-image">
+              <img src="assets/home/countryside.jpg" alt="Garden Café" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Garden Café</h3>
+                  <p>Breakfast in tropical gardens</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spa & Wellness -->
+          <div class="gallery-item" data-category="spa">
+            <div class="gallery-image">
+              <img src="assets/home/desert.jpg" alt="Spa Treatment Room" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Spa Treatment Room</h3>
+                  <p>Luxurious wellness treatments</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="spa">
+            <div class="gallery-image">
+              <img src="assets/home/moutain3.jpg" alt="Fitness Center" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Fitness Center</h3>
+                  <p>State-of-the-art equipment</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Beach & Pool -->
+          <div class="gallery-item" data-category="beach">
+            <div class="gallery-image">
+              <img src="assets/home/coast.jpeg" alt="Infinity Pool" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Infinity Pool</h3>
+                  <p>Stunning ocean views</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="beach">
+            <div class="gallery-image">
+              <img src="assets/home/seaside.jpg" alt="Private Beach" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Private Beach</h3>
+                  <p>Exclusive beach access</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Events -->
+          <div class="gallery-item" data-category="events">
+            <div class="gallery-image">
+              <img src="assets/home/urban2.jpg" alt="Wedding Venue" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Wedding Venue</h3>
+                  <p>Perfect for special occasions</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="events">
+            <div class="gallery-image">
+              <img src="assets/home/moutain4.jpg" alt="Conference Center" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Conference Center</h3>
+                  <p>Business meetings and events</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Landscape -->
+          <div class="gallery-item" data-category="landscape">
+            <div class="gallery-image">
+              <img src="assets/home/moutain.jpg" alt="Mountain Views" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Mountain Views</h3>
+                  <p>Breathtaking natural beauty</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="landscape">
+            <div class="gallery-image">
+              <img src="assets/home/forest.jpeg" alt="Tropical Gardens" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Tropical Gardens</h3>
+                  <p>Lush, exotic landscapes</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="landscape">
+            <div class="gallery-image">
+              <img src="assets/home/tropical.jpeg" alt="Sunset Views" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Sunset Views</h3>
+                  <p>Spectacular evening skies</p>
+                </div>
+                <button class="gallery-btn">
+                  <i data-lucide="maximize"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Gallery -->
+    <section class="video-gallery">
+      <div class="container">
+        <div class="section-header">
+          <h2>Video Gallery</h2>
+          <p>Watch our resort come to life through these stunning videos</p>
+        </div>
+        <div class="video-grid">
+          <div class="video-item">
+            <div class="video-thumbnail">
+              <img src="assets/home/moutain2.jpg" alt="Resort Overview Video" />
+              <div class="video-overlay">
+                <button class="play-btn">
+                  <i data-lucide="play"></i>
+                </button>
+                <div class="video-info">
+                  <h3>Resort Overview</h3>
+                  <p>2:30 min</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="video-item">
+            <div class="video-thumbnail">
+              <img src="assets/home/seaside.jpg" alt="Dining Experience Video" />
+              <div class="video-overlay">
+                <button class="play-btn">
+                  <i data-lucide="play"></i>
+                </button>
+                <div class="video-info">
+                  <h3>Dining Experience</h3>
+                  <p>1:45 min</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="video-item">
+            <div class="video-thumbnail">
+              <img src="assets/home/forest.jpeg" alt="Spa & Wellness Video" />
+              <div class="video-overlay">
+                <button class="play-btn">
+                  <i data-lucide="play"></i>
+                </button>
+                <div class="video-info">
+                  <h3>Spa & Wellness</h3>
+                  <p>2:15 min</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+      <div class="lightbox-content">
+        <button class="lightbox-close">
+          <i data-lucide="x"></i>
+        </button>
+        <button class="lightbox-prev">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        <button class="lightbox-next">
+          <i data-lucide="chevron-right"></i>
+        </button>
+        <div class="lightbox-image-container">
+          <img id="lightboxImage" src="" alt="" />
+          <div class="lightbox-info">
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxDescription"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Experience the Beauty Firsthand</h2>
+          <p>
+            These images only capture a glimpse of the magic that awaits you at Grand Vista Resort. 
+            Book your stay today and create your own unforgettable memories.
+          </p>
+          <div class="cta-buttons">
+            <a href="booking.html" class="btn btn-primary">Book Your Stay</a>
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Hotel Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Grand Vista Resort</span>
+              </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="facebook"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
+            </ul>
+          </div>
+
+          <!-- Guest Services -->
+          <div class="footer-section">
+            <h3>Guest Services</h3>
+            <ul>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-section">
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="gallery.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

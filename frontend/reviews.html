@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reviews & Ratings - Find Your Perfect Stay</title>
+    <title>Guest Reviews & Testimonials - Grand Vista Resort</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="reviews.css" />
     <link
@@ -16,7 +16,7 @@
     <header class="header">
       <nav class="nav">
         <div class="nav-brand">
-          <h1><a href="index.html" style="text-decoration: none; color: blue;">TravelBooking</a></h1>
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
         </div>
         <button class="nav-toggle" aria-label="Toggle navigation">
           <span class="hamburger"></span>
@@ -25,10 +25,12 @@
         </button>
         <ul class="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="explore.html">Explore</a></li>
-          <li><a href="experience.html">Experiences</a></li>
-          <li><a href="attractions.html">Attractions</a></li>
-          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="rooms.html">Rooms & Suites</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="spa.html">Spa & Wellness</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-icons">
           <!-- Will be populated by auth.js (user menu when logged in) -->
@@ -40,8 +42,32 @@
     <section class="reviews-hero">
       <div class="container">
         <div class="reviews-header">
-          <h1>Reviews & Ratings</h1>
-          <p>Read authentic traveler's experiences and share your own journey</p>
+          <h1>Guest Reviews & Testimonials</h1>
+          <p>Discover what our valued guests say about their unforgettable experiences at Grand Vista Resort</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-indicators">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <i data-lucide="award"></i>
+            <span>5-Star Luxury Resort</span>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="shield-check"></i>
+            <span>Verified Reviews</span>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="star"></i>
+            <span>4.8/5 Guest Rating</span>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="users"></i>
+            <span>10,000+ Happy Guests</span>
+          </div>
         </div>
       </div>
     </section>
@@ -51,8 +77,8 @@
       <div class="container">
         <div class="cta-card">
           <div class="cta-content">
-            <h3>Share Your Travel Experience</h3>
-            <p>Help fellow travelers by writing a review of your recent trip</p>
+            <h3>Share Your Resort Experience</h3>
+            <p>Help future guests by sharing your memorable stay at Grand Vista Resort</p>
           </div>
           <button class="btn btn-primary" id="writeReviewBtn">
             <i data-lucide="pen-tool"></i>
@@ -85,17 +111,21 @@
               <i data-lucide="list"></i>
               All Reviews
             </button>
-            <button class="filter-btn" data-category="destinations">
-              <i data-lucide="map"></i>
-              Destinations
+            <button class="filter-btn" data-category="rooms">
+              <i data-lucide="bed"></i>
+              Rooms & Suites
             </button>
-            <button class="filter-btn" data-category="experiences">
-              <i data-lucide="camera"></i>
-              Experiences
+            <button class="filter-btn" data-category="dining">
+              <i data-lucide="utensils"></i>
+              Dining
             </button>
-            <button class="filter-btn" data-category="attractions">
-              <i data-lucide="monument"></i>
-              Attractions
+            <button class="filter-btn" data-category="spa">
+              <i data-lucide="spa"></i>
+              Spa & Wellness
+            </button>
+            <button class="filter-btn" data-category="service">
+              <i data-lucide="concierge-bell"></i>
+              Service
             </button>
           </div>
 
@@ -127,19 +157,19 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-number" id="totalReviews">12,847</div>
-            <div class="stat-label">Total Reviews</div>
+            <div class="stat-number" id="totalReviews">2,847</div>
+            <div class="stat-label">Guest Reviews</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" id="averageRating">4.6</div>
+            <div class="stat-number" id="averageRating">4.8</div>
             <div class="stat-label">Average Rating</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" id="verifiedReviews">88%</div>
+            <div class="stat-number" id="verifiedReviews">95%</div>
             <div class="stat-label">Verified Reviews</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" id="monthlyReviews">1,235</div>
+            <div class="stat-number" id="monthlyReviews">156</div>
             <div class="stat-label">This Month</div>
           </div>
         </div>
@@ -191,9 +221,11 @@
               <label for="reviewType">What are you reviewing?</label>
               <select id="reviewType" class="form-select" required>
                 <option value="">Select Category</option>
-                <option value="destinations">Destination</option>
-                <option value="experiences">Experience</option>
-                <option value="attractions">Attraction</option>
+                <option value="rooms">Rooms & Suites</option>
+                <option value="dining">Dining</option>
+                <option value="spa">Spa & Wellness</option>
+                <option value="service">Service</option>
+                <option value="overall">Overall Experience</option>
               </select>
             </div>
 
@@ -235,19 +267,19 @@
               <textarea
                 id="reviewContent"
                 class="form-textarea"
-                placeholder="Share your experience with fellow travelers..."
+                placeholder="Share your experience with future guests..."
                 rows="5"
                 required
               ></textarea>
             </div>
 
             <div class="form-group">
-              <label for="reviewLocation">Location(Optional)</label>
+              <label for="reviewLocation">Room Type (Optional)</label>
               <input
                 type="text"
                 id="reviewLocation"
                 class="form-input"
-                placeholder="e.g. Paris, France"
+                placeholder="e.g. Deluxe Ocean View Suite"
               />
             </div>
 
@@ -280,16 +312,19 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <!-- Company Info -->
+          <!-- Hotel Info -->
           <div class="footer-section">
             <div class="company-info">
               <div class="company-logo">
                 <div class="logo-icon"></div>
-                <span>Company</span>
+                <span>Grand Vista Resort</span>
               </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
               <div class="social-icons">
                 <button class="social-btn">
-                  <i data-lucide="twitter"></i>
+                  <i data-lucide="facebook"></i>
                 </button>
                 <button class="social-btn">
                   <i data-lucide="instagram"></i>
@@ -298,55 +333,53 @@
                   <i data-lucide="youtube"></i>
                 </button>
                 <button class="social-btn">
-                  <i data-lucide="linkedin"></i>
+                  <i data-lucide="twitter"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- About -->
+          <!-- Quick Links -->
           <div class="footer-section">
-            <h3>About</h3>
+            <h3>Quick Links</h3>
             <ul>
-              <li><a href="#">UX design</a></li>
-              <li><a href="#">Wireframe</a></li>
-              <li><a href="#">Diagramming</a></li>
-              <li><a href="#">Brainstorming</a></li>
-              <li><a href="#">Online whiteboard</a></li>
-              <li><a href="#">Team collaboration</a></li>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
             </ul>
           </div>
 
-          <!-- Careers -->
+          <!-- Guest Services -->
           <div class="footer-section">
-            <h3>Careers</h3>
+            <h3>Guest Services</h3>
             <ul>
-              <li><a href="#">Prototyping</a></li>
-              <li><a href="#">Development features</a></li>
-              <li><a href="#">Design systems</a></li>
-              <li><a href="#">Collaboration features</a></li>
-              <li><a href="#">Design process</a></li>
-              <li><a href="#">FigJam</a></li>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
             </ul>
           </div>
 
-          <!-- Help & Map -->
+          <!-- Contact & Newsletter -->
           <div class="footer-section">
-            <div class="help-section">
-              <h3>Help</h3>
-              <ul>
-                <li><a href="#">Best practices</a></li>
-                <li><a href="#">Colors</a></li>
-                <li><a href="#">Color wheel</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Developers</a></li>
-                <li><a href="#">Resource library</a></li>
-              </ul>
-            </div>
-            <div class="map-section">
-              <div class="map-link">
-                <i data-lucide="map-pin"></i>
-                <span>Map</span>
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
               </div>
             </div>
           </div>

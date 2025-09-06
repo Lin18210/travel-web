@@ -1,0 +1,689 @@
+/* Spa & Wellness Page Styles */
+
+/* Hero Section */
+.spa-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.spa-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="spa-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(212,175,55,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23spa-pattern)"/></svg>');
+    opacity: 0.3;
+}
+
+.spa-hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #d4af37, #f4e4bc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Spa Overview */
+.spa-overview {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.spa-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Treatments Section */
+.treatments {
+    padding: 80px 0;
+    background: white;
+}
+
+.treatment-categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 12px 24px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    color: #666;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    border-color: #d4af37;
+    background: #d4af37;
+    color: white;
+}
+
+.treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.treatment-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treatment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.treatment-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.treatment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.treatment-card:hover .treatment-image img {
+    transform: scale(1.05);
+}
+
+.treatment-duration {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(212, 175, 55, 0.9);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.treatment-content {
+    padding: 25px;
+}
+
+.treatment-content h3 {
+    font-size: 1.5rem;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.treatment-content p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.treatment-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+.duration {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Spa Packages */
+.spa-packages {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.package-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.package-card.featured {
+    border: 3px solid #d4af37;
+    transform: scale(1.05);
+}
+
+.package-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d4af37;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.package-header h3 {
+    font-size: 1.8rem;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.package-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 30px;
+}
+
+.package-price span {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.package-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.package-features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.package-features i {
+    color: #d4af37;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Spa Facilities */
+.spa-facilities {
+    padding: 80px 0;
+    background: white;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.facility-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.facility-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.facility-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.facility-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.facility-card:hover .facility-image img {
+    transform: scale(1.05);
+}
+
+.facility-content {
+    padding: 25px;
+}
+
+.facility-content h3 {
+    font-size: 1.5rem;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.facility-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Spa Booking */
+.spa-booking {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.booking-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.booking-info h2 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+}
+
+.booking-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.booking-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.booking-features .feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.booking-features i {
+    color: #d4af37;
+    font-size: 1.2rem;
+}
+
+.booking-form {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.btn-full {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* Spa Info */
+.spa-info {
+    padding: 60px 0;
+    background: white;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.info-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.info-card h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+}
+
+.info-card i {
+    color: #d4af37;
+    font-size: 1.5rem;
+}
+
+.hours-list {
+    text-align: left;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.policies-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.policies-list li {
+    padding: 8px 0;
+    color: #666;
+    position: relative;
+    padding-left: 20px;
+}
+
+.policies-list li::before {
+    content: '•';
+    color: #d4af37;
+    position: absolute;
+    left: 0;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.contact-info strong {
+    color: #1a1a2e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .spa-hero .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+    
+    .booking-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .treatment-categories {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .category-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .treatments-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .package-card.featured {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .spa-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .booking-form {
+        padding: 25px;
+    }
+    
+    .info-card {
+        padding: 20px;
+    }
+}
+
+/* Animation for treatment cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.treatment-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.treatment-card:nth-child(1) { animation-delay: 0.1s; }
+.treatment-card:nth-child(2) { animation-delay: 0.2s; }
+.treatment-card:nth-child(3) { animation-delay: 0.3s; }
+.treatment-card:nth-child(4) { animation-delay: 0.4s; }
+.treatment-card:nth-child(5) { animation-delay: 0.5s; }
+.treatment-card:nth-child(6) { animation-delay: 0.6s; }
+.treatment-card:nth-child(7) { animation-delay: 0.7s; }
+.treatment-card:nth-child(8) { animation-delay: 0.8s; }
+.treatment-card:nth-child(9) { animation-delay: 0.9s; }
+
+/* Focus states for accessibility */
+.category-btn:focus,
+.treatment-card button:focus,
+.package-card button:focus {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .treatment-card,
+    .package-card,
+    .facility-card {
+        border: 2px solid #000;
+    }
+    
+    .category-btn.active {
+        background: #000;
+        color: #fff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .treatment-card,
+    .package-card,
+    .facility-card,
+    .feature-card {
+        transition: none;
+        animation: none;
+    }
+    
+    .treatment-card:hover,
+    .package-card:hover,
+    .facility-card:hover,
+    .feature-card:hover {
+        transform: none;
+    }
+}

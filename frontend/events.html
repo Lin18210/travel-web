@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events & Activities - Grand Vista Resort</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="events.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms & Suites</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="spa.html">Spa & Wellness</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js (user menu when logged in) -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Events & Activities</h1>
+        <p>Create unforgettable memories with our world-class events and exciting activities</p>
+      </div>
+    </section>
+
+    <!-- Event Categories -->
+    <section class="event-categories">
+      <div class="container">
+        <div class="section-header">
+          <h2>Event Categories</h2>
+          <p>From intimate celebrations to grand occasions, we host events of all sizes</p>
+        </div>
+        
+        <div class="categories-grid">
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="heart"></i>
+            </div>
+            <h3>Weddings</h3>
+            <p>Romantic ceremonies and receptions in stunning venues with breathtaking views</p>
+            <ul class="category-features">
+              <li>Indoor & outdoor venues</li>
+              <li>Custom wedding packages</li>
+              <li>Professional wedding planning</li>
+              <li>Bridal suite accommodations</li>
+            </ul>
+            <button class="btn btn-outline">Learn More</button>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <h3>Corporate Events</h3>
+            <p>Professional meetings, conferences, and team building activities</p>
+            <ul class="category-features">
+              <li>State-of-the-art meeting rooms</li>
+              <li>Audio-visual equipment</li>
+              <li>Catering services</li>
+              <li>Team building activities</li>
+            </ul>
+            <button class="btn btn-outline">Learn More</button>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="cake"></i>
+            </div>
+            <h3>Celebrations</h3>
+            <p>Birthdays, anniversaries, and special occasions to remember</p>
+            <ul class="category-features">
+              <li>Private dining rooms</li>
+              <li>Custom celebration packages</li>
+              <li>Entertainment options</li>
+              <li>Special decorations</li>
+            </ul>
+            <button class="btn btn-outline">Learn More</button>
+          </div>
+
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Social Gatherings</h3>
+            <p>Family reunions, parties, and social events in elegant settings</p>
+            <ul class="category-features">
+              <li>Flexible venue options</li>
+              <li>Customizable menus</li>
+              <li>Entertainment coordination</li>
+              <li>Guest accommodation</li>
+            </ul>
+            <button class="btn btn-outline">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Venues -->
+    <section class="featured-venues">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Venues</h2>
+          <p>Stunning spaces designed to make your event truly special</p>
+        </div>
+
+        <div class="venues-grid">
+          <div class="venue-card">
+            <div class="venue-image">
+              <img src="assets/explore/urban1.jpg" alt="Grand Ballroom" />
+              <div class="venue-overlay">
+                <span class="venue-capacity">Up to 500 guests</span>
+              </div>
+            </div>
+            <div class="venue-content">
+              <h3>Grand Ballroom</h3>
+              <p>Our flagship venue featuring crystal chandeliers, marble floors, and panoramic ocean views. Perfect for weddings and grand celebrations.</p>
+              <div class="venue-features">
+                <span class="feature-tag">Indoor</span>
+                <span class="feature-tag">Ocean View</span>
+                <span class="feature-tag">Dance Floor</span>
+              </div>
+              <button class="btn btn-primary">View Details</button>
+            </div>
+          </div>
+
+          <div class="venue-card">
+            <div class="venue-image">
+              <img src="assets/explore/oceanfront1.jpg" alt="Garden Pavilion" />
+              <div class="venue-overlay">
+                <span class="venue-capacity">Up to 200 guests</span>
+              </div>
+            </div>
+            <div class="venue-content">
+              <h3>Garden Pavilion</h3>
+              <p>An elegant outdoor venue surrounded by lush tropical gardens. Ideal for intimate ceremonies and al fresco dining.</p>
+              <div class="venue-features">
+                <span class="feature-tag">Outdoor</span>
+                <span class="feature-tag">Garden Setting</span>
+                <span class="feature-tag">Natural Lighting</span>
+              </div>
+              <button class="btn btn-primary">View Details</button>
+            </div>
+          </div>
+
+          <div class="venue-card">
+            <div class="venue-image">
+              <img src="assets/explore/urban2.jpg" alt="Executive Boardroom" />
+              <div class="venue-overlay">
+                <span class="venue-capacity">Up to 50 guests</span>
+              </div>
+            </div>
+            <div class="venue-content">
+              <h3>Executive Boardroom</h3>
+              <p>A sophisticated space equipped with cutting-edge technology for corporate meetings and presentations.</p>
+              <div class="venue-features">
+                <span class="feature-tag">Indoor</span>
+                <span class="feature-tag">Tech Equipped</span>
+                <span class="feature-tag">Executive Style</span>
+              </div>
+              <button class="btn btn-primary">View Details</button>
+            </div>
+          </div>
+
+          <div class="venue-card">
+            <div class="venue-image">
+              <img src="assets/explore/seaside1.jpg" alt="Beachfront Terrace" />
+              <div class="venue-overlay">
+                <span class="venue-capacity">Up to 150 guests</span>
+              </div>
+            </div>
+            <div class="venue-content">
+              <h3>Beachfront Terrace</h3>
+              <p>Breathtaking oceanfront setting with direct beach access. Perfect for sunset ceremonies and beach parties.</p>
+              <div class="venue-features">
+                <span class="feature-tag">Beachfront</span>
+                <span class="feature-tag">Sunset Views</span>
+                <span class="feature-tag">Beach Access</span>
+              </div>
+              <button class="btn btn-primary">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Attractions -->
+    <section class="local-attractions">
+      <div class="container">
+        <div class="section-header">
+          <h2>Local Attractions & Activities</h2>
+          <p>Explore the beauty and culture of our surrounding area</p>
+        </div>
+
+        <div class="attractions-grid">
+          <div class="attraction-card">
+            <div class="attraction-image">
+              <img src="assets/attractive/colosseum.webp" alt="Historic Downtown" />
+            </div>
+            <div class="attraction-content">
+              <h3>Historic Downtown</h3>
+              <p>Explore charming streets lined with boutique shops, art galleries, and local restaurants. Just 10 minutes from the resort.</p>
+              <div class="attraction-details">
+                <span class="distance">10 min drive</span>
+                <span class="type">Cultural</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <div class="attraction-image">
+              <img src="assets/attractive/golden.jpg" alt="National Park" />
+            </div>
+            <div class="attraction-content">
+              <h3>National Park</h3>
+              <p>Hiking trails, wildlife viewing, and stunning natural landscapes. Perfect for outdoor enthusiasts and nature lovers.</p>
+              <div class="attraction-details">
+                <span class="distance">25 min drive</span>
+                <span class="type">Nature</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <div class="attraction-image">
+              <img src="assets/attractive/museum.jpg" alt="Art Museum" />
+            </div>
+            <div class="attraction-content">
+              <h3>Contemporary Art Museum</h3>
+              <p>World-class exhibitions featuring local and international artists. A cultural gem in the heart of the city.</p>
+              <div class="attraction-details">
+                <span class="distance">15 min drive</span>
+                <span class="type">Art & Culture</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <div class="attraction-image">
+              <img src="assets/attractive/golf.jpg" alt="Championship Golf" />
+            </div>
+            <div class="attraction-content">
+              <h3>Championship Golf Course</h3>
+              <p>18-hole championship course designed by a renowned architect. Challenging play with breathtaking ocean views.</p>
+              <div class="attraction-details">
+                <span class="distance">5 min drive</span>
+                <span class="type">Sports</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <div class="attraction-image">
+              <img src="assets/attractive/beach.jpg" alt="Private Beach" />
+            </div>
+            <div class="attraction-content">
+              <h3>Private Beach Access</h3>
+              <p>Exclusive beachfront with pristine sands and crystal-clear waters. Complimentary beach chairs and umbrellas.</p>
+              <div class="attraction-details">
+                <span class="distance">On-site</span>
+                <span class="type">Beach</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <div class="attraction-image">
+              <img src="assets/attractive/wine.jpg" alt="Wine Tasting" />
+            </div>
+            <div class="attraction-content">
+              <h3>Wine Tasting Tours</h3>
+              <p>Guided tours of local vineyards with wine tastings and gourmet food pairings. Transportation included.</p>
+              <div class="attraction-details">
+                <span class="distance">30 min drive</span>
+                <span class="type">Food & Wine</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resort Activities -->
+    <section class="resort-activities">
+      <div class="container">
+        <div class="section-header">
+          <h2>Resort Activities</h2>
+          <p>Enjoy a variety of activities without leaving our property</p>
+        </div>
+
+        <div class="activities-grid">
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i data-lucide="waves"></i>
+            </div>
+            <h3>Water Sports</h3>
+            <p>Kayaking, paddleboarding, snorkeling, and more in our crystal-clear lagoon</p>
+            <ul class="activity-features">
+              <li>Equipment included</li>
+              <li>Professional instruction</li>
+              <li>Safety equipment provided</li>
+            </ul>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i data-lucide="dumbbell"></i>
+            </div>
+            <h3>Fitness Center</h3>
+            <p>State-of-the-art gym with personal trainers and group fitness classes</p>
+            <ul class="activity-features">
+              <li>24/7 access</li>
+              <li>Personal training</li>
+              <li>Group classes</li>
+            </ul>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i data-lucide="spa"></i>
+            </div>
+            <h3>Spa Services</h3>
+            <p>Relax and rejuvenate with our world-class spa treatments and wellness programs</p>
+            <ul class="activity-features">
+              <li>Massage therapies</li>
+              <li>Facial treatments</li>
+              <li>Wellness programs</li>
+            </ul>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i data-lucide="chef-hat"></i>
+            </div>
+            <h3>Cooking Classes</h3>
+            <p>Learn from our master chefs with hands-on cooking classes and wine pairings</p>
+            <ul class="activity-features">
+              <li>Professional instruction</li>
+              <li>Local cuisine focus</li>
+              <li>Wine pairings</li>
+            </ul>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i data-lucide="music"></i>
+            </div>
+            <h3>Live Entertainment</h3>
+            <p>Evening shows, live music, and cultural performances in our entertainment venues</p>
+            <ul class="activity-features">
+              <li>Daily performances</li>
+              <li>Local artists</li>
+              <li>Cultural shows</li>
+            </ul>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">
+              <i data-lucide="map"></i>
+            </div>
+            <h3>Guided Tours</h3>
+            <p>Explore the local area with our knowledgeable guides and curated tour experiences</p>
+            <ul class="activity-features">
+              <li>Expert guides</li>
+              <li>Custom itineraries</li>
+              <li>Transportation included</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Planning Services -->
+    <section class="event-planning">
+      <div class="container">
+        <div class="planning-content">
+          <div class="planning-text">
+            <h2>Professional Event Planning</h2>
+            <p>Let our experienced event planners create the perfect celebration for you. From intimate gatherings to grand affairs, we handle every detail with precision and care.</p>
+            
+            <div class="planning-features">
+              <div class="feature-item">
+                <i data-lucide="check-circle"></i>
+                <span>Custom event design and coordination</span>
+              </div>
+              <div class="feature-item">
+                <i data-lucide="check-circle"></i>
+                <span>Vendor management and recommendations</span>
+              </div>
+              <div class="feature-item">
+                <i data-lucide="check-circle"></i>
+                <span>Timeline creation and management</span>
+              </div>
+              <div class="feature-item">
+                <i data-lucide="check-circle"></i>
+                <span>On-site coordination and support</span>
+              </div>
+            </div>
+
+            <div class="planning-cta">
+              <button class="btn btn-primary">Start Planning Your Event</button>
+              <button class="btn btn-outline">Download Event Guide</button>
+            </div>
+          </div>
+          
+          <div class="planning-image">
+            <img src="assets/experience/traditional-cooking.jpg" alt="Event Planning" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Plan Your Perfect Event?</h2>
+          <p>Contact our events team to discuss your vision and create unforgettable memories</p>
+          <div class="cta-buttons">
+            <button class="btn btn-primary">Contact Events Team</button>
+            <button class="btn btn-outline">View Event Packages</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Hotel Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Grand Vista Resort</span>
+              </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="facebook"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
+            </ul>
+          </div>
+
+          <!-- Guest Services -->
+          <div class="footer-section">
+            <h3>Guest Services</h3>
+            <ul>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-section">
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="events.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

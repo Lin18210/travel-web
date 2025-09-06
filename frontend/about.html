@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Grand Vista Resort</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="about.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms & Suites</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="spa.html">Spa & Wellness</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js (user menu when logged in) -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>About Grand Vista Resort</h1>
+          <p>Discover our story, values, and commitment to exceptional hospitality</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="our-story">
+      <div class="container">
+        <div class="story-content">
+          <div class="story-text">
+            <h2>Our Story</h2>
+            <p class="lead">
+              For over three decades, Grand Vista Resort has been a beacon of luxury hospitality, 
+              creating unforgettable experiences for guests from around the world.
+            </p>
+            <p>
+              Founded in 1990 by hospitality visionary Robert Grand, our resort began as a dream 
+              to create a destination where luxury meets nature in perfect harmony. What started 
+              as a small beachfront property has evolved into a world-class resort spanning 
+              500 acres of pristine coastline.
+            </p>
+            <p>
+              Today, Grand Vista Resort stands as a testament to our founder's vision, offering 
+              unparalleled service, breathtaking accommodations, and experiences that create 
+              lasting memories for our guests and their families.
+            </p>
+          </div>
+          <div class="story-image">
+            <img src="assets/home/moutain2.jpg" alt="Grand Vista Resort - Aerial view" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+      <div class="container">
+        <div class="mv-grid">
+          <div class="mv-card">
+            <div class="mv-icon">
+              <i data-lucide="target"></i>
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+              To provide exceptional hospitality experiences that exceed expectations, 
+              creating meaningful connections and lasting memories for every guest who 
+              walks through our doors.
+            </p>
+          </div>
+          <div class="mv-card">
+            <div class="mv-icon">
+              <i data-lucide="eye"></i>
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              To be the world's premier luxury resort destination, recognized for our 
+              commitment to sustainability, innovation, and the highest standards of 
+              hospitality excellence.
+            </p>
+          </div>
+          <div class="mv-card">
+            <div class="mv-icon">
+              <i data-lucide="heart"></i>
+            </div>
+            <h3>Our Values</h3>
+            <p>
+              Integrity, excellence, respect, and sustainability guide everything we do. 
+              We believe in creating positive impact for our guests, team members, and 
+              the communities we serve.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="awards">
+      <div class="container">
+        <h2>Awards & Recognition</h2>
+        <p class="section-subtitle">
+          Our commitment to excellence has been recognized by industry leaders worldwide
+        </p>
+        <div class="awards-grid">
+          <div class="award-item">
+            <div class="award-icon">
+              <i data-lucide="award"></i>
+            </div>
+            <h4>AAA Five Diamond Award</h4>
+            <p>2020-2024</p>
+          </div>
+          <div class="award-item">
+            <div class="award-icon">
+              <i data-lucide="star"></i>
+            </div>
+            <h4>Forbes Travel Guide Five-Star</h4>
+            <p>2018-2024</p>
+          </div>
+          <div class="award-item">
+            <div class="award-icon">
+              <i data-lucide="trophy"></i>
+            </div>
+            <h4>World's Best Resort</h4>
+            <p>Travel + Leisure 2023</p>
+          </div>
+          <div class="award-item">
+            <div class="award-icon">
+              <i data-lucide="leaf"></i>
+            </div>
+            <h4>Green Hotel Certification</h4>
+            <p>Eco-Friendly Excellence</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="leadership">
+      <div class="container">
+        <h2>Leadership Team</h2>
+        <p class="section-subtitle">
+          Meet the passionate leaders who guide our resort's continued success
+        </p>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-photo">
+              <img src="assets/home/urban.jpg" alt="Sarah Johnson - General Manager" />
+            </div>
+            <div class="member-info">
+              <h4>Sarah Johnson</h4>
+              <p class="position">General Manager</p>
+              <p class="bio">
+                With over 20 years in luxury hospitality, Sarah leads our team with 
+                passion and dedication to guest satisfaction.
+              </p>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-photo">
+              <img src="assets/home/seaside.jpg" alt="Michael Chen - Director of Operations" />
+            </div>
+            <div class="member-info">
+              <h4>Michael Chen</h4>
+              <p class="position">Director of Operations</p>
+              <p class="bio">
+                Michael ensures every aspect of our resort runs seamlessly, from 
+                housekeeping to guest services.
+              </p>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-photo">
+              <img src="assets/home/forest.jpeg" alt="Elena Rodriguez - Executive Chef" />
+            </div>
+            <div class="member-info">
+              <h4>Elena Rodriguez</h4>
+              <p class="position">Executive Chef</p>
+              <p class="bio">
+                Award-winning chef Elena creates culinary masterpieces using the 
+                finest local and international ingredients.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sustainability -->
+    <section class="sustainability">
+      <div class="container">
+        <div class="sustainability-content">
+          <div class="sustainability-text">
+            <h2>Our Commitment to Sustainability</h2>
+            <p class="lead">
+              We believe in preserving the natural beauty that surrounds us for 
+              future generations to enjoy.
+            </p>
+            <div class="sustainability-features">
+              <div class="feature">
+                <i data-lucide="recycle"></i>
+                <div>
+                  <h4>Zero Waste Initiative</h4>
+                  <p>Comprehensive recycling and composting programs</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i data-lucide="sun"></i>
+                <div>
+                  <h4>Renewable Energy</h4>
+                  <p>Solar panels power 80% of our resort operations</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i data-lucide="droplets"></i>
+                <div>
+                  <h4>Water Conservation</h4>
+                  <p>Advanced water recycling and conservation systems</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i data-lucide="tree-pine"></i>
+                <div>
+                  <h4>Local Sourcing</h4>
+                  <p>Supporting local farmers and sustainable suppliers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sustainability-image">
+            <img src="assets/home/countryside.jpg" alt="Sustainable practices at Grand Vista Resort" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Impact -->
+    <section class="community">
+      <div class="container">
+        <h2>Community Impact</h2>
+        <p class="section-subtitle">
+          We're proud to support and give back to our local community
+        </p>
+        <div class="community-stats">
+          <div class="stat">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Local Jobs Created</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">$2M+</div>
+            <div class="stat-label">Annual Community Investment</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Local Suppliers Supported</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">Volunteer Hours Annually</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Experience the Grand Vista Difference</h2>
+          <p>
+            Join thousands of satisfied guests who have discovered the magic of 
+            Grand Vista Resort. Book your stay today and create memories that 
+            will last a lifetime.
+          </p>
+          <div class="cta-buttons">
+            <a href="booking.html" class="btn btn-primary">Book Your Stay</a>
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Hotel Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Grand Vista Resort</span>
+              </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="facebook"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
+            </ul>
+          </div>
+
+          <!-- Guest Services -->
+          <div class="footer-section">
+            <h3>Guest Services</h3>
+            <ul>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-section">
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

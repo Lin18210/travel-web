@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Grand Vista Resort</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="faq.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms & Suites</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="spa.html">Spa & Wellness</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js (user menu when logged in) -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to common questions about your stay at Grand Vista Resort</p>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="container">
+        <div class="search-container">
+          <div class="search-input-container">
+            <i data-lucide="search"></i>
+            <input
+              type="text"
+              placeholder="Search FAQ..."
+              class="search-input"
+              id="faqSearch"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="faq-categories">
+      <div class="container">
+        <div class="categories-nav">
+          <button class="category-btn active" data-category="all">All Questions</button>
+          <button class="category-btn" data-category="reservations">Reservations</button>
+          <button class="category-btn" data-category="checkin">Check-in/Check-out</button>
+          <button class="category-btn" data-category="amenities">Amenities</button>
+          <button class="category-btn" data-category="dining">Dining</button>
+          <button class="category-btn" data-category="policies">Policies</button>
+          <button class="category-btn" data-category="accessibility">Accessibility</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-content">
+      <div class="container">
+        <div class="faq-grid">
+          <!-- Reservations -->
+          <div class="faq-category" data-category="reservations">
+            <h2>Reservations</h2>
+            <div class="faq-items">
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>How do I make a reservation?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>You can make a reservation through our website, by calling our reservations team at +1 (555) 123-4567, or by emailing reservations@grandvistaresort.com. Our online booking system is available 24/7 and offers real-time availability and pricing.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What is your cancellation policy?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>We offer flexible cancellation policies based on your booking type. For standard reservations, you can cancel up to 24 hours before check-in for a full refund. Non-refundable rates are available at a discount. Please check your specific booking terms for details.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Do you offer group discounts?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, we offer special rates for groups of 10 or more rooms. Group discounts vary based on the season and length of stay. Please contact our group sales team at groups@grandvistaresort.com for a personalized quote.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Can I modify my reservation?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, you can modify your reservation through our website or by contacting our reservations team. Changes are subject to availability and rate differences. Some restrictions may apply to non-refundable bookings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Check-in/Check-out -->
+          <div class="faq-category" data-category="checkin">
+            <h2>Check-in & Check-out</h2>
+            <div class="faq-items">
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What are your check-in and check-out times?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Check-in time is 3:00 PM and check-out time is 11:00 AM. Early check-in and late check-out may be available upon request, subject to availability and additional charges. Please contact our front desk to arrange these services.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Can I check in early or check out late?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Early check-in and late check-out are available based on availability. Early check-in before 12:00 PM incurs a 50% room rate charge. Late check-out after 2:00 PM incurs a full room rate charge. Please request these services in advance.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What do I need to bring for check-in?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Please bring a valid government-issued photo ID and the credit card used for the reservation. For international guests, a passport is required. We also recommend bringing your confirmation number for faster check-in.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Is there a deposit required?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, we require a credit card deposit at check-in to cover incidental charges. The deposit amount varies by room type and length of stay, typically ranging from $100-$500 per night. The deposit is released upon check-out if no charges are incurred.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Amenities -->
+          <div class="faq-category" data-category="amenities">
+            <h2>Amenities & Services</h2>
+            <div class="faq-items">
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What amenities are included in my stay?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Your stay includes access to our fitness center, outdoor pools, private beach, tennis courts, and complimentary WiFi. We also provide daily housekeeping, concierge services, and complimentary airport shuttle service.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Is WiFi free throughout the resort?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, complimentary high-speed WiFi is available throughout the resort, including all guest rooms, public areas, and outdoor spaces. Premium WiFi with enhanced speed is available for business guests at an additional charge.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Do you have a spa and fitness center?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, we have a world-class spa offering a full range of treatments and a state-of-the-art fitness center open 24/7. Spa services require advance booking. Personal training sessions and group fitness classes are available.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Is parking available?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Complimentary valet parking is available for all guests. Self-parking is also available in our secure underground garage. Electric vehicle charging stations are provided at no additional charge.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dining -->
+          <div class="faq-category" data-category="dining">
+            <h2>Dining</h2>
+            <div class="faq-items">
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What dining options are available?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>We offer three restaurants: The Grand Bistro (fine dining), Ocean Breeze Grill (casual beachfront), and Sky Lounge (rooftop bar). Room service is available 24/7. We also have a coffee shop and poolside bar.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Do you accommodate dietary restrictions?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, our chefs can accommodate various dietary restrictions including vegetarian, vegan, gluten-free, and food allergies. Please inform us of any dietary requirements when making your reservation or upon arrival.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Is breakfast included?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Breakfast is included in our resort fee for all guests. We offer a full breakfast buffet at The Grand Bistro and continental breakfast options at our coffee shop. Room service breakfast is available for an additional charge.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Can I make restaurant reservations?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, we recommend making reservations for our restaurants, especially The Grand Bistro. You can make reservations through our concierge, online booking system, or by calling the restaurant directly.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Policies -->
+          <div class="faq-category" data-category="policies">
+            <h2>Policies</h2>
+            <div class="faq-items">
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What is your pet policy?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>We welcome pets in designated pet-friendly rooms for an additional fee of $75 per night. Pets must be under 50 pounds and well-behaved. A pet deposit is required, and pets must be leashed in public areas.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What is your smoking policy?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Grand Vista Resort is a non-smoking property. Smoking is only permitted in designated outdoor areas. A $250 cleaning fee will be charged for smoking in guest rooms or non-designated areas.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What is your age requirement for check-in?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Guests must be at least 18 years old to check in. Guests under 18 must be accompanied by a parent or legal guardian. Photo identification is required for all guests at check-in.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What is your lost and found policy?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>We maintain a lost and found department for items left behind by guests. Items are held for 30 days. Please contact our front desk at +1 (555) 123-4567 to inquire about lost items. Shipping charges may apply for returned items.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accessibility -->
+          <div class="faq-category" data-category="accessibility">
+            <h2>Accessibility</h2>
+            <div class="faq-items">
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Is the resort accessible for guests with disabilities?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, Grand Vista Resort is fully accessible and ADA compliant. We offer accessible guest rooms, public areas, and facilities. All common areas are wheelchair accessible, and we provide accessible parking spaces and beach wheelchairs.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What accessibility features are available?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>We offer accessible guest rooms with roll-in showers, grab bars, and lowered fixtures. Public areas feature wide doorways, accessible elevators, and ramps. We also provide TTY devices, visual alarms, and service animal accommodations.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Do you have accessible transportation?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, our airport shuttle service includes wheelchair-accessible vehicles. We also provide accessible transportation for local attractions and can arrange for accessible taxis and car services upon request.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Can you accommodate special dietary needs?</span>
+                  <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Our culinary team can accommodate various dietary needs and restrictions. Please inform us of any special dietary requirements when making your reservation, and we'll ensure your needs are met throughout your stay.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Still Have Questions?</h2>
+          <p>Our friendly team is here to help with any additional questions you may have</p>
+          <div class="cta-buttons">
+            <button class="btn btn-primary">Contact Us</button>
+            <button class="btn btn-outline">Live Chat</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Hotel Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Grand Vista Resort</span>
+              </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="facebook"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
+            </ul>
+          </div>
+
+          <!-- Guest Services -->
+          <div class="footer-section">
+            <h3>Guest Services</h3>
+            <ul>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-section">
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="faq.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

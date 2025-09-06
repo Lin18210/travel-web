@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special Offers - Grand Vista Resort</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="offers.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms & Suites</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="spa.html">Spa & Wellness</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js (user menu when logged in) -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Special Offers</h1>
+          <p>Discover exclusive deals and packages designed to make your stay even more memorable</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Offers -->
+    <section class="featured-offers">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Offers</h2>
+          <p>Limited-time deals you won't want to miss</p>
+        </div>
+
+        <div class="offers-grid">
+          <!-- Early Bird Special -->
+          <div class="offer-card featured">
+            <div class="offer-badge">Most Popular</div>
+            <div class="offer-image">
+              <img src="assets/home/seaside.jpg" alt="Early Bird Special" />
+            </div>
+            <div class="offer-content">
+              <h3>Early Bird Special</h3>
+              <p class="offer-description">
+                Book 30 days in advance and save up to 25% on your stay. Perfect for planning ahead 
+                and securing the best rates for your dream vacation.
+              </p>
+              <div class="offer-details">
+                <div class="detail">
+                  <i data-lucide="calendar"></i>
+                  <span>Valid until Dec 31, 2024</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="users"></i>
+                  <span>All room types</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="clock"></i>
+                  <span>30-day advance booking</span>
+                </div>
+              </div>
+              <div class="offer-pricing">
+                <div class="original-price">$399</div>
+                <div class="discounted-price">$299</div>
+                <div class="savings">Save $100 per night</div>
+              </div>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+
+          <!-- Romance Package -->
+          <div class="offer-card">
+            <div class="offer-badge romantic">Romance</div>
+            <div class="offer-image">
+              <img src="assets/home/moutain2.jpg" alt="Romance Package" />
+            </div>
+            <div class="offer-content">
+              <h3>Romance Package</h3>
+              <p class="offer-description">
+                Create unforgettable memories with your special someone. Includes champagne, 
+                rose petals, couples spa treatment, and a private dinner setup.
+              </p>
+              <div class="offer-details">
+                <div class="detail">
+                  <i data-lucide="heart"></i>
+                  <span>Couples only</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="calendar"></i>
+                  <span>Valid year-round</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="gift"></i>
+                  <span>Special amenities included</span>
+                </div>
+              </div>
+              <div class="offer-pricing">
+                <div class="package-price">+$150 per night</div>
+                <div class="value">Value: $300</div>
+              </div>
+              <button class="btn btn-outline">Learn More</button>
+            </div>
+          </div>
+
+          <!-- Family Fun Package -->
+          <div class="offer-card">
+            <div class="offer-badge family">Family</div>
+            <div class="offer-image">
+              <img src="assets/home/countryside.jpg" alt="Family Fun Package" />
+            </div>
+            <div class="offer-content">
+              <h3>Family Fun Package</h3>
+              <p class="offer-description">
+                Everything families need for an amazing vacation. Includes kids club access, 
+                family activities, and dining credits for the whole family.
+              </p>
+              <div class="offer-details">
+                <div class="detail">
+                  <i data-lucide="users"></i>
+                  <span>Up to 2 children free</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="calendar"></i>
+                  <span>Valid year-round</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="gift"></i>
+                  <span>Activities included</span>
+                </div>
+              </div>
+              <div class="offer-pricing">
+                <div class="package-price">+$100 per night</div>
+                <div class="value">Value: $200</div>
+              </div>
+              <button class="btn btn-outline">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seasonal Offers -->
+    <section class="seasonal-offers">
+      <div class="container">
+        <div class="section-header">
+          <h2>Seasonal Specials</h2>
+          <p>Celebrate each season with our exclusive seasonal packages</p>
+        </div>
+
+        <div class="seasonal-grid">
+          <!-- Summer Escape -->
+          <div class="seasonal-card">
+            <div class="seasonal-image">
+              <img src="assets/home/tropical.jpeg" alt="Summer Escape" />
+              <div class="seasonal-overlay">
+                <h3>Summer Escape</h3>
+                <p>May - August 2024</p>
+              </div>
+            </div>
+            <div class="seasonal-content">
+              <h4>Summer Beach Getaway</h4>
+              <p>Enjoy our pristine beaches with complimentary water sports, beach service, and tropical cocktails.</p>
+              <div class="seasonal-features">
+                <div class="feature">
+                  <i data-lucide="sun"></i>
+                  <span>Beach service included</span>
+                </div>
+                <div class="feature">
+                  <i data-lucide="waves"></i>
+                  <span>Water sports equipment</span>
+                </div>
+                <div class="feature">
+                  <i data-lucide="wine"></i>
+                  <span>Tropical drink vouchers</span>
+                </div>
+              </div>
+              <div class="seasonal-pricing">
+                <span class="discount">20% OFF</span>
+                <span class="validity">Valid May-Aug 2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Winter Wonderland -->
+          <div class="seasonal-card">
+            <div class="seasonal-image">
+              <img src="assets/home/moutain3.jpg" alt="Winter Wonderland" />
+              <div class="seasonal-overlay">
+                <h3>Winter Wonderland</h3>
+                <p>December - February 2024</p>
+              </div>
+            </div>
+            <div class="seasonal-content">
+              <h4>Cozy Winter Retreat</h4>
+              <p>Escape to our warm paradise during winter months with special holiday celebrations and spa treatments.</p>
+              <div class="seasonal-features">
+                <div class="feature">
+                  <i data-lucide="snowflake"></i>
+                  <span>Holiday decorations</span>
+                </div>
+                <div class="feature">
+                  <i data-lucide="sparkles"></i>
+                  <span>New Year's celebration</span>
+                </div>
+                <div class="feature">
+                  <i data-lucide="heart"></i>
+                  <span>Valentine's special</span>
+                </div>
+              </div>
+              <div class="seasonal-pricing">
+                <span class="discount">15% OFF</span>
+                <span class="validity">Valid Dec-Feb 2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spring Renewal -->
+          <div class="seasonal-card">
+            <div class="seasonal-image">
+              <img src="assets/home/forest.jpeg" alt="Spring Renewal" />
+              <div class="seasonal-overlay">
+                <h3>Spring Renewal</h3>
+                <p>March - May 2024</p>
+              </div>
+            </div>
+            <div class="seasonal-content">
+              <h4>Wellness & Renewal</h4>
+              <p>Rejuvenate with our spring wellness program featuring yoga, meditation, and fresh garden-to-table dining.</p>
+              <div class="seasonal-features">
+                <div class="feature">
+                  <i data-lucide="leaf"></i>
+                  <span>Garden tours included</span>
+                </div>
+                <div class="feature">
+                  <i data-lucide="moon"></i>
+                  <span>Meditation sessions</span>
+                </div>
+                <div class="feature">
+                  <i data-lucide="utensils"></i>
+                  <span>Farm-to-table dining</span>
+                </div>
+              </div>
+              <div class="seasonal-pricing">
+                <span class="discount">10% OFF</span>
+                <span class="validity">Valid Mar-May 2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loyalty Program -->
+    <section class="loyalty-program">
+      <div class="container">
+        <div class="loyalty-content">
+          <div class="loyalty-text">
+            <h2>Grand Vista Rewards</h2>
+            <p class="lead">
+              Join our loyalty program and enjoy exclusive benefits, special rates, and personalized 
+              experiences with every stay.
+            </p>
+            <div class="loyalty-benefits">
+              <div class="benefit">
+                <i data-lucide="star"></i>
+                <div>
+                  <h4>Elite Status</h4>
+                  <p>Priority check-in, room upgrades, and exclusive access</p>
+                </div>
+              </div>
+              <div class="benefit">
+                <i data-lucide="gift"></i>
+                <div>
+                  <h4>Exclusive Offers</h4>
+                  <p>Member-only rates and special promotions</p>
+                </div>
+              </div>
+              <div class="benefit">
+                <i data-lucide="credit-card"></i>
+                <div>
+                  <h4>Points & Rewards</h4>
+                  <p>Earn points for every stay and redeem for free nights</p>
+                </div>
+              </div>
+              <div class="benefit">
+                <i data-lucide="users"></i>
+                <div>
+                  <h4>Personalized Service</h4>
+                  <p>Dedicated concierge and customized experiences</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary">Join Now - It's Free</button>
+          </div>
+          <div class="loyalty-image">
+            <img src="assets/home/urban.jpg" alt="Grand Vista Rewards Program" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Corporate & Group Offers -->
+    <section class="corporate-offers">
+      <div class="container">
+        <div class="section-header">
+          <h2>Corporate & Group Offers</h2>
+          <p>Special rates and packages for business travelers and group bookings</p>
+        </div>
+
+        <div class="corporate-grid">
+          <div class="corporate-card">
+            <div class="corporate-icon">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <h3>Business Traveler</h3>
+            <p>Special rates for corporate guests with meeting facilities, high-speed internet, and business services.</p>
+            <ul class="corporate-features">
+              <li>Meeting room access</li>
+              <li>High-speed WiFi</li>
+              <li>Business center</li>
+              <li>Express check-in/out</li>
+            </ul>
+            <div class="corporate-pricing">
+              <span class="rate">From $199/night</span>
+            </div>
+            <button class="btn btn-outline">Contact Sales</button>
+          </div>
+
+          <div class="corporate-card">
+            <div class="corporate-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Group Bookings</h3>
+            <p>Discounted rates for groups of 10 or more with dedicated event planning and special amenities.</p>
+            <ul class="corporate-features">
+              <li>Group discounts up to 20%</li>
+              <li>Dedicated event planner</li>
+              <li>Welcome reception</li>
+              <li>Group activities</li>
+            </ul>
+            <div class="corporate-pricing">
+              <span class="rate">From $159/night</span>
+            </div>
+            <button class="btn btn-outline">Get Quote</button>
+          </div>
+
+          <div class="corporate-card">
+            <div class="corporate-icon">
+              <i data-lucide="calendar"></i>
+            </div>
+            <h3>Extended Stay</h3>
+            <p>Special rates for extended stays of 7 nights or more with additional amenities and services.</p>
+            <ul class="corporate-features">
+              <li>Weekly housekeeping</li>
+              <li>Kitchenette access</li>
+              <li>Laundry service</li>
+              <li>Concierge support</li>
+            </ul>
+            <div class="corporate-pricing">
+              <span class="rate">From $179/night</span>
+            </div>
+            <button class="btn btn-outline">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Stay Updated on Special Offers</h2>
+          <p>Be the first to know about our latest deals, seasonal packages, and exclusive member benefits.</p>
+          <form class="newsletter-form">
+            <div class="form-group">
+              <input type="email" placeholder="Enter your email address" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <p class="newsletter-disclaimer">
+              By subscribing, you agree to receive marketing emails from Grand Vista Resort. 
+              You can unsubscribe at any time.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Save on Your Dream Vacation?</h2>
+          <p>
+            Don't miss out on these exclusive offers. Book now and start planning your perfect getaway 
+            at Grand Vista Resort.
+          </p>
+          <div class="cta-buttons">
+            <a href="booking.html" class="btn btn-primary">Book Your Stay</a>
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Hotel Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Grand Vista Resort</span>
+              </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="facebook"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
+            </ul>
+          </div>
+
+          <!-- Guest Services -->
+          <div class="footer-section">
+            <h3>Guest Services</h3>
+            <ul>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-section">
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

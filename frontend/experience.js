@@ -411,6 +411,7 @@ function setupEventListeners() {
       this.style.display = "none";
     }
   });
+  
 
   // Modal close
   const closeModal = document.getElementById("closeModal");

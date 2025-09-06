@@ -1,0 +1,570 @@
+/* Dining Page Specific Styles */
+
+/* Page Hero */
+.page-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Restaurants Overview */
+.restaurants-overview {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+}
+
+.restaurant-image {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover .restaurant-image img {
+  transform: scale(1.05);
+}
+
+.restaurant-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #d4af37;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.restaurant-badge.casual {
+  background: #059669;
+}
+
+.restaurant-badge.breakfast {
+  background: #dc2626;
+}
+
+.restaurant-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.restaurant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.restaurant-header h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.restaurant-rating {
+  text-align: right;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.stars i {
+  width: 16px;
+  height: 16px;
+  color: #fbbf24;
+}
+
+.restaurant-rating span {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.restaurant-description {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.restaurant-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.detail i {
+  width: 16px;
+  height: 16px;
+  color: #d4af37;
+  flex-shrink: 0;
+}
+
+.restaurant-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.restaurant-actions .btn {
+  flex: 1;
+  padding: 12px 24px;
+  font-weight: 600;
+}
+
+/* Sample Menu */
+.sample-menu {
+  padding: 80px 0;
+  background: white;
+}
+
+.menu-categories {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.menu-category {
+  margin-bottom: 40px;
+}
+
+.menu-category h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #d4af37;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.item-info h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.item-info p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.item-price {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #d4af37;
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+
+/* Dining Experiences */
+.dining-experiences {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.experience-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+}
+
+.experience-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover .experience-image img {
+  transform: scale(1.05);
+}
+
+.experience-content {
+  padding: 30px;
+}
+
+.experience-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.experience-content p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.experience-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.experience-details .detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.experience-details .detail i {
+  width: 16px;
+  height: 16px;
+  color: #d4af37;
+  flex-shrink: 0;
+}
+
+.experience-content .btn {
+  width: 100%;
+  padding: 12px 24px;
+  font-weight: 600;
+}
+
+/* Wine & Bar */
+.wine-bar {
+  padding: 80px 0;
+  background: white;
+}
+
+.wine-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.wine-text h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+
+.wine-text .lead {
+  font-size: 1.25rem;
+  color: #4b5563;
+  font-weight: 500;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.wine-features {
+  display: grid;
+  gap: 24px;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feature i {
+  width: 24px;
+  height: 24px;
+  color: #d4af37;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.feature h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.feature p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.wine-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.wine-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Call to Action */
+.cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cta-content p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  padding: 16px 32px;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.cta-buttons .btn-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-buttons .btn-outline:hover {
+  background: white;
+  color: #1e3a8a;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .restaurant-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .restaurant-image {
+    height: 300px;
+  }
+  
+  .restaurant-content {
+    padding: 30px;
+  }
+  
+  .wine-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .wine-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .page-hero p {
+    font-size: 1.125rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .restaurant-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .restaurant-rating {
+    text-align: left;
+  }
+  
+  .restaurant-details {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .restaurant-actions {
+    flex-direction: column;
+  }
+  
+  .menu-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .item-price {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+  
+  .experiences-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .wine-text h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 60px 0;
+  }
+  
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .restaurants-overview,
+  .sample-menu,
+  .dining-experiences,
+  .wine-bar,
+  .cta-section {
+    padding: 60px 0;
+  }
+  
+  .restaurant-content {
+    padding: 20px;
+  }
+  
+  .experience-content {
+    padding: 20px;
+  }
+  
+  .wine-text h2 {
+    font-size: 1.75rem;
+  }
+}

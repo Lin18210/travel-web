@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Grand Vista Resort</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms & Suites</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="spa.html">Spa & Wellness</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js (user menu when logged in) -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Contact Us</h1>
+          <p>We're here to help make your stay perfect. Get in touch with us anytime.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <h3>Address</h3>
+            <p>123 Paradise Drive<br>Resort City, RC 12345<br>United States</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i data-lucide="phone"></i>
+            </div>
+            <h3>Phone</h3>
+            <p>Main: +1 (555) 123-4567<br>Reservations: +1 (555) 123-4568<br>Concierge: +1 (555) 123-4569</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i data-lucide="mail"></i>
+            </div>
+            <h3>Email</h3>
+            <p>info@grandvistaresort.com<br>reservations@grandvistaresort.com<br>concierge@grandvistaresort.com</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i data-lucide="clock"></i>
+            </div>
+            <h3>Hours</h3>
+            <p>24/7 Front Desk<br>Concierge: 6 AM - 11 PM<br>Reservations: 8 AM - 8 PM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <div class="map-content">
+          <div class="map-info">
+            <h2>Find Us</h2>
+            <p class="lead">
+              Located in the heart of paradise, Grand Vista Resort is easily accessible 
+              from major airports and offers stunning views of the surrounding landscape.
+            </p>
+            <div class="location-features">
+              <div class="feature">
+                <i data-lucide="plane"></i>
+                <div>
+                  <h4>Airport Access</h4>
+                  <p>15 minutes from Paradise International Airport</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i data-lucide="car"></i>
+                <div>
+                  <h4>Parking</h4>
+                  <p>Complimentary valet parking for all guests</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i data-lucide="navigation"></i>
+                <div>
+                  <h4>Directions</h4>
+                  <p>Easy access from Highway 101 and local roads</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary">Get Directions</button>
+          </div>
+          <div class="map-container">
+            <div class="map-placeholder">
+              <i data-lucide="map"></i>
+              <span>Interactive Map</span>
+              <p>Click to view full map</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+      <div class="container">
+        <div class="form-content">
+          <div class="form-header">
+            <h2>Send Us a Message</h2>
+            <p>Have a question or special request? We'd love to hear from you.</p>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="reservation">Reservation Inquiry</option>
+                <option value="dining">Dining Reservation</option>
+                <option value="spa">Spa & Wellness</option>
+                <option value="events">Events & Weddings</option>
+                <option value="group">Group Bookings</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Please provide details about your inquiry..."></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="newsletter" name="newsletter" />
+                <span class="checkmark"></span>
+                I would like to receive updates and special offers via email
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Department Contacts -->
+    <section class="departments">
+      <div class="container">
+        <div class="section-header">
+          <h2>Department Contacts</h2>
+          <p>Connect directly with the right department for faster assistance</p>
+        </div>
+
+        <div class="departments-grid">
+          <div class="department-card">
+            <div class="department-icon">
+              <i data-lucide="bed"></i>
+            </div>
+            <h3>Reservations</h3>
+            <p>Book your stay, modify reservations, or inquire about availability.</p>
+            <div class="department-contact">
+              <p><i data-lucide="phone"></i> +1 (555) 123-4568</p>
+              <p><i data-lucide="mail"></i> reservations@grandvistaresort.com</p>
+            </div>
+            <button class="btn btn-outline">Contact Reservations</button>
+          </div>
+
+          <div class="department-card">
+            <div class="department-icon">
+              <i data-lucide="utensils"></i>
+            </div>
+            <h3>Dining</h3>
+            <p>Make restaurant reservations, inquire about special dietary needs, or plan private dining.</p>
+            <div class="department-contact">
+              <p><i data-lucide="phone"></i> +1 (555) 123-4570</p>
+              <p><i data-lucide="mail"></i> dining@grandvistaresort.com</p>
+            </div>
+            <button class="btn btn-outline">Contact Dining</button>
+          </div>
+
+          <div class="department-card">
+            <div class="department-icon">
+              <i data-lucide="heart"></i>
+            </div>
+            <h3>Spa & Wellness</h3>
+            <p>Book spa treatments, wellness programs, or fitness center access.</p>
+            <div class="department-contact">
+              <p><i data-lucide="phone"></i> +1 (555) 123-4571</p>
+              <p><i data-lucide="mail"></i> spa@grandvistaresort.com</p>
+            </div>
+            <button class="btn btn-outline">Contact Spa</button>
+          </div>
+
+          <div class="department-card">
+            <div class="department-icon">
+              <i data-lucide="calendar"></i>
+            </div>
+            <h3>Events & Weddings</h3>
+            <p>Plan your special event, wedding, or corporate gathering with our event team.</p>
+            <div class="department-contact">
+              <p><i data-lucide="phone"></i> +1 (555) 123-4572</p>
+              <p><i data-lucide="mail"></i> events@grandvistaresort.com</p>
+            </div>
+            <button class="btn btn-outline">Contact Events</button>
+          </div>
+
+          <div class="department-card">
+            <div class="department-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Concierge</h3>
+            <p>Get assistance with local recommendations, transportation, and special requests.</p>
+            <div class="department-contact">
+              <p><i data-lucide="phone"></i> +1 (555) 123-4569</p>
+              <p><i data-lucide="mail"></i> concierge@grandvistaresort.com</p>
+            </div>
+            <button class="btn btn-outline">Contact Concierge</button>
+          </div>
+
+          <div class="department-card">
+            <div class="department-icon">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <h3>Group Sales</h3>
+            <p>Special rates and packages for group bookings and corporate events.</p>
+            <div class="department-contact">
+              <p><i data-lucide="phone"></i> +1 (555) 123-4573</p>
+              <p><i data-lucide="mail"></i> groupsales@grandvistaresort.com</p>
+            </div>
+            <button class="btn btn-outline">Contact Group Sales</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="emergency-contact">
+      <div class="container">
+        <div class="emergency-content">
+          <div class="emergency-icon">
+            <i data-lucide="phone-call"></i>
+          </div>
+          <div class="emergency-text">
+            <h2>Emergency Contact</h2>
+            <p>For urgent matters or emergencies, please call our 24/7 emergency line.</p>
+            <div class="emergency-number">
+              <span class="number">+1 (555) 911-RESORT</span>
+              <span class="label">24/7 Emergency Line</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social-media">
+      <div class="container">
+        <div class="social-content">
+          <h2>Follow Us</h2>
+          <p>Stay connected and see what's happening at Grand Vista Resort</p>
+          <div class="social-links">
+            <a href="#" class="social-link facebook">
+              <i data-lucide="facebook"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="social-link instagram">
+              <i data-lucide="instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="social-link twitter">
+              <i data-lucide="twitter"></i>
+              <span>Twitter</span>
+            </a>
+            <a href="#" class="social-link youtube">
+              <i data-lucide="youtube"></i>
+              <span>YouTube</span>
+            </a>
+            <a href="#" class="social-link linkedin">
+              <i data-lucide="linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Hotel Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Grand Vista Resort</span>
+              </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="facebook"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
+            </ul>
+          </div>
+
+          <!-- Guest Services -->
+          <div class="footer-section">
+            <h3>Guest Services</h3>
+            <ul>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-section">
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="contact.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

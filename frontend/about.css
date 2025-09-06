@@ -1,0 +1,537 @@
+/* About Page Specific Styles */
+
+/* Page Hero */
+.page-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Our Story Section */
+.our-story {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-text h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+
+.story-text .lead {
+  font-size: 1.25rem;
+  color: #4b5563;
+  font-weight: 500;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.story-text p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.story-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.story-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.story-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Mission & Vision */
+.mission-vision {
+  padding: 80px 0;
+  background: white;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.mv-card {
+  text-align: center;
+  padding: 40px 30px;
+  border-radius: 16px;
+  background: #f8fafc;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.mv-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.mv-icon i {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.mv-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.mv-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Awards Section */
+.awards {
+  padding: 80px 0;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.awards h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.award-item {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.award-item:hover {
+  transform: translateY(-5px);
+}
+
+.award-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.award-icon i {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.award-item h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.award-item p {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Leadership Team */
+.leadership {
+  padding: 80px 0;
+  background: white;
+  text-align: center;
+}
+
+.leadership h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.team-member {
+  background: #f8fafc;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.member-photo {
+  height: 250px;
+  overflow: hidden;
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover .member-photo img {
+  transform: scale(1.1);
+}
+
+.member-info {
+  padding: 30px;
+  text-align: center;
+}
+
+.member-info h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.position {
+  color: #d4af37;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.bio {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* Sustainability */
+.sustainability {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.sustainability-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.sustainability-text h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+
+.sustainability-text .lead {
+  font-size: 1.25rem;
+  color: #4b5563;
+  font-weight: 500;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.sustainability-features {
+  display: grid;
+  gap: 24px;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feature i {
+  width: 24px;
+  height: 24px;
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.feature h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.feature p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.sustainability-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.sustainability-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Community Impact */
+.community {
+  padding: 80px 0;
+  background: white;
+  text-align: center;
+}
+
+.community h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.community-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.stat {
+  padding: 30px 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Call to Action */
+.cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cta-content p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  padding: 16px 32px;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.cta-buttons .btn-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-buttons .btn-outline:hover {
+  background: white;
+  color: #1e3a8a;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .story-content,
+  .sustainability-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .story-image,
+  .sustainability-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .page-hero p {
+    font-size: 1.125rem;
+  }
+  
+  .story-text h2,
+  .awards h2,
+  .leadership h2,
+  .sustainability-text h2,
+  .community h2,
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .mv-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .awards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .community-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 60px 0;
+  }
+  
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .our-story,
+  .mission-vision,
+  .awards,
+  .leadership,
+  .sustainability,
+  .community,
+  .cta-section {
+    padding: 60px 0;
+  }
+  
+  .mv-card,
+  .award-item {
+    padding: 30px 20px;
+  }
+  
+  .member-info {
+    padding: 20px;
+  }
+  
+  .community-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+}

@@ -23,6 +23,46 @@
   color: #64748b;
 }
 
+/* Trust Indicators */
+.trust-indicators {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  padding: 40px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.trust-item i {
+  width: 48px;
+  height: 48px;
+  color: #d4af37;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.trust-item span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
 /* Write Review CTA */
 .write-review-cta {
   background: white;

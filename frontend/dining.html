@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dining - Grand Vista Resort</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dining.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms & Suites</a></li>
+          <li><a href="dining.html" class="active">Dining</a></li>
+          <li><a href="spa.html">Spa & Wellness</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js (user menu when logged in) -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Culinary Excellence</h1>
+          <p>Discover world-class dining experiences crafted by our award-winning culinary team</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurants Overview -->
+    <section class="restaurants-overview">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Restaurants</h2>
+          <p>From fine dining to casual beachside fare, experience culinary artistry at every meal</p>
+        </div>
+
+        <!-- Ocean Terrace -->
+        <div class="restaurant-card">
+          <div class="restaurant-image">
+            <img src="assets/home/seaside.jpg" alt="Ocean Terrace Restaurant" />
+            <div class="restaurant-badge">Fine Dining</div>
+          </div>
+          <div class="restaurant-content">
+            <div class="restaurant-header">
+              <h3>Ocean Terrace</h3>
+              <div class="restaurant-rating">
+                <div class="stars">
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                </div>
+                <span>4.9 (247 reviews)</span>
+              </div>
+            </div>
+            <p class="restaurant-description">
+              Our signature fine dining restaurant offers panoramic ocean views and an innovative menu 
+              featuring fresh seafood, premium steaks, and locally sourced ingredients. Executive Chef 
+              Elena Rodriguez creates seasonal masterpieces that celebrate the region's culinary heritage.
+            </p>
+            <div class="restaurant-details">
+              <div class="detail">
+                <i data-lucide="clock"></i>
+                <span>Dinner: 6:00 PM - 10:00 PM</span>
+              </div>
+              <div class="detail">
+                <i data-lucide="users"></i>
+                <span>Capacity: 80 guests</span>
+              </div>
+              <div class="detail">
+                <i data-lucide="dollar-sign"></i>
+                <span>$$$$</span>
+              </div>
+              <div class="detail">
+                <i data-lucide="phone"></i>
+                <span>Reservations: (555) 123-4567</span>
+              </div>
+            </div>
+            <div class="restaurant-actions">
+              <button class="btn btn-outline">View Menu</button>
+              <button class="btn btn-primary">Make Reservation</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beachside Bistro -->
+        <div class="restaurant-card">
+          <div class="restaurant-image">
+            <img src="assets/home/tropical.jpeg" alt="Beachside Bistro" />
+            <div class="restaurant-badge casual">Casual Dining</div>
+          </div>
+          <div class="restaurant-content">
+            <div class="restaurant-header">
+              <h3>Beachside Bistro</h3>
+              <div class="restaurant-rating">
+                <div class="stars">
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                </div>
+                <span>4.7 (189 reviews)</span>
+              </div>
+            </div>
+            <p class="restaurant-description">
+              Casual beachfront dining with your toes in the sand. Enjoy fresh tropical cocktails, 
+              grilled seafood, and light bites while watching the sunset over the ocean. Perfect for 
+              families and couples seeking a relaxed atmosphere.
+            </p>
+            <div class="restaurant-details">
+              <div class="detail">
+                <i data-lucide="clock"></i>
+                <span>All Day: 11:00 AM - 9:00 PM</span>
+              </div>
+              <div class="detail">
+                <i data-lucide="users"></i>
+                <span>Capacity: 120 guests</span>
+              </div>
+              <div class="detail">
+                <i data-lucide="dollar-sign"></i>
+                <span>$$</span>
+              </div>
+              <div class="detail">
+                <i data-lucide="phone"></i>
+                <span>Walk-ins Welcome</span>
+              </div>
+            </div>
+            <div class="restaurant-actions">
+              <button class="btn btn-outline">View Menu</button>
+              <button class="btn btn-primary">Order Online</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garden Café -->
+        <div class="restaurant-card">
+          <div class="restaurant-image">
+            <img src="assets/home/forest.jpeg" alt="Garden Café" />
+            <div class="restaurant-badge breakfast">Breakfast & Brunch</div>
+          </div>
+          <div class="restaurant-content">
+            <div class="restaurant-header">
+              <h3>Garden Café</h3>
+              <div class="restaurant-rating">
+                <div class="stars">
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                  <i data-lucide="star"></i>
+                </div>
+                <span>4.8 (156 reviews)</span>
+              </div>
+            </div>
+            <p class="restaurant-description">
+              Start your day surrounded by lush tropical gardens. Our breakfast and brunch menu 
+              features fresh pastries, artisanal coffee, healthy smoothies, and hearty breakfast 
+              classics. The perfect spot for a leisurely morning meal.
+            </p>
+            <div class="restaurant-details">
+              <div class="detail">
+                <i data-lucide="clock"></i>
+                <span>Breakfast: 7:00 AM - 11:00 AM</span>
+              </div>
+              <div class="detail">
+                <i data-lucide="users"></i>
+                <span>Capacity: 60 guests</span>
+              </div>
+              <div class="detail">
+                <i data-lucide="dollar-sign"></i>
+                <span>$$</span>
+              </div>
+              <div class="detail">
+                <i data-lucide="coffee"></i>
+                <span>Specialty Coffee Bar</span>
+              </div>
+            </div>
+            <div class="restaurant-actions">
+              <button class="btn btn-outline">View Menu</button>
+              <button class="btn btn-primary">Order Coffee</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Menu -->
+    <section class="sample-menu">
+      <div class="container">
+        <div class="section-header">
+          <h2>Sample Menu - Ocean Terrace</h2>
+          <p>Experience our signature dishes crafted with the finest ingredients</p>
+        </div>
+
+        <div class="menu-categories">
+          <!-- Appetizers -->
+          <div class="menu-category">
+            <h3>Appetizers</h3>
+            <div class="menu-items">
+              <div class="menu-item">
+                <div class="item-info">
+                  <h4>Lobster Bisque</h4>
+                  <p>Rich and creamy soup with fresh Maine lobster, cognac, and chives</p>
+                </div>
+                <div class="item-price">$18</div>
+              </div>
+              <div class="menu-item">
+                <div class="item-info">
+                  <h4>Seared Foie Gras</h4>
+                  <p>Pan-seared foie gras with brioche toast, fig compote, and microgreens</p>
+                </div>
+                <div class="item-price">$32</div>
+              </div>
+              <div class="menu-item">
+                <div class="item-info">
+                  <h4>Oysters Rockefeller</h4>
+                  <p>Fresh Blue Point oysters with spinach, herbs, and hollandaise sauce</p>
+                </div>
+                <div class="item-price">$24</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Courses -->
+          <div class="menu-category">
+            <h3>Main Courses</h3>
+            <div class="menu-items">
+              <div class="menu-item">
+                <div class="item-info">
+                  <h4>Wagyu Beef Tenderloin</h4>
+                  <p>8oz A5 Wagyu beef with truffle mashed potatoes and seasonal vegetables</p>
+                </div>
+                <div class="item-price">$85</div>
+              </div>
+              <div class="menu-item">
+                <div class="item-info">
+                  <h4>Pan-Seared Halibut</h4>
+                  <p>Fresh Atlantic halibut with lemon butter sauce and wild rice pilaf</p>
+                </div>
+                <div class="item-price">$42</div>
+              </div>
+              <div class="menu-item">
+                <div class="item-info">
+                  <h4>Rack of Lamb</h4>
+                  <p>Herb-crusted New Zealand lamb with roasted root vegetables and jus</p>
+                </div>
+                <div class="item-price">$48</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desserts -->
+          <div class="menu-category">
+            <h3>Desserts</h3>
+            <div class="menu-items">
+              <div class="menu-item">
+                <div class="item-info">
+                  <h4>Chocolate Soufflé</h4>
+                  <p>Warm chocolate soufflé with vanilla bean ice cream and berry coulis</p>
+                </div>
+                <div class="item-price">$16</div>
+              </div>
+              <div class="menu-item">
+                <div class="item-info">
+                  <h4>Tiramisu</h4>
+                  <p>Classic Italian dessert with espresso-soaked ladyfingers and mascarpone</p>
+                </div>
+                <div class="item-price">$14</div>
+              </div>
+              <div class="menu-item">
+                <div class="item-info">
+                  <h4>Crème Brûlée</h4>
+                  <p>Vanilla bean crème brûlée with fresh berries and mint</p>
+                </div>
+                <div class="item-price">$12</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Dining Experiences -->
+    <section class="dining-experiences">
+      <div class="container">
+        <div class="section-header">
+          <h2>Special Dining Experiences</h2>
+          <p>Create unforgettable memories with our unique culinary offerings</p>
+        </div>
+
+        <div class="experiences-grid">
+          <div class="experience-card">
+            <div class="experience-image">
+              <img src="assets/home/urban.jpg" alt="Chef's Table Experience" />
+            </div>
+            <div class="experience-content">
+              <h3>Chef's Table Experience</h3>
+              <p>
+                Join our executive chef for an intimate 8-course tasting menu with wine pairings. 
+                Limited to 8 guests per evening for a truly exclusive experience.
+              </p>
+              <div class="experience-details">
+                <div class="detail">
+                  <i data-lucide="clock"></i>
+                  <span>7:00 PM - 10:00 PM</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="users"></i>
+                  <span>8 guests max</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="dollar-sign"></i>
+                  <span>$150 per person</span>
+                </div>
+              </div>
+              <button class="btn btn-primary">Reserve Now</button>
+            </div>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-image">
+              <img src="assets/home/desert.jpg" alt="Sunset Dinner Cruise" />
+            </div>
+            <div class="experience-content">
+              <h3>Sunset Dinner Cruise</h3>
+              <p>
+                Enjoy a romantic dinner aboard our private yacht while watching the sunset. 
+                Fresh seafood and champagne service included.
+              </p>
+              <div class="experience-details">
+                <div class="detail">
+                  <i data-lucide="clock"></i>
+                  <span>6:00 PM - 9:00 PM</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="users"></i>
+                  <span>20 guests max</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="dollar-sign"></i>
+                  <span>$120 per person</span>
+                </div>
+              </div>
+              <button class="btn btn-primary">Reserve Now</button>
+            </div>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-image">
+              <img src="assets/home/countryside.jpg" alt="Garden Cooking Class" />
+            </div>
+            <div class="experience-content">
+              <h3>Garden Cooking Class</h3>
+              <p>
+                Learn to prepare local dishes using fresh ingredients from our organic garden. 
+                Includes lunch and recipe cards to take home.
+              </p>
+              <div class="experience-details">
+                <div class="detail">
+                  <i data-lucide="clock"></i>
+                  <span>10:00 AM - 2:00 PM</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="users"></i>
+                  <span>12 guests max</span>
+                </div>
+                <div class="detail">
+                  <i data-lucide="dollar-sign"></i>
+                  <span>$85 per person</span>
+                </div>
+              </div>
+              <button class="btn btn-primary">Reserve Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wine & Bar -->
+    <section class="wine-bar">
+      <div class="container">
+        <div class="wine-content">
+          <div class="wine-text">
+            <h2>Wine & Bar Collection</h2>
+            <p class="lead">
+              Discover our extensive collection of fine wines, craft cocktails, and premium spirits 
+              from around the world.
+            </p>
+            <div class="wine-features">
+              <div class="feature">
+                <i data-lucide="wine"></i>
+                <div>
+                  <h4>Wine Cellar</h4>
+                  <p>Over 500 bottles from renowned vineyards worldwide</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i data-lucide="wine"></i>
+                <div>
+                  <h4>Craft Cocktails</h4>
+                  <p>Signature drinks created by our master mixologist</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i data-lucide="users"></i>
+                <div>
+                  <h4>Wine Tastings</h4>
+                  <p>Weekly tastings with our sommelier</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i data-lucide="moon"></i>
+                <div>
+                  <h4>Late Night Bar</h4>
+                  <p>Open until 2 AM with live music on weekends</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wine-image">
+            <img src="assets/home/moutain3.jpg" alt="Wine Cellar at Grand Vista Resort" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Reserve Your Table</h2>
+          <p>
+            Experience culinary excellence at Grand Vista Resort. Book your table today 
+            and indulge in unforgettable dining experiences.
+          </p>
+          <div class="cta-buttons">
+            <a href="booking.html" class="btn btn-primary">Make Reservation</a>
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Hotel Info -->
+          <div class="footer-section">
+            <div class="company-info">
+              <div class="company-logo">
+                <div class="logo-icon"></div>
+                <span>Grand Vista Resort</span>
+              </div>
+              <p class="hotel-description">
+                Experience luxury hospitality at its finest. Your perfect getaway awaits at our world-class resort.
+              </p>
+              <div class="social-icons">
+                <button class="social-btn">
+                  <i data-lucide="facebook"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="instagram"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="youtube"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="twitter"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="rooms.html">Rooms & Suites</a></li>
+              <li><a href="dining.html">Dining</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Weddings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
+            </ul>
+          </div>
+
+          <!-- Guest Services -->
+          <div class="footer-section">
+            <h3>Guest Services</h3>
+            <ul>
+              <li><a href="concierge.html">Concierge</a></li>
+              <li><a href="transportation.html">Airport Shuttle</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-section">
+            <div class="contact-section">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i data-lucide="map-pin"></i> 123 Paradise Drive, Resort City, RC 12345</p>
+                <p><i data-lucide="phone"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="mail"></i> info@grandvistaresort.com</p>
+              </div>
+              <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email address" />
+                  <button class="btn btn-primary">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa & Wellness - Grand Vista Resort</title>
+    <meta name="description" content="Indulge in luxury spa treatments and wellness programs at Grand Vista Resort. Professional therapists, premium products, and serene environments await.">
+    <meta name="keywords" content="spa, wellness, massage, treatments, relaxation, luxury resort, Grand Vista">
+    <meta name="author" content="Grand Vista Resort">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Spa & Wellness - Grand Vista Resort">
+    <meta property="og:description" content="Indulge in luxury spa treatments and wellness programs at Grand Vista Resort.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grandvistaresort.com/spa">
+    <meta property="og:image" content="https://grandvistaresort.com/images/spa-hero.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Spa & Wellness - Grand Vista Resort">
+    <meta name="twitter:description" content="Indulge in luxury spa treatments and wellness programs at Grand Vista Resort.">
+    <meta property="twitter:image" content="https://grandvistaresort.com/images/spa-hero.jpg">
+    
+    <link rel="canonical" href="https://grandvistaresort.com/spa">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="spa.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+      <nav class="nav">
+        <div class="nav-brand">
+          <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu" role="menubar">
+          <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+          <li role="none"><a href="rooms.html" role="menuitem">Rooms & Suites</a></li>
+          <li role="none"><a href="dining.html" role="menuitem">Dining</a></li>
+          <li role="none"><a href="spa.html" role="menuitem" aria-current="page">Spa & Wellness</a></li>
+          <li role="none"><a href="events.html" role="menuitem">Events</a></li>
+          <li role="none"><a href="about.html" role="menuitem">About Us</a></li>
+          <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <!-- Will be populated by auth.js (user menu when logged in) -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="spa-hero" role="banner">
+            <div class="hero-content">
+                <h1>Spa & Wellness</h1>
+                <p>Rejuvenate your mind, body, and soul in our world-class spa sanctuary</p>
+                <div class="hero-actions">
+                    <a href="#treatments" class="btn btn-primary">View Treatments</a>
+                    <a href="#book-spa" class="btn btn-secondary">Book Appointment</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/spa-hero.jpg" alt="Luxury spa treatment room with serene atmosphere" loading="eager">
+            </div>
+        </section>
+
+        <!-- Spa Overview -->
+        <section class="spa-overview" id="spa-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Luxury Spa Experience</h2>
+                    <p>Discover tranquility and renewal in our award-winning spa facility</p>
+                </div>
+                <div class="spa-features">
+                    <div class="feature-card">
+                        <i data-lucide="leaf" aria-hidden="true"></i>
+                        <h3>Natural Products</h3>
+                        <p>Premium organic and natural ingredients for all treatments</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="users" aria-hidden="true"></i>
+                        <h3>Expert Therapists</h3>
+                        <p>Licensed professionals with years of experience</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="heart" aria-hidden="true"></i>
+                        <h3>Holistic Approach</h3>
+                        <p>Complete wellness programs for mind, body, and spirit</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="shield-check" aria-hidden="true"></i>
+                        <h3>Sanitized Environment</h3>
+                        <p>Highest standards of cleanliness and safety</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatments Section -->
+        <section class="treatments" id="treatments">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Spa Treatments</h2>
+                    <p>Choose from our extensive menu of therapeutic and beauty treatments</p>
+                </div>
+                
+                <div class="treatment-categories">
+                    <button class="category-btn active" data-category="all">All Treatments</button>
+                    <button class="category-btn" data-category="massage">Massage</button>
+                    <button class="category-btn" data-category="facial">Facial</button>
+                    <button class="category-btn" data-category="body">Body Treatments</button>
+                    <button class="category-btn" data-category="wellness">Wellness</button>
+                </div>
+
+                <div class="treatments-grid">
+                    <!-- Massage Treatments -->
+                    <div class="treatment-card" data-category="massage">
+                        <div class="treatment-image">
+                            <img src="images/spa-massage.jpg" alt="Deep tissue massage treatment" loading="lazy">
+                            <div class="treatment-duration">90 min</div>
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Deep Tissue Massage</h3>
+                            <p>Targeted pressure to release muscle tension and improve circulation</p>
+                            <div class="treatment-details">
+                                <span class="price">$180</span>
+                                <span class="duration">90 minutes</span>
+                            </div>
+                            <button class="btn btn-outline">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card" data-category="massage">
+                        <div class="treatment-image">
+                            <img src="images/spa-hot-stone.jpg" alt="Hot stone massage therapy" loading="lazy">
+                            <div class="treatment-duration">75 min</div>
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Hot Stone Massage</h3>
+                            <p>Heated stones provide deep muscle relaxation and stress relief</p>
+                            <div class="treatment-details">
+                                <span class="price">$160</span>
+                                <span class="duration">75 minutes</span>
+                            </div>
+                            <button class="btn btn-outline">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card" data-category="massage">
+                        <div class="treatment-image">
+                            <img src="images/spa-aromatherapy.jpg" alt="Aromatherapy massage with essential oils" loading="lazy">
+                            <div class="treatment-duration">60 min</div>
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Aromatherapy Massage</h3>
+                            <p>Essential oils combined with therapeutic massage techniques</p>
+                            <div class="treatment-details">
+                                <span class="price">$140</span>
+                                <span class="duration">60 minutes</span>
+                            </div>
+                            <button class="btn btn-outline">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Facial Treatments -->
+                    <div class="treatment-card" data-category="facial">
+                        <div class="treatment-image">
+                            <img src="images/spa-facial.jpg" alt="Luxury facial treatment" loading="lazy">
+                            <div class="treatment-duration">75 min</div>
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Signature Facial</h3>
+                            <p>Customized facial treatment with premium skincare products</p>
+                            <div class="treatment-details">
+                                <span class="price">$120</span>
+                                <span class="duration">75 minutes</span>
+                            </div>
+                            <button class="btn btn-outline">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card" data-category="facial">
+                        <div class="treatment-image">
+                            <img src="images/spa-anti-aging.jpg" alt="Anti-aging facial treatment" loading="lazy">
+                            <div class="treatment-duration">90 min</div>
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Anti-Aging Treatment</h3>
+                            <p>Advanced techniques to reduce fine lines and improve skin texture</p>
+                            <div class="treatment-details">
+                                <span class="price">$200</span>
+                                <span class="duration">90 minutes</span>
+                            </div>
+                            <button class="btn btn-outline">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Body Treatments -->
+                    <div class="treatment-card" data-category="body">
+                        <div class="treatment-image">
+                            <img src="images/spa-body-wrap.jpg" alt="Detoxifying body wrap treatment" loading="lazy">
+                            <div class="treatment-duration">120 min</div>
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Detox Body Wrap</h3>
+                            <p>Purifying treatment to eliminate toxins and improve skin texture</p>
+                            <div class="treatment-details">
+                                <span class="price">$180</span>
+                                <span class="duration">120 minutes</span>
+                            </div>
+                            <button class="btn btn-outline">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card" data-category="body">
+                        <div class="treatment-image">
+                            <img src="images/spa-scrub.jpg" alt="Exfoliating body scrub treatment" loading="lazy">
+                            <div class="treatment-duration">60 min</div>
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Sea Salt Scrub</h3>
+                            <p>Exfoliating treatment with natural sea salt and essential oils</p>
+                            <div class="treatment-details">
+                                <span class="price">$100</span>
+                                <span class="duration">60 minutes</span>
+                            </div>
+                            <button class="btn btn-outline">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Wellness Treatments -->
+                    <div class="treatment-card" data-category="wellness">
+                        <div class="treatment-image">
+                            <img src="images/spa-meditation.jpg" alt="Guided meditation session" loading="lazy">
+                            <div class="treatment-duration">45 min</div>
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Guided Meditation</h3>
+                            <p>Mindfulness session to reduce stress and promote inner peace</p>
+                            <div class="treatment-details">
+                                <span class="price">$80</span>
+                                <span class="duration">45 minutes</span>
+                            </div>
+                            <button class="btn btn-outline">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card" data-category="wellness">
+                        <div class="treatment-image">
+                            <img src="images/spa-yoga.jpg" alt="Private yoga session" loading="lazy">
+                            <div class="treatment-duration">60 min</div>
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Private Yoga Session</h3>
+                            <p>Personalized yoga practice for flexibility and mindfulness</p>
+                            <div class="treatment-details">
+                                <span class="price">$120</span>
+                                <span class="duration">60 minutes</span>
+                            </div>
+                            <button class="btn btn-outline">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spa Packages -->
+        <section class="spa-packages" id="packages">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Spa Packages</h2>
+                    <p>Complete wellness experiences designed for ultimate relaxation</p>
+                </div>
+                
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Couples Retreat</h3>
+                            <div class="package-price">$450<span>/couple</span></div>
+                        </div>
+                        <div class="package-content">
+                            <ul class="package-features">
+                                <li><i data-lucide="check" aria-hidden="true"></i> Side-by-side massage (60 min)</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Couples facial treatment</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Private relaxation suite</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Champagne service</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Light refreshments</li>
+                            </ul>
+                            <button class="btn btn-primary">Book Package</button>
+                        </div>
+                    </div>
+
+                    <div class="package-card featured">
+                        <div class="package-badge">Most Popular</div>
+                        <div class="package-header">
+                            <h3>Ultimate Wellness</h3>
+                            <div class="package-price">$320<span>/person</span></div>
+                        </div>
+                        <div class="package-content">
+                            <ul class="package-features">
+                                <li><i data-lucide="check" aria-hidden="true"></i> Deep tissue massage (90 min)</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Signature facial (75 min)</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Detox body wrap</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Guided meditation</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Spa lunch</li>
+                            </ul>
+                            <button class="btn btn-primary">Book Package</button>
+                        </div>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Day of Renewal</h3>
+                            <div class="package-price">$180<span>/person</span></div>
+                        </div>
+                        <div class="package-content">
+                            <ul class="package-features">
+                                <li><i data-lucide="check" aria-hidden="true"></i> Aromatherapy massage (60 min)</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Sea salt scrub</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Private yoga session</li>
+                                <li><i data-lucide="check" aria-hidden="true"></i> Herbal tea service</li>
+                            </ul>
+                            <button class="btn btn-primary">Book Package</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spa Facilities -->
+        <section class="spa-facilities" id="facilities">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Spa Facilities</h2>
+                    <p>State-of-the-art amenities for your comfort and relaxation</p>
+                </div>
+                
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="images/spa-sauna.jpg" alt="Luxury sauna facility" loading="lazy">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Finnish Sauna</h3>
+                            <p>Traditional dry heat sauna for detoxification and relaxation</p>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="images/spa-steam-room.jpg" alt="Steam room with aromatherapy" loading="lazy">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Steam Room</h3>
+                            <p>Aromatherapy steam room with essential oil infusions</p>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="images/spa-pool.jpg" alt="Heated relaxation pool" loading="lazy">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Heated Pool</h3>
+                            <p>Temperature-controlled pool for hydrotherapy and relaxation</p>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="images/spa-lounge.jpg" alt="Tranquil relaxation lounge" loading="lazy">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Relaxation Lounge</h3>
+                            <p>Serene space with comfortable seating and refreshments</p>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="images/spa-garden.jpg" alt="Outdoor meditation garden" loading="lazy">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Meditation Garden</h3>
+                            <p>Peaceful outdoor space for mindfulness and reflection</p>
+                        </div>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="images/spa-fitness.jpg" alt="Wellness fitness center" loading="lazy">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Wellness Studio</h3>
+                            <p>Dedicated space for yoga, Pilates, and fitness classes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="spa-booking" id="book-spa">
+            <div class="container">
+                <div class="booking-content">
+                    <div class="booking-info">
+                        <h2>Book Your Spa Experience</h2>
+                        <p>Reserve your appointment with our expert therapists and begin your journey to wellness and relaxation.</p>
+                        
+                        <div class="booking-features">
+                            <div class="feature">
+                                <i data-lucide="calendar" aria-hidden="true"></i>
+                                <span>Flexible scheduling</span>
+                            </div>
+                            <div class="feature">
+                                <i data-lucide="clock" aria-hidden="true"></i>
+                                <span>Same-day availability</span>
+                            </div>
+                            <div class="feature">
+                                <i data-lucide="shield-check" aria-hidden="true"></i>
+                                <span>Safe & sanitized</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-form">
+                        <form id="spa-booking-form">
+                            <div class="form-group">
+                                <label for="spa-service">Select Service</label>
+                                <select id="spa-service" name="service" required>
+                                    <option value="">Choose a treatment</option>
+                                    <option value="deep-tissue">Deep Tissue Massage - $180</option>
+                                    <option value="hot-stone">Hot Stone Massage - $160</option>
+                                    <option value="aromatherapy">Aromatherapy Massage - $140</option>
+                                    <option value="signature-facial">Signature Facial - $120</option>
+                                    <option value="anti-aging">Anti-Aging Treatment - $200</option>
+                                    <option value="detox-wrap">Detox Body Wrap - $180</option>
+                                    <option value="sea-salt-scrub">Sea Salt Scrub - $100</option>
+                                    <option value="meditation">Guided Meditation - $80</option>
+                                    <option value="yoga">Private Yoga Session - $120</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="spa-date">Preferred Date</label>
+                                    <input type="date" id="spa-date" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="spa-time">Preferred Time</label>
+                                    <select id="spa-time" name="time" required>
+                                        <option value="">Select time</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="spa-name">Full Name</label>
+                                    <input type="text" id="spa-name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="spa-phone">Phone Number</label>
+                                    <input type="tel" id="spa-phone" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="spa-email">Email Address</label>
+                                <input type="email" id="spa-email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="spa-notes">Special Requests</label>
+                                <textarea id="spa-notes" name="notes" rows="3" placeholder="Any allergies, preferences, or special requirements..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full">Book Appointment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spa Hours & Policies -->
+        <section class="spa-info">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3><i data-lucide="clock" aria-hidden="true"></i> Spa Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span>Monday - Friday</span>
+                                <span>8:00 AM - 9:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Saturday - Sunday</span>
+                                <span>7:00 AM - 10:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i data-lucide="info" aria-hidden="true"></i> Policies</h3>
+                        <ul class="policies-list">
+                            <li>24-hour cancellation policy</li>
+                            <li>Arrive 15 minutes early</li>
+                            <li>Silence mobile devices</li>
+                            <li>No children under 16</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i data-lucide="phone" aria-hidden="true"></i> Contact</h3>
+                        <div class="contact-info">
+                            <p><strong>Phone:</strong> (555) 123-SPA</p>
+                            <p><strong>Email:</strong> spa@grandvistaresort.com</p>
+                            <p><strong>Location:</strong> Resort Level 2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <h3>Grand Vista Resort</h3>
+                        <p>Luxury hospitality at its finest. Experience unparalleled service and comfort in our world-class resort.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Follow us on Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Follow us on Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Follow us on Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="Follow us on LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="rooms.html">Rooms & Suites</a></li>
+                        <li><a href="dining.html">Dining</a></li>
+                        <li><a href="spa.html">Spa & Wellness</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Guest Services</h4>
+                    <ul>
+                        <li><a href="contact.html">Concierge</a></li>
+                        <li><a href="contact.html">Airport Shuttle</a></li>
+                        <li><a href="events.html">Activities</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="reviews.html">Feedback</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i data-lucide="map-pin" aria-hidden="true"></i> 123 Resort Drive, Paradise City, PC 12345</p>
+                        <p><i data-lucide="phone" aria-hidden="true"></i> (555) 123-4567</p>
+                        <p><i data-lucide="mail" aria-hidden="true"></i> info@grandvistaresort.com</p>
+                    </div>
+                    <div class="newsletter-signup">
+                        <h5>Stay Updated</h5>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Grand Vista Resort. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="spa.js"></script>
+</body>
+</html>
