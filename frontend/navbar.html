@@ -1,0 +1,32 @@
+<!-- Navbar Component -->
+<nav class="nav">
+  <div class="nav-brand">
+    <h1><a href="index.html" style="text-decoration: none; color: var(--primary-color);">Grand Vista Resort</a></h1>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <span class="hamburger"></span>
+    <span class="hamburger"></span>
+    <span class="hamburger"></span>
+  </button>
+  <ul class="nav-menu" role="menubar">
+    <li role="none"><a href="index.html" role="menuitem" data-nav-link="home">Home</a></li>
+    <li role="none" class="dropdown">
+      <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" data-nav-link="rooms">Rooms & Suites <i data-lucide="chevron-down"></i></a>
+      <ul class="dropdown-menu" role="menu">
+        <li role="none"><a href="rooms.html" role="menuitem">All Rooms & Suites</a></li>
+        <li role="none"><a href="dining.html" role="menuitem">Dining</a></li>
+        <li role="none"><a href="spa.html" role="menuitem">Spa & Wellness</a></li>
+      </ul>
+    </li>
+    <li role="none"><a href="events.html" role="menuitem" data-nav-link="events">Events</a></li>
+    <li role="none"><a href="about.html" role="menuitem" data-nav-link="about">About Us</a></li>
+    <li role="none"><a href="contact.html" role="menuitem" data-nav-link="contact">Contact</a></li>
+  </ul>
+  <div class="nav-icons">
+    <!-- Will be populated by auth.js (user menu when logged in) -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <i data-lucide="sun" class="theme-icon-light"></i>
+      <i data-lucide="moon" class="theme-icon-dark"></i>
+    </button>
+  </div>
+</nav>

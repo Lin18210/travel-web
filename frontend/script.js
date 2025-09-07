@@ -4,9 +4,20 @@ document.addEventListener("DOMContentLoaded", function () {
   if (typeof lucide !== "undefined") {
     lucide.createIcons();
   }
-
+  
+  // Initialize theme
+  initializeTheme();
+  
+  // Initialize dropdowns
+  initializeDropdowns();
+  
   // Initialize social media integration
   initializeSocialMedia();
+  
+  // Load navbar if it's not already loaded
+  if (!document.querySelector('.nav')) {
+    loadNavbar();
+  }
 
   // Navigation functionality
   const navButtons = document.querySelectorAll(".nav-btn");
@@ -636,3 +647,257 @@ function addTrustElements() {
 document.addEventListener('DOMContentLoaded', function() {
   addTrustElements();
 });
+
+// Load navbar component
+function loadNavbar() {
+  const headerElement = document.querySelector('header.header');
+  
+  if (headerElement) {
+    fetch('navbar.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to load navbar component');
+        }
+        return response.text();
+      })
+      .then(html => {
+        headerElement.innerHTML = html;
+        
+        // Set current page indicator
+        const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+        const navLinks = document.querySelectorAll('[data-nav-link]');
+        
+        navLinks.forEach(link => {
+          if (link.getAttribute('data-nav-link') === currentPage || 
+              (currentPage === 'index' && link.getAttribute('data-nav-link') === 'home')) {
+            link.setAttribute('aria-current', 'page');
+          }
+        });
+        
+        // Initialize authentication buttons
+        if (typeof window.Auth !== 'undefined' && typeof window.updateNavigation === 'function') {
+          window.updateNavigation();
+        } else {
+          // Fallback for auth buttons if Auth is not available
+          const navIcons = document.querySelector('.nav-icons');
+          if (navIcons) {
+            navIcons.innerHTML = `
+              <button class="btn btn-ghost" onclick="window.location.href='login.html'">Login</button>
+              <button class="btn btn-outline" onclick="window.location.href='signup.html'">Sign Up</button>
+            `;
+          }
+        }
+        
+        // Re-initialize dropdown functionality
+        initializeDropdowns();
+        
+        // Re-initialize Lucide icons
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+        
+        // Re-initialize nav toggle for mobile
+        initializeNavToggle();
+      })
+      .catch(error => {
+        console.error('Error loading navbar:', error);
+        // Fallback: If navbar fails to load, don't leave the header empty
+        headerElement.innerHTML = `
+          <nav class="nav">
+            <div class="nav-brand">
+              <h1><a href="index.html" style="text-decoration: none; color: #d4af37;">Grand Vista Resort</a></h1>
+            </div>
+          </nav>
+        `;
+      });
+  }
+}
+
+// Initialize dropdown menu functionality
+function initializeDropdowns() {
+  const dropdowns = document.querySelectorAll('.dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('a');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    
+    // Toggle dropdown with keyboard
+    trigger.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        
+        if (!expanded) {
+          menu.querySelectorAll('a')[0].focus();
+        }
+      }
+    });
+    
+    // Close dropdown when focus leaves
+    dropdown.addEventListener('focusout', function(e) {
+      if (!this.contains(e.relatedTarget)) {
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+}
+
+// Initialize navigation toggle for mobile
+function initializeNavToggle() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      this.classList.toggle('active');
+      const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+      this.setAttribute('aria-expanded', !expanded);
+    });
+  }
+}
+
+// Load navbar when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  loadNavbar();
+  // Keep other initialization functions that should run after navbar is loaded
+});
+
+// Theme functionality
+function initializeTheme() {
+  // Check for saved theme preference or respect OS preference
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+  
+  // Initialize theme toggle button
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+// Load navbar component
+function loadNavbar() {
+  const headerElement = document.querySelector('header');
+  
+  if (!headerElement) return;
+  
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(html => {
+      headerElement.innerHTML = html;
+      
+      // Re-initialize Lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+      
+      // Initialize dropdowns
+      initializeDropdowns();
+      
+      // Initialize theme toggle
+      initializeTheme();
+      
+      // Initialize mobile menu toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+          navToggle.classList.toggle('active');
+        });
+      }
+      
+      // Update active nav link
+      updateActiveNavLink();
+      
+      // Initialize auth buttons if available
+      if (typeof updateNavigation === 'function') {
+        updateNavigation();
+      }
+    })
+    .catch(error => {
+      console.error('Error loading navbar:', error);
+      headerElement.innerHTML = '<p>Error loading navigation. Please refresh the page.</p>';
+    });
+}
+
+function updateActiveNavLink() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+  
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute('data-nav-link');
+    if ((currentPage === 'index.html' && linkPage === 'home') ||
+        (currentPage.includes(linkPage) && linkPage !== 'home')) {
+      link.classList.add('active');
+    }
+  });
+}
+
+function initializeDropdowns() {
+  const dropdowns = document.querySelectorAll('.dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('a[aria-haspopup="true"]');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    
+    if (!trigger || !menu) return;
+    
+    // Mouse events
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('show');
+    });
+    
+    // Keyboard events
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const expanded = trigger.getAttribute('aria-expanded') === 'true';
+        trigger.setAttribute('aria-expanded', !expanded);
+        menu.classList.toggle('show');
+        
+        if (!expanded) {
+          const firstItem = menu.querySelector('a');
+          if (firstItem) firstItem.focus();
+        }
+      }
+    });
+    
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        trigger.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('show');
+      }
+    });
+    
+    // Close when focus moves out
+    dropdown.addEventListener('focusout', (e) => {
+      // Check if the new focus target is still within the dropdown
+      if (!dropdown.contains(e.relatedTarget)) {
+        trigger.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('show');
+      }
+    });
+  });
+}

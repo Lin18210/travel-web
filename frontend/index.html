@@ -124,9 +124,14 @@
         </button>
         <ul class="nav-menu" role="menubar">
           <li role="none"><a href="index.html" role="menuitem" aria-current="page">Home</a></li>
-          <li role="none"><a href="rooms.html" role="menuitem">Rooms & Suites</a></li>
-          <li role="none"><a href="dining.html" role="menuitem">Dining</a></li>
-          <li role="none"><a href="spa.html" role="menuitem">Spa & Wellness</a></li>
+          <li role="none" class="dropdown">
+            <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false">Rooms & Suites <i data-lucide="chevron-down"></i></a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="none"><a href="rooms.html" role="menuitem">All Rooms & Suites</a></li>
+              <li role="none"><a href="dining.html" role="menuitem">Dining</a></li>
+              <li role="none"><a href="spa.html" role="menuitem">Spa & Wellness</a></li>
+            </ul>
+          </li>
           <li role="none"><a href="events.html" role="menuitem">Events</a></li>
           <li role="none"><a href="about.html" role="menuitem">About Us</a></li>
           <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>

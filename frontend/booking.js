@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupFormValidation();
   setupPaymentInputs();
   populateBookingDetails();
+  loadSelectedRoom();
 });
 
 function setupEventListeners() {
@@ -497,6 +498,77 @@ function populateBookingDetails() {
   // Re-initialize icons if they were added dynamically
   if (typeof lucide !== "undefined") {
     lucide.createIcons();
+  }
+}
+
+// Load selected room data from sessionStorage
+function loadSelectedRoom() {
+  const selectedRoom = sessionStorage.getItem('selectedRoom');
+  
+  if (selectedRoom) {
+    try {
+      const roomData = JSON.parse(selectedRoom);
+      
+      // Update booking summary with selected room
+      const bookingItem = document.getElementById('bookingItem');
+      if (bookingItem) {
+        const itemImage = bookingItem.querySelector('.item-image');
+        const itemDetails = bookingItem.querySelector('.item-details h4');
+        const itemLocation = bookingItem.querySelector('.item-location');
+        
+        if (itemImage) {
+          itemImage.innerHTML = `<img src="${roomData.image}" alt="${roomData.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">`;
+        }
+        
+        if (itemDetails) {
+          itemDetails.textContent = roomData.name;
+        }
+        
+        if (itemLocation) {
+          itemLocation.innerHTML = '<i data-lucide="map-pin"></i> Grand Vista Resort';
+        }
+      }
+      
+      // Update price based on selected room
+      const priceRows = document.querySelectorAll('.price-row');
+      if (priceRows.length > 0) {
+        // Extract price number from room price (remove $ and any text)
+        const roomPrice = parseInt(roomData.price.replace(/[^0-9]/g, ''));
+        const nights = 5; // Default nights
+        const totalRoomPrice = roomPrice * nights;
+        const serviceFee = Math.round(totalRoomPrice * 0.09); // 9% service fee
+        const taxes = Math.round(totalRoomPrice * 0.16); // 16% taxes
+        const total = totalRoomPrice + serviceFee + taxes;
+        
+        // Update price breakdown
+        if (priceRows[0]) {
+          priceRows[0].innerHTML = `<span>$${roomPrice} × ${nights} nights</span><span>$${totalRoomPrice}</span>`;
+        }
+        if (priceRows[1]) {
+          priceRows[1].innerHTML = `<span>Service fee</span><span>$${serviceFee}</span>`;
+        }
+        if (priceRows[2]) {
+          priceRows[2].innerHTML = `<span>Taxes</span><span>$${taxes}</span>`;
+        }
+        if (priceRows[3]) {
+          priceRows[3].innerHTML = `<span>Total</span><span>$${total}</span>`;
+        }
+        
+        // Update total amount in confirm button
+        const totalAmount = document.querySelector('.total-amount');
+        if (totalAmount) {
+          totalAmount.textContent = `$${total}`;
+        }
+      }
+      
+      // Reinitialize Lucide icons
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+      
+    } catch (error) {
+      console.error('Error parsing selected room data:', error);
+    }
   }
 }
 
